@@ -158,6 +158,18 @@ Created comprehensive validation script (`~/verify-wsl.sh`) that checks:
    - PATH contamination prevention
    - Validation and diagnostics
 
+7. `scripts/dev-environment/Setup-Bash-Profile.sh` ⭐ **NEW**
+   - Links AbeOS custom bash profile to ~/.bashrc
+   - Automatically detects AbeOS location (Windows or Linux)
+   - Updates paths for bashrc.core
+   - Adds npm global bin to PATH
+
+8. `scripts/dev-environment/Setup-PowerShell-Profile.ps1` ⭐ **NEW**
+   - Unifies all PowerShell profiles (VS Code, Terminal, Admin)
+   - All profiles load from single core config
+   - Adds Claude CLI to PATH
+   - Fixes PATH fragmentation (from DEBUG2.md)
+
 ---
 
 ## Installation Order (PHASE 3)
@@ -168,24 +180,37 @@ For fresh Windows 11 + WSL2 setup:
 ```powershell
 # Run as Administrator
 .\scripts\dev-environment\Install-Windows-DevTools.ps1
+
+# Setup unified PowerShell profiles (fixes Claude CLI PATH)
+.\scripts\dev-environment\Setup-PowerShell-Profile.ps1
+
+# Restart terminal to apply changes
 ```
 
 ### Phase 3B: WSL Side (Run in order)
 ```bash
-# 1. Configure WSL properly
+# 1. Configure WSL properly (creates /etc/wsl.conf, disables Windows PATH)
 ./scripts/dev-environment/Configure-WSL.sh
 
 # 2. Exit and shutdown WSL from PowerShell
 wsl --shutdown
 
-# 3. Restart WSL and continue
+# 3. Restart WSL
+
+# 4. Setup custom bash profile (links AbeOS configs to ~/.bashrc)
+./scripts/dev-environment/Setup-Bash-Profile.sh
+
+# 5. Reload shell
+source ~/.bashrc
+
+# 6. Install WSL development tools
 ./scripts/dev-environment/Install-WSL-DevTools.sh
 ./scripts/dev-environment/Install-Node-DevTools.sh
 ./scripts/dev-environment/Install-Python-AI-DevTools.sh
 ./scripts/dev-environment/Install-WebDev-Packages.sh
 ./scripts/dev-environment/Install-AI-CLIs.sh
 
-# 4. Verify installation
+# 7. Verify installation
 ~/verify-wsl.sh
 ```
 
@@ -193,8 +218,7 @@ wsl --shutdown
 
 ## Validation Checklist
 
-After installation, verify:
-
+### WSL Environment
 - [ ] `/etc/wsl.conf` exists with LF endings (not CRLF)
 - [ ] `file /etc/wsl.conf` shows "ASCII text", NOT "Windows SYSTEM.INI"
 - [ ] `echo $PATH` does NOT contain `/mnt/c` paths
@@ -203,6 +227,19 @@ After installation, verify:
 - [ ] `node --version` shows v20+
 - [ ] `systemctl is-system-running` works
 - [ ] No Windows packages bleeding into WSL
+
+### Bash Profile
+- [ ] `~/.bashrc` sources AbeOS bashrc.core
+- [ ] `grep bashrc.core ~/.bashrc` shows correct path
+- [ ] Oh My Posh theme loads (if configured)
+- [ ] NVM loads automatically
+
+### PowerShell Profile
+- [ ] All PowerShell hosts load unified profile
+- [ ] VS Code terminal shows custom profile
+- [ ] Windows Terminal shows custom profile
+- [ ] `claude --help` works in all terminals
+- [ ] `$env:Path` includes `$HOME\.local\bin`
 
 ---
 
