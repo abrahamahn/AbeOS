@@ -51,14 +51,13 @@ sudo apt install -y \
     gcc \
     g++ \
     make \
-    cmake \
-    ninja-build \
     pkg-config \
     autoconf \
     automake \
     libtool
 
 log_success "Build essentials installed"
+# Removed bloat: cmake, ninja-build
 
 # Install development libraries
 log_info "Installing development libraries..."
@@ -90,22 +89,20 @@ log_success "Multimedia tools installed"
 # Install modern CLI tools
 log_info "Installing modern CLI tools..."
 sudo apt install -y \
-    ripgrep \
     fd-find \
-    fzf \
     jq \
     curl \
     wget \
     git \
     vim \
     neovim \
-    tmux \
     htop \
     tree \
     zip \
     unzip
 
 log_success "Modern CLI tools installed"
+# Removed bloat: ripgrep, fzf, tmux
 
 # Install yq (YAML processor)
 log_info "Installing yq..."
@@ -150,21 +147,6 @@ else
     log_info "eza already installed"
 fi
 
-# Install zoxide (smarter cd)
-log_info "Installing zoxide..."
-if ! command -v zoxide &> /dev/null; then
-    curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-    log_success "zoxide installed"
-
-    # Add zoxide init to bashrc if not present
-    if ! grep -q "zoxide init" ~/.bashrc; then
-        echo 'eval "$(zoxide init bash)"' >> ~/.bashrc
-        log_info "zoxide hook added to ~/.bashrc"
-    fi
-else
-    log_info "zoxide already installed"
-fi
-
 # Clean up
 log_info "Cleaning up..."
 sudo apt autoremove -y
@@ -176,11 +158,11 @@ log_success "WSL2/Linux toolchain installation complete!"
 echo "=================================================="
 echo ""
 echo "Installed components:"
-echo "  ✓ Build essentials (gcc, g++, make, cmake, ninja)"
+echo "  ✓ Build essentials (gcc, g++, make)"
 echo "  ✓ Development libraries (ssl, zlib, readline, etc.)"
 echo "  ✓ Multimedia tools (FFmpeg, ImageMagick)"
-echo "  ✓ Modern CLI tools (ripgrep, fd, fzf, jq, yq)"
-echo "  ✓ Productivity tools (direnv, bat, eza, zoxide)"
+echo "  ✓ Modern CLI tools (fd, jq, yq)"
+echo "  ✓ Productivity tools (direnv, bat, eza)"
 echo ""
 echo "Next steps:"
 echo "  1. Restart your shell or run: source ~/.bashrc"
