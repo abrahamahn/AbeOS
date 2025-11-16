@@ -1,0 +1,1228 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AbeOS Audio Production Plugins",
+  "description": "Comprehensive list of installed audio production software, plugins, and tools",
+  "version": "1.0.0",
+  "lastUpdated": "2025-11-16",
+  "categories": {
+    "daws": {
+      "description": "Digital Audio Workstations",
+      "plugins": [
+        {
+          "id": "ableton-live-11",
+          "name": "Ableton Live 11",
+          "publisher": "Ableton",
+          "type": "DAW",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "fl-studio-2025",
+          "name": "FL Studio 2025",
+          "publisher": "Image-Line",
+          "type": "DAW",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "studio-one-5",
+          "name": "Studio One 5",
+          "publisher": "Presonus",
+          "type": "DAW",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true
+        },
+        {
+          "id": "reaper",
+          "name": "Reaper",
+          "publisher": "Reaper",
+          "type": "DAW",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "reason-12",
+          "name": "Reason 12",
+          "publisher": "Reason Studios",
+          "type": "DAW",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        }
+      ]
+    },
+    "synthesizers": {
+      "description": "Software Synthesizers",
+      "plugins": [
+        {
+          "id": "arturia-pigments",
+          "name": "Pigments",
+          "publisher": "Arturia",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Standalone"
+        },
+        {
+          "id": "arturia-analog-lab-pro",
+          "name": "Analog Lab Pro",
+          "publisher": "Arturia",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "V Collection"
+        },
+        {
+          "id": "arturia-modular-v3",
+          "name": "Modular V3",
+          "publisher": "Arturia",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "V Collection"
+        },
+        {
+          "id": "air-vacuum-pro",
+          "name": "Vacuum Pro",
+          "publisher": "AIR",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true
+        },
+        {
+          "id": "disco-dsp-ob-xd",
+          "name": "OB-XD",
+          "publisher": "Disco DSP",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "kilohearts-phase-plant",
+          "name": "Phase Plant",
+          "publisher": "Kilohearts",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Ultimate"
+        },
+        {
+          "id": "korg-arp-odyssey",
+          "name": "ARP ODYSSEY",
+          "publisher": "Korg",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Korg Collection"
+        },
+        {
+          "id": "korg-m1",
+          "name": "M1",
+          "publisher": "Korg",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Korg Collection"
+        },
+        {
+          "id": "korg-monopoly",
+          "name": "MonoPoly",
+          "publisher": "Korg",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Korg Collection"
+        },
+        {
+          "id": "korg-ms20",
+          "name": "MS-20",
+          "publisher": "Korg",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Korg Collection"
+        },
+        {
+          "id": "korg-polysix",
+          "name": "Polysix",
+          "publisher": "Korg",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Korg Collection"
+        },
+        {
+          "id": "korg-triton",
+          "name": "TRITON",
+          "publisher": "Korg",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Korg Collection"
+        },
+        {
+          "id": "korg-triton-extreme",
+          "name": "TRITON Extreme",
+          "publisher": "Korg",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Korg Collection"
+        },
+        {
+          "id": "korg-wavestation",
+          "name": "WAVESTATION",
+          "publisher": "Korg",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Korg Collection"
+        },
+        {
+          "id": "kv331-synthmaster",
+          "name": "SynthMaster 2.9",
+          "publisher": "KV331 Audio",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "lennar-sylenth1",
+          "name": "Sylenth1",
+          "publisher": "Lennar Digital",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "ni-razor",
+          "name": "Razor",
+          "publisher": "Native Instruments",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-absynth-5",
+          "name": "Absynth 5",
+          "publisher": "Native Instruments",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-form",
+          "name": "Form",
+          "publisher": "Native Instruments",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-reaktor-blocks",
+          "name": "Reaktor Blocks",
+          "publisher": "Native Instruments",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-trk-01",
+          "name": "TRK-01",
+          "publisher": "Native Instruments",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-trk-01-bass",
+          "name": "TRK-01 Bass",
+          "publisher": "Native Instruments",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "reveal-sound-spire",
+          "name": "Spire",
+          "publisher": "Reveal Sound",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "serato-sample",
+          "name": "Sample",
+          "publisher": "Serato",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "sonic-academy-ana",
+          "name": "Ana",
+          "publisher": "Sonic Academy",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "sonic-academy-kick2",
+          "name": "Kick 2",
+          "publisher": "Sonic Academy",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "sonic-charge-synplant",
+          "name": "Synplant",
+          "publisher": "Sonic Charge",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "tal-noisemaker",
+          "name": "TAL-Noisemaker",
+          "publisher": "TAL",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "tal-u-no-lx",
+          "name": "TAL-U-NO-LX",
+          "publisher": "TAL",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "tal-vocoder-2",
+          "name": "TAL-Vocoder-2",
+          "publisher": "TAL",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "u-he-dark-zebra",
+          "name": "Dark Zebra",
+          "publisher": "u-he",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "u-he-diva",
+          "name": "Diva",
+          "publisher": "u-he",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "u-he-hive-2",
+          "name": "Hive 2",
+          "publisher": "u-he",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "u-he-repro",
+          "name": "Repro",
+          "publisher": "u-he",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "u-he-triple-cheese",
+          "name": "Triple Cheese",
+          "publisher": "u-he",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "u-he-tyrelln6",
+          "name": "TyrellN6",
+          "publisher": "u-he",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "u-he-zebra-2",
+          "name": "Zebra 2",
+          "publisher": "u-he",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "u-he-bazillecm",
+          "name": "BazilleCM",
+          "publisher": "u-he",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "vengeance-vps-avenger",
+          "name": "VPS Avenger",
+          "publisher": "Vengeance",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "vital",
+          "name": "Vital",
+          "publisher": "Vital",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "xfer-serum-1",
+          "name": "Serum 1",
+          "publisher": "Xfer",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "xfer-serum-2",
+          "name": "Serum 2",
+          "publisher": "Xfer",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        }
+      ]
+    },
+    "romplers": {
+      "description": "Sample-based ROM Players",
+      "plugins": [
+        {
+          "id": "air-xpand2",
+          "name": "Xpand!2",
+          "publisher": "AIR",
+          "type": "Rompler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true
+        },
+        {
+          "id": "ni-battery-4",
+          "name": "Battery 4",
+          "publisher": "Native Instruments",
+          "type": "Rompler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-the-giant",
+          "name": "The Giant",
+          "publisher": "Native Instruments",
+          "type": "Rompler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "spectrasonics-omnisphere-2",
+          "name": "Omnisphere 2",
+          "publisher": "Spectrasonics",
+          "type": "Rompler",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "spectrasonics-trilian",
+          "name": "Trilian",
+          "publisher": "Spectrasonics",
+          "type": "Rompler",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "spectrasonics-keyscape",
+          "name": "Keyscape",
+          "publisher": "Spectrasonics",
+          "type": "Rompler",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        }
+      ]
+    },
+    "samplers": {
+      "description": "Samplers and Sample Libraries",
+      "plugins": [
+        {
+          "id": "refx-nexus-3",
+          "name": "Nexus 3",
+          "publisher": "reFX",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "ni-damage",
+          "name": "Damage",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-monark",
+          "name": "Monark",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-battery-4-factory",
+          "name": "Battery 4 Factory Library",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-cuba",
+          "name": "Cuba",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-fm8",
+          "name": "FM8",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-guitar-rig-6-player",
+          "name": "Guitar Rig 6 Player",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-india",
+          "name": "India",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-kontakt-8-player",
+          "name": "Kontakt 8 Player",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-massive",
+          "name": "Massive",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-massive-x",
+          "name": "Massive X",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-massive-x-factory",
+          "name": "Massive X Factory Library",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-middle-east",
+          "name": "Middle East",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-reaktor-6",
+          "name": "Reaktor 6",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-reaktor-factory",
+          "name": "Reaktor Factory Library",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-reaktor-selection-r2",
+          "name": "Reaktor Factory Selection R2",
+          "publisher": "Native Instruments",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-replika-xt",
+          "name": "Replika XT",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-session-guitarist-electric",
+          "name": "Session Guitarist - Electric Sunburst",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-session-strings-pro-2",
+          "name": "Session Strings Pro 2",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-una-corda",
+          "name": "Una Corda",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-west-africa",
+          "name": "West Africa",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "ni-solid-bus-comp",
+          "name": "Solid Bus Comp FX",
+          "publisher": "Native Instruments",
+          "type": "Sampler",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        }
+      ]
+    },
+    "effects": {
+      "description": "Audio Effects Plugins",
+      "publishers": {
+        "acustica": [
+          {
+            "id": "acustica-coffee-pun",
+            "name": "Coffee the Pun",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true
+          },
+          {
+            "id": "acustica-coral-baxter",
+            "name": "Coral Baxter",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true
+          },
+          {
+            "id": "acustica-jet",
+            "name": "Jet",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true
+          },
+          {
+            "id": "acustica-pensado-eq-2",
+            "name": "Pensado EQ 2",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true
+          },
+          {
+            "id": "acustica-sienna-free",
+            "name": "Sienna Free",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true
+          },
+          {
+            "id": "acustica-titanium-3-basstard",
+            "name": "Titanium 3 Basstard",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true
+          }
+        ],
+        "fabfilter": [
+          {
+            "id": "fabfilter-pro-q3",
+            "name": "Pro-Q 3",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true
+          }
+        ],
+        "waves": [
+          {
+            "id": "waves-cla-vocals",
+            "name": "CLA Vocals",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true
+          },
+          {
+            "id": "waves-j37-tape",
+            "name": "J37 Tape",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true
+          },
+          {
+            "id": "waves-ssl-g-master",
+            "name": "SSL G-Master Buss",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true
+          }
+        ],
+        "soundtoys": [
+          {
+            "id": "soundtoys-decapitator",
+            "name": "Decapitator",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true,
+            "collection": "Soundtoys 5"
+          },
+          {
+            "id": "soundtoys-echoboy",
+            "name": "EchoBoy",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true,
+            "collection": "Soundtoys 5"
+          },
+          {
+            "id": "soundtoys-little-alterboy",
+            "name": "Little AlterBoy",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true,
+            "collection": "Soundtoys 5"
+          }
+        ],
+        "valhalla": [
+          {
+            "id": "valhalla-room",
+            "name": "Room",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": false, "vst3": false},
+            "center": false
+          },
+          {
+            "id": "valhalla-shimmer",
+            "name": "Shimmer",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": false, "vst3": false},
+            "center": false
+          },
+          {
+            "id": "valhalla-ubermod",
+            "name": "UberMod",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": false, "vst3": false},
+            "center": false
+          },
+          {
+            "id": "valhalla-vintageverb",
+            "name": "VintageVerb",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": false, "vst3": false},
+            "center": false
+          }
+        ],
+        "izotope": [
+          {
+            "id": "izotope-ozone-9-advanced",
+            "name": "Ozone 9 Advanced",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true,
+            "collection": "Music Production Suite 3"
+          },
+          {
+            "id": "izotope-neutron-3-advanced",
+            "name": "Neutron 3 Advanced",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true,
+            "collection": "Music Production Suite 3"
+          },
+          {
+            "id": "izotope-nectar-3",
+            "name": "Nectar 3",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true,
+            "collection": "Music Production Suite 3"
+          },
+          {
+            "id": "izotope-rx-7-standard",
+            "name": "RX 7 Standard",
+            "type": "FX",
+            "installed": true,
+            "formats": {"vst2": true, "vst3": true},
+            "center": true,
+            "collection": "Music Production Suite 3"
+          }
+        ]
+      },
+      "note": "Effects category contains 300+ plugins. See full list in PLUGINS.md. Organized by key publishers above."
+    },
+    "tools": {
+      "description": "Audio Production Utilities and Tools",
+      "plugins": [
+        {
+          "id": "mixed-in-key-8.5",
+          "name": "Mixed In Key 8.5",
+          "publisher": "Mixed In Key",
+          "type": "Tools",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false
+        },
+        {
+          "id": "ni-komplete-kontrol",
+          "name": "Komplete Kontrol",
+          "publisher": "Native Instruments",
+          "type": "Tools",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true,
+          "collection": "Komplete 12 Ultimate"
+        },
+        {
+          "id": "sonarworks-reference-4",
+          "name": "Reference 4",
+          "publisher": "Sonarworks",
+          "type": "Tools",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true
+        },
+        {
+          "id": "sononym",
+          "name": "Sononym",
+          "publisher": "Sononym",
+          "type": "Tools",
+          "installed": true,
+          "formats": {
+            "vst2": true,
+            "vst3": true
+          },
+          "center": true
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "totalPlugins": 410,
+    "totalDAWs": 5,
+    "totalSynths": 43,
+    "totalRomplers": 6,
+    "totalSamplers": 22,
+    "totalEffects": 300,
+    "totalTools": 4,
+    "targetSystem": "Windows 11 - ASUS Zephyrus G14",
+    "installationNotes": "This is a comprehensive audio production setup. Installation scripts would need to handle license management, VST path configuration, and plugin registration."
+  }
+}
