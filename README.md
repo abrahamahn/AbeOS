@@ -51,19 +51,19 @@ This installs:
 
 #### Option 2: Complete Developer Environment (Full - ~2 hrs)
 
-See **[docs/manual/quickstart.md](./docs/manual/quickstart.md)** or **[docs/manual/setup-guide.md](./docs/manual/setup-guide.md)**
+**One-Click Setup** - See **[docs/manual/quickstart.md](./docs/manual/quickstart.md)** for details
 
 ```powershell
 # Windows (PowerShell as Admin)
 cd C:\AbeOS\scripts\dev-environment
-.\Install-Windows-DevTools.ps1
-
-# RESTART COMPUTER
-
-# WSL2 (after restart)
-cd /mnt/c/AbeOS/scripts/dev-environment
-./Install-All-DevTools.sh
+.\Setup-DevEnvironment.ps1
 ```
+
+**That's it!** The orchestrator automatically:
+- Installs Windows + WSL2 development tools
+- Handles computer restarts (resumes automatically)
+- Configures WSL with PATH isolation
+- Sets up all language stacks and profiles
 
 This installs:
 - ✅ WSL2 + Ubuntu
