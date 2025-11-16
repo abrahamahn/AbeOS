@@ -1,0 +1,453 @@
+{
+  "manifest_version": "1.0",
+  "created_date": "2025-11-16",
+  "system_info": {
+    "device": "ASUS ROG Zephyrus G14",
+    "os": "Windows",
+    "purpose": "Asset installation tracking and restoration"
+  },
+  "categories": {
+    "cursors": {
+      "description": "macOS cursor themes for Windows",
+      "base_path": "assets/cursors/macOS-cursors-for-Windows-main",
+      "items": [
+        {
+          "name": "macOS Sierra+ Cursors (No Shadow, Normal)",
+          "path": "1. Sierra and newer/1. No Shadow/1. Normal",
+          "install_file": "Install.inf",
+          "type": "cursor_theme",
+          "size": "Normal"
+        },
+        {
+          "name": "macOS Sierra+ Cursors (No Shadow, Large)",
+          "path": "1. Sierra and newer/1. No Shadow/2. Large",
+          "install_file": "Install.inf",
+          "type": "cursor_theme",
+          "size": "Large"
+        },
+        {
+          "name": "macOS Sierra+ Cursors (No Shadow, XtraLarge)",
+          "path": "1. Sierra and newer/1. No Shadow/3. XtraLarge",
+          "install_file": "Install.inf",
+          "type": "cursor_theme",
+          "size": "XtraLarge"
+        },
+        {
+          "name": "macOS El Capitan Cursors (No Shadow, Normal)",
+          "path": "2. El Capitan and before/1. No Shadow/1. Normal",
+          "install_file": "Install.inf",
+          "type": "cursor_theme",
+          "size": "Normal"
+        },
+        {
+          "name": "macOS El Capitan Cursors (No Shadow, Large)",
+          "path": "2. El Capitan and before/1. No Shadow/2. Large",
+          "install_file": "Install.inf",
+          "type": "cursor_theme",
+          "size": "Large"
+        },
+        {
+          "name": "macOS El Capitan Cursors (No Shadow, XtraLarge)",
+          "path": "2. El Capitan and before/1. No Shadow/3. XtraLarge",
+          "install_file": "Install.inf",
+          "type": "cursor_theme",
+          "size": "XtraLarge"
+        },
+        {
+          "name": "macOS El Capitan Cursors (With Shadow, Normal)",
+          "path": "2. El Capitan and before/2. With Shadow/1. Normal",
+          "install_file": "Install.inf",
+          "type": "cursor_theme",
+          "size": "Normal"
+        },
+        {
+          "name": "macOS El Capitan Cursors (With Shadow, Large)",
+          "path": "2. El Capitan and before/2. With Shadow/2. Large",
+          "install_file": "Install.inf",
+          "type": "cursor_theme",
+          "size": "Large"
+        },
+        {
+          "name": "macOS El Capitan Cursors (With Shadow, XtraLarge)",
+          "path": "2. El Capitan and before/2. With Shadow/3. XtraLarge",
+          "install_file": "Install.inf",
+          "type": "cursor_theme",
+          "size": "XtraLarge"
+        }
+      ]
+    },
+    "fonts": {
+      "description": "Nerd Fonts for terminal and code editors",
+      "base_path": "assets/fonts",
+      "items": [
+        {
+          "name": "Caskaydia Cove Nerd Font",
+          "family": "CascadiaCode",
+          "path": "CascadiaCode",
+          "variants": [
+            "Regular", "Bold", "Italic", "BoldItalic",
+            "Light", "LightItalic", "SemiLight", "SemiLightItalic",
+            "SemiBold", "SemiBoldItalic", "ExtraLight", "ExtraLightItalic"
+          ],
+          "formats": ["Proportional", "Mono", "Standard"],
+          "file_count": 36,
+          "install_method": "Windows Font Settings or manual TTF installation"
+        }
+      ]
+    },
+    "plugins": {
+      "description": "VST/VST3/AAX audio plugins for music production",
+      "base_path": "assets/installations/plugins/Windows",
+      "subcategories": {
+        "synthesizers": {
+          "items": [
+            {"name": "Xfer Serum", "file": "Install_Xfer_Serum_136b8.exe", "version": "1.36b8", "format": ["VST", "VST3"]},
+            {"name": "Xfer Serum 2", "file": "Install_Xfer_Serum2_2.0.23.exe", "version": "2.0.23", "format": ["VST", "VST3"]},
+            {"name": "Serum 2 Update", "file": "Install_Xfer_Serum2_Update_2.0.23.exe", "version": "2.0.23", "format": ["Update"]},
+            {"name": "Reveal Sound Spire", "files": ["Reveal_Sound_Spire_VST3-1.5.19-5343.msi", "Reveal_Sound_Spire_x64-1.5.19-5343.msi"], "version": "1.5.19", "license": "spire.lic"},
+            {"name": "u-he Diva", "file": "Diva-148-Winstaller.exe", "version": "1.4.8"},
+            {"name": "u-he Hive", "file": "Hive-212-Winstaller.exe", "version": "2.1.2"},
+            {"name": "u-he Bazille CM-101", "file": "BazilleCM-101-Winstaller.exe"},
+            {"name": "u-he Podolski", "file": "Podolski-123-Winstaller.exe", "version": "1.2.3"},
+            {"name": "u-he Protoverb", "file": "Protoverb-101-Winstaller.exe", "version": "1.0.1"},
+            {"name": "u-he Satin", "file": "Satin-133-Winstaller.exe", "version": "1.3.3"},
+            {"name": "Vital", "file": "VitalInstaller.exe", "bank": "FactoryContent.vitalbank"},
+            {"name": "TAL-U-NO-LX", "file": "tal_u_no_lx_v2_installer_vst3_64.msi", "license": "TAL-U-NO-LX_SerialKey.txt"},
+            {"name": "TAL-NoiseMaker", "files": ["tal_noisemaker_installer_vst3_64.msi", "TAL-NoiseMaker-64.dll"], "folder": "TAL-NoiseMaker.vst3"},
+            {"name": "Vengeance Avenger", "file": "WIN_Avenger_1_8_7.exe", "version": "1.8.7"},
+            {"name": "KV331 SynthMaster", "file": "SynthMaster29Setup.exe", "version": "2.9"},
+            {"name": "KV331 SynthMaster Player", "file": "SynthMaster29PlayerSetup.exe", "version": "2.9"},
+            {"name": "KV331 SynthMaster One", "file": "SynthMasterOneSetup.exe"},
+            {"name": "Sonic Charge Synplant Collection One", "file": "Synplant Collection One.exe"},
+            {"name": "discoDSP OB-Xd", "file": "Obxd312.exe", "version": "3.1.2"},
+            {"name": "Surrealistic MG-1 Plus", "file": "Surrealistic-MG-1-Plus-Installer-Windows-x64.exe"},
+            {"name": "u-he Zebra Legacy", "folder": "Zebra_Legacy_294_16765_Win", "version": "2.9.4"},
+            {"name": "The Dark Zebra", "file": "The Dark Zebra 2.9.3 Win Installer.exe", "version": "2.9.3"}
+          ]
+        },
+        "effects_mixing": {
+          "items": [
+            {"name": "Xfer OTT", "file": "Install_Xfer_OTT_137.exe", "version": "1.37"},
+            {"name": "Xfer Dimension Expander", "file": "Install_Xfer_DimensionExpander_124.exe", "version": "1.24"},
+            {"name": "Xfer DJM Filter", "file": "Install_Xfer_DJMFilter_125.exe", "version": "1.25"},
+            {"name": "FabFilter Pro-Q 3", "file": "ffproq327x64.exe", "version": "3.27"},
+            {"name": "Valhalla Room", "files": ["ValhallaRoomWin_V2_0_5.exe", "ValhallaRoom-KeyfileFor-Abe-Ahn.vkeyfile"], "version": "2.0.5"},
+            {"name": "Valhalla Shimmer", "files": ["ValhallaShimmerWin_V1_2_2v2.exe", "ValhallaShimmer-KeyfileFor-Abe-Ahn.vkeyfile"], "version": "1.2.2"},
+            {"name": "Valhalla Vintage Verb", "files": ["ValhallaVintageVerbWin_V4_0_5.exe", "ValhallaVintageVerb-KeyfileFor-Abe-Ahn.vkeyfile"], "version": "4.0.5"},
+            {"name": "Valhalla UberMod", "files": ["ValhallaUberModWin_V1_1_6v3.exe", "ValhallaUberMod-KeyfileFor-Abe-Ahn.vkeyfile"], "version": "1.1.6"},
+            {"name": "TAL-Reverb-2", "files": ["tal_reverb_2_installer_vst3_64.msi", "TAL-Reverb-2-64.dll"], "folder": "TAL-Reverb-2 vst3"},
+            {"name": "TAL-Reverb-3", "files": ["tal_reverb_3_installer_vst3_64.msi", "TAL-Reverb-3-64.dll"], "folder": "TAL-Reverb-3.vst3"},
+            {"name": "TAL-Reverb-4", "files": ["tal_reverb_4_installer_vst3_64.msi", "install_TAL-Reverb-4"]},
+            {"name": "TAL-Chorus", "file": "tal_chorus_installer_vst3_64.msi"},
+            {"name": "TAL-Filter-2", "file": "tal_filter_2_installer_vst3_64.msi"},
+            {"name": "TAL-Vocoder-2", "file": "tal_vocoder_2_installer_vst3_64.msi"},
+            {"name": "Soundtoys 5 Bundle", "file": "SoundtoysV53Bundle_5.5.3.18786_64.exe", "version": "5.5.3"},
+            {"name": "Gullfoss", "file": "Gullfoss 1.11.8 Installer.exe", "version": "1.11.8"},
+            {"name": "Oeksound Soothe2", "file": "soothe2_v133_Win.exe", "version": "1.33"},
+            {"name": "Polyverse Wider", "file": "Polyverse - Wider Setup (v2.0.0).exe", "version": "2.0.0"},
+            {"name": "Cableguys HalfTime", "files": ["Cableguys - HalfTime 1.1.11 Setup.exe", "HalfTime_License.lic"], "version": "1.1.11"},
+            {"name": "Cableguys ShaperBox 3", "files": ["Cableguys - ShaperBox 3.6 Setup.exe", "ShaperBox3_License.lic"], "version": "3.6"},
+            {"name": "Cableguys PanCake", "file": "Cableguys - PanCake 2.3.2 Setup.exe", "version": "2.3.2"},
+            {"name": "Nicky Romero Kickstart 2", "files": ["Nicky Romero - Kickstart 2.0.8 Setup.exe", "Kickstart2_License.lic", "NickyRomaroLicense.exe"], "version": "2.0.8"},
+            {"name": "Nicky Romero Kick", "files": ["Kick - Nicky Romero Edition V1.12b.exe", "KICK - Nicky Romero.license"], "version": "1.12b"}
+          ]
+        },
+        "baby_audio": {
+          "items": [
+            {"name": "Baby Audio TAIP", "file": "Baby Audio - TAIP - PC 1.6.exe", "version": "1.6"},
+            {"name": "Baby Audio Super VHS", "file": "PC13_Baby Audio - Super VHS - PC 1.3.exe", "version": "1.3"},
+            {"name": "Baby Audio Magic Switch", "file": "Baby Audio - Magic Switch - PC 1.1.exe", "version": "1.1"},
+            {"name": "Baby Audio Magic Dice", "file": "Baby Audio - Magic Dice - PC 1.1.exe", "version": "1.1"},
+            {"name": "Baby Audio Pitch Drift", "file": "Baby Audio - Pitch Drift - PC 1.1.exe", "version": "1.1"},
+            {"name": "Baby Audio Beat Slammer", "file": "Baby Audio - Beat Slammer - PC 1.2.exe", "version": "1.2"},
+            {"name": "Baby Audio Warp", "file": "Baby Audio - Warp - PC 1.0.exe", "version": "1.0"}
+          ]
+        },
+        "denise_audio": {
+          "items": [
+            {"name": "Denise Bite Harder", "file": "Install Bigkick 1.9.7 Windows.exe", "version": "1.9.7"},
+            {"name": "Denise Stereo Savage", "file": "Install StereoSavage 2.1.1 Windows.exe", "version": "2.1.1"},
+            {"name": "Denise Texture", "files": ["Install Texture 1.8.17 Windows.exe", "4819_Install+Texture+1.8.17+Windows.exe"], "version": "1.8.17"},
+            {"name": "Denise Pan Knob", "file": "Pan_Knob_2_2.0.8_Windows.exe", "version": "2.0.8"},
+            {"name": "Denise Panipulator", "file": "Panipulator_3_3.0.11_Windows.exe", "version": "3.0.11"},
+            {"name": "Denise Transgressor", "file": "Transgressor_2.0.3_Windows.exe", "version": "2.0.3"},
+            {"name": "Denise Width Knob", "file": "Width_Knob_1.0.0_Windows.exe", "version": "1.0.0"}
+          ]
+        },
+        "plugin_alliance": {
+          "items": [
+            {"name": "bx_digital V3", "file": "bx_digital V3.dll"},
+            {"name": "bx_digital V3 Mix", "file": "bx_digital V3 mix.dll"},
+            {"name": "bx_cleansweep V2", "file": "bx_cleansweep V2.dll"},
+            {"name": "bx_console SSL 4000 E", "file": "bx_console SSL 4000 E.dll"},
+            {"name": "bx_rockrack V3 Player", "file": "bx_rockrack V3 Player.dll"},
+            {"name": "bx_solo", "file": "bx_solo.dll"},
+            {"name": "bx_subfilter", "file": "bx_subfilter.dll"},
+            {"name": "SPL Free Ranger", "file": "SPL Free Ranger.dll"},
+            {"name": "Bettermaker EQ232D", "file": "Bettermaker EQ232D.dll"},
+            {"name": "Dangerous BAX EQ Master", "file": "Dangerous BAX EQ Master.dll"},
+            {"name": "Dangerous BAX EQ Mix", "file": "Dangerous BAX EQ Mix.dll"},
+            {"name": "elysia niveau filter", "file": "elysia niveau filter.dll"},
+            {"name": "Maag EQ2", "file": "Maag EQ2.dll"},
+            {"name": "Vertigo VSM-3", "file": "Vertigo VSM-3.dll"},
+            {"name": "Ampeg SVTVR Classic", "file": "Ampeg SVTVR Classic.dll"},
+            {"name": "Plugin Alliance Manager", "file": "PA-InstallationManager-v1.4.0.msi", "version": "1.4.0"}
+          ]
+        },
+        "izotope": {
+          "items": [
+            {"name": "iZotope RX 7 Audio Editor", "file": "iZotope_RX_7_Audio_Editor_7_01.exe", "version": "7.01"},
+            {"name": "iZotope Insight 2", "file": "iZotope_Insight_2_v2_6_0.exe", "version": "2.6.0"},
+            {"name": "iZotope Nectar 3", "file": "iZotope_Nectar_v3_3_0_a.exe", "version": "3.3.0"},
+            {"name": "iZotope Stutter Edit", "file": "iZotope_Stutter_Edit_v1_05c.exe", "version": "1.05c"},
+            {"name": "iZotope Vinyl", "file": "iZotope_Vinyl_v1_13_0.exe", "version": "1.13.0"},
+            {"name": "iZotope Product Portal", "file": "iZotope_Product_Portal_v1_4_9.exe", "version": "1.4.9"}
+          ]
+        },
+        "spectrasonics": {
+          "items": [
+            {"name": "Spectrasonics Omnisphere 2", "folder": "Omnisphere 2 Download Manager"},
+            {"name": "Spectrasonics Trilian", "folder": "Trilian Download Manager"}
+          ]
+        },
+        "free_plugins": {
+          "items": [
+            {"name": "TDR Kotelnikov", "file": "TDR Kotelnikov - setup.exe"},
+            {"name": "TDR Molotok", "file": "TDR Molotok - setup.exe"},
+            {"name": "TDR Nova", "file": "TDR Nova - setup.exe"},
+            {"name": "TDR Prism", "file": "TDR Prism - setup.exe"},
+            {"name": "TDR VOS SlickEQ", "file": "TDR VOS SlickEQ - setup.exe"},
+            {"name": "Voxengo SPAN", "file": "VoxengoSPAN_323_Win32_64_VST_VST3_AAX_setup.exe", "version": "3.23"},
+            {"name": "Voxengo MSED", "file": "VoxengoMSED_312_Win32_64_VST_VST3_AAX_setup.exe", "version": "3.12"},
+            {"name": "Voxengo Correlometer", "file": "VoxengoCorrelometer_19_Win32_64_VST_VST3_AAX_setup.exe", "version": "1.9"},
+            {"name": "Voxengo OldSkool Verb", "file": "VoxengoOldSkoolVerb_213_Win32_64_VST_VST3_AAX_setup.exe", "version": "2.13"},
+            {"name": "Voxengo Stereo Touch", "file": "VoxengoStereoTouch_218_Win32_64_VST_VST3_AAX_setup.exe", "version": "2.18"},
+            {"name": "Voxengo Tempo Delay", "file": "VoxengoTempoDelay_28_Win32_64_VST_VST3_AAX_setup.exe", "version": "2.8"},
+            {"name": "Voxengo Tube Amp", "file": "VoxengoTubeAmp_214_Win32_64_VST_VST3_AAX_setup.exe", "version": "2.14"},
+            {"name": "Voxengo Latency Delay", "file": "VoxengoLatencyDelay_211_Win32_64_VST_VST3_AAX_setup.exe", "version": "2.11"},
+            {"name": "Voxengo Overtone GEQ", "file": "VoxengoOvertoneGEQ_118_Win32_64_VST_VST3_AAX_setup.exe", "version": "1.18"},
+            {"name": "Camel Audio CamelCrusher", "file": "CamelCrusher-Win-x64-CamelCrusher.Com-1-0-1.exe", "version": "1.0.1"},
+            {"name": "Youlean Loudness Meter 2", "file": "Youlean Loudness Meter 2 - V2.5.13 Installer.exe", "version": "2.5.13"}
+          ]
+        },
+        "chow_dsp": {
+          "items": [
+            {"name": "ChowTapeModel", "file": "ChowTapeModel-Win-64bit-2.11.4.exe", "version": "2.11.4"},
+            {"name": "ChowCentaur", "file": "ChowCentaur-Win-1.4.0.exe", "version": "1.4.0"},
+            {"name": "ChowKick", "file": "ChowKick-Win-64bit-1.2.0.exe", "version": "1.2.0"},
+            {"name": "ChowMatrix", "files": ["ChowMatrix-Win-1.2.0.exe", "ChowMatrix-Win-1.3.0.exe"], "version": "1.3.0"},
+            {"name": "ChowPhaser", "file": "ChowPhaser-Win-1.1.1.exe", "version": "1.1.1"}
+          ]
+        },
+        "other_effects": {
+          "items": [
+            {"name": "Ohm Force Ohmicide", "files": ["Ohmicide-137-win-vst-pro.exe", "Ohmicide-137-win64-vst-pro.exe"], "version": "1.37"},
+            {"name": "Sonic Charge Plugins 2024", "files": ["Sonic Charge Plugins 2024.08.30/Install Sonic Charge Plugins.exe", "Install Sonic Charge Plugins 2022.11.25.exe"]},
+            {"name": "D16 Group Decimort 2", "file": "Decimort 2 - 2.1.6 (x64).msi", "version": "2.1.6"},
+            {"name": "D16 Group Frontier", "file": "Frontier-1.2.2(x64).msi", "version": "1.2.2"},
+            {"name": "D16 Group Repeater", "file": "Repeater-1.2.5(x64).msi", "version": "1.2.5"},
+            {"name": "Klanghelm DC1A", "file": "DC1A3-installer.exe"},
+            {"name": "Klanghelm IVGI2", "file": "IVGI2-installer.exe"},
+            {"name": "Klanghelm MJUC", "file": "MJUC-installer.exe"},
+            {"name": "Newfangled Saturate", "file": "Newfangled-Saturate-1.14.0-windows-installer.exe", "version": "1.14.0"},
+            {"name": "Newfangled Pendulate", "file": "Pendulate-1.7.0-windows-installer.exe", "version": "1.7.0"},
+            {"name": "Eventide Blackhole", "file": "Blackhole-3.10.0-windows_x64-installer.exe", "version": "3.10.0"},
+            {"name": "Eventide Temperance Lite", "file": "Temperance-Lite-1.0.1-windows_x64-installer.exe", "version": "1.0.1"},
+            {"name": "Output Portal", "file": "Portal-1.2.1.282-windows-x64-installer_Per.exe", "version": "1.2.1.282"},
+            {"name": "Zynaptiq SUBSPACE", "file": "Zynaptiq SUBSPACE 1.2.1 Setup x64.exe", "version": "1.2.1"},
+            {"name": "Infected Mushroom Gatekeeper", "file": "Infected Mushroom - Gatekeeper Setup (v1.3.13).exe", "version": "1.3.13"},
+            {"name": "Trackspacer", "file": "Trackspacer 2.5.10.exe", "version": "2.5.10"},
+            {"name": "Wavesfactory Cassette", "file": "Cassette 1.0.7.exe", "version": "1.0.7"},
+            {"name": "Wavesfactory Echo Cat", "file": "Echo Cat 1.0.2.exe", "version": "1.0.2"},
+            {"name": "Wavesfactory Spectre", "file": "Spectre 1.5.6.exe", "version": "1.5.6"},
+            {"name": "ADPTR Audio MetricAB", "file": "ADPTR MetricAB.dll"},
+            {"name": "Oxford Inflator Native v3", "file": "Oxford_Inflator_Native_v3.12.0[64]P.exe", "version": "3.12.0"},
+            {"name": "Oxford Inflator Native v4", "file": "Oxford_Inflator_Native_v4.02.4[5877]P.exe", "version": "4.02.4"},
+            {"name": "Flux Mini", "file": "Flux+Mini+2+v1.0.2+64-Bit.exe", "version": "1.0.2"},
+            {"name": "Flux Tape Cassette 2", "file": "Tape+Cassette+2+v1.3.0+64-bit.exe", "version": "1.3.0"},
+            {"name": "Flux Center", "file": "FluxCenter-64-bit_Windows_Installer_(25.03.0.50464).exe"},
+            {"name": "SGA1566", "file": "SGA156664.exe"},
+            {"name": "PTEq-X", "files": ["PTEq-X.dll", "PTEq-X.vst3"]},
+            {"name": "DeltaModulator", "file": "DeltaModulator_x64.dll"},
+            {"name": "8-Bit Shaper", "file": "8-Bit Shaper.dll"},
+            {"name": "Op1 Drum Util", "file": "Op1DrumUtil.dll"}
+          ]
+        },
+        "smart_plugins": {
+          "items": [
+            {"name": "sonible smart:comp", "file": "smartcomp_1.2.0.exe", "version": "1.2.0"},
+            {"name": "sonible smart:EQ 2", "file": "smartEQ2_1.2.1.exe", "version": "1.2.1"},
+            {"name": "sonible smart:reverb", "file": "smartreverb_1.1.4.exe", "version": "1.1.4"},
+            {"name": "sonible freiraum", "file": "freiraum_1.1.5.exe", "version": "1.1.5"},
+            {"name": "sonible entropy:EQ", "file": "entropyEQ_1.0.6.exe", "version": "1.0.6"}
+          ]
+        },
+        "slate_digital": {
+          "items": [
+            {"name": "Slate Digital Fresh Air", "file": "fresh-air-win-1.1.1.exe", "version": "1.1.1"},
+            {"name": "Slate Digital Reviver", "file": "ReviverWin64v139.msi", "version": "1.39"}
+          ]
+        },
+        "black_rooster": {
+          "items": [
+            {"name": "Black Rooster Canary VST", "file": "BlackRoosterAudio_Canary_VST_V3.0.0_B332.exe", "version": "3.0.0"},
+            {"name": "Black Rooster Canary VST3", "file": "BlackRoosterAudio_Canary_VST3_V3.0.0_B332.exe", "version": "3.0.0"},
+            {"name": "Black Rooster Cypress TT-15 VST", "file": "BlackRoosterAudio_CypressTT15_VST_V3.0.0_B332.exe", "version": "3.0.0"},
+            {"name": "Black Rooster Cypress TT-15 VST3", "file": "BlackRoosterAudio_CypressTT15_VST3_V3.0.0_B332.exe", "version": "3.0.0"},
+            {"name": "Black Rooster Magnetite VST", "file": "BlackRoosterAudio_Magnetite_VST_V3.0.0_B332.exe", "version": "3.0.0"},
+            {"name": "Black Rooster Magnetite VST3", "file": "BlackRoosterAudio_Magnetite_VST3_V3.0.0_B332.exe", "version": "3.0.0"},
+            {"name": "Black Rooster VHL-3C VST", "file": "BlackRoosterAudio_VHL3C_VST_V3.0.0_B332.exe", "version": "3.0.0"},
+            {"name": "Black Rooster VHL-3C VST3", "file": "BlackRoosterAudio_VHL3C_VST3_V3.0.0_B332.exe", "version": "3.0.0"}
+          ]
+        },
+        "plugin_managers": {
+          "items": [
+            {"name": "Waves Central", "file": "Install_Waves_Central.exe"},
+            {"name": "Arturia Software Center", "file": "Arturia_Software_Center__2_11_0_3103.exe", "version": "2.11.0.3103"},
+            {"name": "reFX Cloud", "file": "reFX_Cloud_3.0.22.exe", "version": "3.0.22"},
+            {"name": "Kilohearts Installer", "file": "Kilohearts Installer [10SZfmf-zk9p4uPH9Wj3].exe"},
+            {"name": "Klevgrand Helper", "file": "Klevgrand Helper Installer.exe"},
+            {"name": "KORG Software Pass", "file": "KORG Software Pass Installer.exe"},
+            {"name": "inMusic Software Center", "file": "inMusic Software Center-1.34.0 Setup.exe", "version": "1.34.0"},
+            {"name": "XLN Online Installer", "file": "XLN Online Installer.exe"},
+            {"name": "Softube Central", "file": "Softube Central Setup 2.1.2.exe", "version": "2.1.2"},
+            {"name": "MeldaProduction Plugin Manager", "file": "MPluginManager_02_13_setup.exe", "version": "2.13"},
+            {"name": "United Plugins Manager", "file": "UnitedPluginsManager_02_07_setup.exe", "version": "2.07"},
+            {"name": "HOFA-Plugins Manager", "file": "HOFA-Plugins_Manager.exe"},
+            {"name": "Vengeance V-Manager", "file": "V-Manager.exe"}
+          ]
+        },
+        "misc_plugins": {
+          "items": [
+            {"name": "AIR Music plugins", "folder": "AIR Music"},
+            {"name": "Sonic Academy A.N.A", "folder": "Sonic Academy A.N.A v1.50"},
+            {"name": "KSHMR Essentials", "file": "KSHMR Essentials Installer - PC FULL VERSION.exe"},
+            {"name": "FAW SubLab", "file": "Sublab-Installer-v1.1.8.exe", "version": "1.1.8"},
+            {"name": "Dawesome Kult", "file": "bloom_v1.1.2_win.exe", "version": "1.1.2"},
+            {"name": "Dawesome Myth", "file": "Mirage Installer.exe"},
+            {"name": "MeldaProduction MThump", "file": "MHThump_v4.0.2.157.msi", "version": "4.0.2.157"},
+            {"name": "Aberrant DSP SketchCassette II", "file": "SketchCassette II v2.3 - Setup.exe", "version": "2.3"},
+            {"name": "Boz Digital Bark of Dog 3", "file": "Bark_of_Dog_3_3.0.1_Windows.exe", "version": "3.0.1"},
+            {"name": "Boz Digital TENSjr", "file": "TENSjr-installer.exe"},
+            {"name": "Dada Life Endless Smile", "files": ["Endless Smile-1.3.1-Installer [Abraham J Ahn I8FUQBKO28].exe", "Endless Smile-1.3.1-Installer [Abraham J. Ahn 6TQ5DPUI37].exe"], "version": "1.3.1"},
+            {"name": "Dada Life Sausage Fattener", "file": "SausageFattener-1.4.1-Installer [Abraham J. Ahn 132QNQ2431].exe", "version": "1.4.1"},
+            {"name": "Goodhertz Vulf Compressor", "file": "VacuumPro_1.1.1_Setup.exe", "version": "1.1.1"},
+            {"name": "Klevgrand Svep", "file": "Svep.exe"},
+            {"name": "Outer Space", "file": "Outer Space 2.2.exe", "version": "2.2"},
+            {"name": "Things Flip EQ", "file": "Things Flip EQ 1.2.exe", "version": "1.2"},
+            {"name": "Things Texture", "file": "Things Texture 1.1.2.exe", "version": "1.1.2"},
+            {"name": "Type A", "file": "Type A 1.3.3.exe", "version": "1.3.3"},
+            {"name": "Creative FX Collection Plus", "file": "CreativeFXCollectionPlus_Setup.exe"},
+            {"name": "Cherry Audio Voltage Modular", "file": "Voltage-Modular-Installer-Windows-x64.exe"},
+            {"name": "Aquarius", "file": "Setup Aquarius 3.0.109 build 1 Win.exe", "version": "3.0.109"},
+            {"name": "Sononym", "file": "Sononym-1.5.6.exe", "version": "1.5.6"},
+            {"name": "Serato Sample", "file": "Serato Sample 2.1.0.exe", "version": "2.1.0"},
+            {"name": "License Support", "file": "License Support Win64.exe"},
+            {"name": "OJD", "file": "Install.OJD.exe"},
+            {"name": "Ace", "file": "Ace64.exe"},
+            {"name": "WaveObserver", "file": "WaveObserver_WinSetup_1.7.0.exe", "version": "1.7.0"}
+          ]
+        },
+        "calibration": {
+          "items": [
+            {"name": "Sonarworks Reference 4", "files": ["Sonarworks Reference 4 Studio Edition 4.4.9.11.exe", "Reference4Setup.exe"], "version": "4.4.9.11"}
+          ]
+        },
+        "dolby": {
+          "items": [
+            {"name": "Dolby Atmos Composer Essential", "files": ["Dolby Atmos Composer Essential.exe", "Dolby-Atmos-Composer-Essential.zip"]}
+          ]
+        },
+        "special_plugins": {
+          "items": [
+            {"name": "SP950", "files": ["SP950.vst3", "plugins/MacOS/SP950.component", "plugins/MacOS/SP950.vst3"]},
+            {"name": "Mixed In Key", "file": "MixedInKeySetupNew_8_5_2411_0.exe", "version": "8.5.2411.0"}
+          ]
+        }
+      }
+    },
+    "utilities": {
+      "description": "System utilities and configuration tools",
+      "base_path": "assets/utilities",
+      "items": [
+        {
+          "name": "GHelper",
+          "file": "GHelper.exe",
+          "purpose": "ASUS laptop control utility",
+          "category": "System Control"
+        },
+        {
+          "name": "OOAPB",
+          "file": "OOAPB.exe",
+          "purpose": "Unknown utility",
+          "category": "Utility"
+        },
+        {
+          "name": "privacy.sexy",
+          "file": "privacy.sexy-Setup-0.13.8.exe",
+          "version": "0.13.8",
+          "purpose": "Windows privacy configuration tool",
+          "category": "Privacy"
+        },
+        {
+          "name": "RTL Utility",
+          "file": "RTL_Utility_1_0_12_x64.exe",
+          "version": "1.0.12",
+          "purpose": "Realtek audio utility",
+          "category": "Audio"
+        },
+        {
+          "name": "WindowsSpyBlocker",
+          "file": "WindowsSpyBlocker.exe",
+          "purpose": "Windows telemetry blocker",
+          "category": "Privacy"
+        }
+      ]
+    },
+    "audio_tools": {
+      "description": "Audio system configuration and routing tools",
+      "items": [
+        {
+          "name": "Equalizer APO",
+          "file": "assets/installations/plugins/Windows/EqualizerAPO-x64-1.4.2.exe",
+          "version": "1.4.2",
+          "purpose": "System-wide parametric equalizer",
+          "companion_tools": ["Peace"]
+        },
+        {
+          "name": "Peace",
+          "file": "assets/installations/plugins/Windows/PeaceSetup.exe",
+          "purpose": "GUI for Equalizer APO"
+        },
+        {
+          "name": "FlexASIO",
+          "file": "assets/installations/plugins/Windows/FlexASIO-1.10b.exe",
+          "version": "1.10b",
+          "purpose": "Universal ASIO driver"
+        },
+        {
+          "name": "Apogee Control 2 DSP",
+          "file": "assets/installations/plugins/ApogeeControl2-DSP-Windows.zip",
+          "purpose": "Apogee interface control software"
+        }
+      ]
+    },
+    "daws": {
+      "description": "Digital Audio Workstations",
+      "items": [
+        {
+          "name": "PreSonus Studio One 5",
+          "file": "assets/installations/plugins/Windows/PreSonus Studio One 5 Installer.exe",
+          "version": "5"
+        }
+      ]
+    }
+  },
+  "notes": {
+    "cursor_installation": "Right-click Install.inf file in desired cursor folder and select 'Install'. Then apply via Windows Mouse Settings.",
+    "font_installation": "Double-click TTF files or use Settings > Fonts > Drag and drop",
+    "plugin_order": "Install plugin managers first, then individual plugins. Some plugins require authentication after installation.",
+    "utilities_priority": "Install GHelper and RTL Utility first for ASUS laptop optimization",
+    "backup_recommendation": "Store license files (.lic, .vkeyfile, .license) separately and backup serial keys"
+  }
+}
