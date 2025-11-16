@@ -29,6 +29,7 @@ AbeOS/
 │   │   ├── debug-root-cause-analysis.md # Root cause analysis
 │   │   ├── debug-session-4.md      # Additional debugging
 │   │   ├── phase3-fixes.md         # Phase 3 comprehensive fixes
+│   │   ├── coverage-checklist.md   # Installation coverage tracking
 │   │   ├── asset-management-system.md # Asset management docs
 │   │   ├── documentation-index.md  # Documentation index
 │   │   ├── changelog.md            # Project changelog
@@ -70,8 +71,8 @@ AbeOS/
 │
 ├── 📁 scripts/                     # Automation scripts
 │   └── dev-environment/            # Development environment setup
+│       ├── Setup-DevEnvironment.ps1 # Master orchestrator (Windows + WSL)
 │       ├── Configure-WSL.sh        # WSL configuration
-│       ├── Configure-OhMyPosh-Theme.sh # Terminal theme setup
 │       ├── Setup-Bash-Profile.sh   # Bash profile setup
 │       ├── Setup-PowerShell-Profile.ps1 # PowerShell profile setup
 │       ├── Install-Windows-DevTools.ps1 # Windows dev tools
@@ -84,11 +85,10 @@ AbeOS/
 │       ├── Install-CPP-DevTools.sh # C/C++ toolchain
 │       ├── Install-VSCode-Extensions.sh # VS Code extensions
 │       ├── Install-Miniconda.sh    # Python package manager
-│       ├── Install-All-DevTools.sh # Master installation script
+│       ├── Install-All-DevTools.sh # WSL dev tools master script
 │       ├── Setup-ProjectDirectories.sh # Project structure setup
 │       ├── Verify-Installation.sh  # Installation verification
-│       ├── README.md                # Dev environment documentation
-│       └── COVERAGE-CHECKLIST.md   # Feature coverage checklist
+│       └── README.md                # Dev environment documentation
 │
 └── 📁 stages/                      # Installation phases
     ├── 01_baseline/                # Phase 1: Baseline system setup
@@ -157,12 +157,20 @@ Phase 1.1: Core Optimization
 Phase 1.2: Drivers & BIOS
   └─> stages/01_baseline/02_drivers_bios/
 
-Phase 1.3: Developer Environment
+Phase 1.3: Developer Environment (One-Click)
+  └─> scripts/dev-environment/Setup-DevEnvironment.ps1
+      ├─> Installs Windows dev tools
+      ├─> Configures WSL2 (PATH isolation, systemd)
+      ├─> Handles automatic restarts
+      ├─> Installs all language stacks
+      └─> Sets up unified profiles
+
+  OR Manual Installation:
   ├─> Windows: scripts/dev-environment/Install-Windows-DevTools.ps1
   ├─> WSL Config: scripts/dev-environment/Configure-WSL.sh
+  ├─> WSL Tools: scripts/dev-environment/Install-All-DevTools.sh
   ├─> Bash Profile: scripts/dev-environment/Setup-Bash-Profile.sh
-  ├─> PowerShell: scripts/dev-environment/Setup-PowerShell-Profile.ps1
-  └─> WSL Tools: scripts/dev-environment/Install-All-DevTools.sh
+  └─> PowerShell: scripts/dev-environment/Setup-PowerShell-Profile.ps1
 
 Phase 2: Music Production
   └─> stages/02_music_production/01_daw_plugins/
