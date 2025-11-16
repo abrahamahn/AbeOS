@@ -2,7 +2,30 @@
 
 Fast track to get your development environment running.
 
-## For the Impatient
+## One-Click Setup (Recommended)
+
+### Windows (PowerShell as Administrator)
+
+```powershell
+cd C:\AbeOS\scripts\dev-environment
+.\Setup-DevEnvironment.ps1
+```
+
+**That's it!** The orchestrator handles:
+- ✅ Windows development tools installation
+- ✅ Automatic restart (if needed for Docker Desktop)
+- ✅ WSL2 configuration with PATH isolation
+- ✅ All development tools (Node.js, Python, Java, C++, etc.)
+- ✅ Profile setup (Bash + PowerShell)
+- ✅ Resume after restart automatically
+
+**Time Required:** 1-2 hours (including downloads)
+
+---
+
+## Manual Step-by-Step (Advanced)
+
+If you prefer manual control or need to troubleshoot:
 
 ### Windows (PowerShell as Administrator)
 
@@ -10,7 +33,7 @@ Fast track to get your development environment running.
 cd C:\AbeOS\scripts\dev-environment
 .\Install-Windows-DevTools.ps1
 
-# RESTART COMPUTER
+# RESTART COMPUTER if Docker Desktop was installed
 ```
 
 ### After Restart - WSL2
@@ -18,17 +41,22 @@ cd C:\AbeOS\scripts\dev-environment
 ```bash
 cd /mnt/c/AbeOS/scripts/dev-environment
 
+# Configure WSL (CRITICAL: PATH isolation, systemd)
+./Configure-WSL.sh
+
+# Shutdown and restart WSL
+exit
+# In PowerShell: wsl --shutdown
+# Then reopen WSL
+
 # Install everything
 ./Install-All-DevTools.sh
 
-# Reload shell
-source ~/.bashrc
+# Set up profiles
+./Setup-Bash-Profile.sh
 
-# Set up projects
-./Setup-ProjectDirectories.sh
-
-# Install VS Code extensions
-./Install-VSCode-Extensions.sh
+# In PowerShell:
+# .\Setup-PowerShell-Profile.ps1
 
 # Verify installation
 ./Verify-Installation.sh

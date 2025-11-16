@@ -55,32 +55,13 @@ sudo apt install -y \
 
 log_success "Python packages installed"
 
-# Install pipx for isolated CLI tools
-log_info "Installing pipx..."
-python3 -m pip install --user pipx
-python3 -m pipx ensurepath
-export PATH="$HOME/.local/bin:$PATH"
-log_success "pipx installed"
-
-# Install Poetry (Python dependency manager)
-log_info "Installing Poetry..."
-if ! command -v poetry &> /dev/null; then
-    curl -sSL https://install.python-poetry.org | python3 -
-
-    # Add Poetry to PATH
-    if ! grep -q ".local/bin" ~/.bashrc; then
-        echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
-    fi
-
-    log_success "Poetry installed"
-else
-    log_info "Poetry already installed"
+# Ensure ~/.local/bin is in PATH (needed for various tools)
+if ! grep -q ".local/bin" ~/.bashrc; then
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 fi
+export PATH="$HOME/.local/bin:$PATH"
 
-# Install pipenv
-log_info "Installing pipenv..."
-pipx install pipenv
-log_success "pipenv installed"
+# Removed bloat: pipx, poetry, pipenv
 
 # Install uv (fast Python package installer)
 log_info "Installing uv..."
@@ -110,24 +91,9 @@ else
     log_info "pyenv already installed"
 fi
 
-# Install common Python development tools via pipx
-log_info "Installing Python development tools..."
-PYTHON_TOOLS=(
-    "black"
-    "ruff"
-    "mypy"
-    "pytest"
-    "ipython"
-    "jupyter"
-    "cookiecutter"
-)
-
-for tool in "${PYTHON_TOOLS[@]}"; do
-    log_info "Installing $tool..."
-    pipx install "$tool" || log_warning "$tool installation failed"
-done
-
-log_success "Python development tools installed"
+# Note: Python development tools (black, ruff, mypy, pytest, etc.)
+# should be installed per-project using virtual environments or uv
+log_info "Python development tools should be installed per-project"
 
 # Install AI/ML Python packages
 log_info "Installing AI/ML Python packages..."
@@ -150,13 +116,13 @@ pip install --upgrade \
     numpy \
     pandas \
     matplotlib \
-    seaborn \
     scipy \
     scikit-learn \
     pillow \
     opencv-python \
     tqdm \
     requests
+# Removed bloat: seaborn (can be installed per-project if needed)
 
 # Install Hugging Face ecosystem
 log_info "Installing Hugging Face tools..."
@@ -165,10 +131,7 @@ pip install --upgrade \
     datasets \
     tokenizers \
     accelerate \
-    huggingface-hub
-
-# Install Hugging Face CLI
-pipx install huggingface-hub[cli]
+    "huggingface-hub[cli]"
 
 # Install OpenAI Whisper
 log_info "Installing OpenAI Whisper..."
@@ -244,9 +207,8 @@ log_success "Python/AI toolchain installation complete!"
 echo "=================================================="
 echo ""
 echo "Installed components:"
-echo "  ✓ pipx, Poetry, pipenv, uv"
+echo "  ✓ uv (fast Python package installer)"
 echo "  ✓ pyenv (Python version manager)"
-echo "  ✓ Development tools (black, ruff, mypy, pytest, jupyter)"
 echo "  ✓ AI/ML frameworks (PyTorch, TensorFlow)"
 echo "  ✓ Hugging Face ecosystem (transformers, datasets, etc.)"
 echo "  ✓ OpenAI Whisper"
@@ -257,9 +219,11 @@ echo "To activate: source $HOME/.virtualenvs/activate-ai.sh"
 echo ""
 echo "Next steps:"
 echo "  1. Restart your shell or run: source ~/.bashrc"
-echo "  2. Test with: python3 --version && poetry --version"
+echo "  2. Test with: python3 --version"
 echo "  3. Activate AI env: source ~/.virtualenvs/activate-ai.sh"
 echo "  4. Test PyTorch: python -c 'import torch; print(torch.__version__)'"
+echo ""
+echo "Note: Install per-project tools (black, ruff, pytest, etc.) using uv or venv"
 echo ""
 if [ "$CUDA_AVAILABLE" = false ]; then
     log_warning "CUDA was not detected. If you have an NVIDIA GPU:"

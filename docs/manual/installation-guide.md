@@ -163,6 +163,75 @@ Step identifiers match the `id` field inside the manifest file, making it easy t
    .\setup.ps1 -Phase phase1-drivers -MaxStatus experimental
    ```
 
+### Developer Environment Setup (Phase 1.3)
+
+Complete developer environment setup for Windows + WSL2 with one command:
+
+#### One-Click Setup (Recommended)
+
+```powershell
+# Navigate to dev environment scripts
+cd C:\AbeOS\scripts\dev-environment
+
+# Run the master orchestrator
+.\Setup-DevEnvironment.ps1
+```
+
+**What it does:**
+1. Installs Windows development tools (Git, VS Code, Docker Desktop, PowerShell 7, etc.)
+2. Configures WSL2 with PATH isolation and systemd
+3. Installs all development stacks:
+   - Node.js/JavaScript (NVM, Node 20/24, pnpm, yarn)
+   - Python/AI/ML (PyTorch, TensorFlow, Transformers, Jupyter)
+   - Java/JVM (SDKMAN!, Java 21/17/11, Gradle, Maven)
+   - C/C++ (GCC, Clang, build tools, debuggers)
+   - AI CLI tools (Claude, OpenAI, Gemini, Aider)
+4. Installs 80+ VS Code extensions
+5. Sets up unified shell profiles (Bash + PowerShell)
+6. **Handles computer restarts automatically** (resumes after reboot)
+
+**Time required:** 1-2 hours (mostly downloads)
+
+#### Manual Step-by-Step (Advanced)
+
+If you prefer manual control or need to troubleshoot:
+
+```powershell
+# 1. Install Windows development tools
+cd C:\AbeOS\scripts\dev-environment
+.\Install-Windows-DevTools.ps1
+
+# 2. Restart computer if Docker Desktop was installed
+# Restart-Computer
+
+# 3. Configure WSL (CRITICAL: PATH isolation)
+wsl bash /mnt/c/AbeOS/scripts/dev-environment/Configure-WSL.sh
+
+# 4. Restart WSL to apply configuration
+wsl --shutdown
+# Wait 5 seconds, then reopen WSL
+
+# 5. Install all development tools
+wsl bash /mnt/c/AbeOS/scripts/dev-environment/Install-All-DevTools.sh
+
+# 6. Set up profiles
+wsl bash /mnt/c/AbeOS/scripts/dev-environment/Setup-Bash-Profile.sh
+.\Setup-PowerShell-Profile.ps1
+
+# 7. Verify installation
+wsl bash /mnt/c/AbeOS/scripts/dev-environment/Verify-Installation.sh
+```
+
+#### Manifest-Based Installation
+
+Run from the manifest for tracked progress:
+
+```powershell
+.\setup.ps1 -Phase phase1-dev -MaxStatus experimental
+```
+
+**Note:** Phase 1.3 is marked as "experimental" since it requires testing on fresh installs.
+
 ## 🔄 Post-Installation Tasks
 
 ### 1. Run Privacy.sexy Script (Manual Step)

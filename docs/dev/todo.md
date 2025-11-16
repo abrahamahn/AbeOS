@@ -110,55 +110,55 @@ C:\AbeOS
 
 ### 2 WSL2 / Linux Toolchain
 
-- [ ] Confirm WSL2 features enabled + Ubuntu distro updated (`wsl --update`, `apt upgrade`).
-- [ ] Install build essentials (gcc/g++, make, cmake, ninja), `pkg-config`, `libssl-dev`, `zlib1g-dev`.
-- [ ] Install FFmpeg, ImageMagick, `ripgrep`, `fd`, `fzf`, `jq`, `yq`.
-- [ ] Configure `direnv` or `pyenv` if needed for per-project envs.
+- [x] Confirm WSL2 features enabled + Ubuntu distro updated (`wsl --update`, `apt upgrade`).
+- [x] Install build essentials (gcc/g++, make, cmake, ninja), `pkg-config`, `libssl-dev`, `zlib1g-dev`. → Install-WSL-DevTools.sh
+- [x] Install FFmpeg, ImageMagick, `ripgrep`, `fd`, `fzf`, `jq`, `yq`. → Install-WSL-DevTools.sh
+- [x] Configure `direnv` or `pyenv` if needed for per-project envs.
 
 ### 3 Node.js / JavaScript Stack
 
-- [ ] WSL: Manage Node versions with NVM (currently v20.19.5 default, v24.11.1 installed). Ensure `npm list -g` global packages stay mirrored (eslint, prettier, ts-node, pnpm, yarn, nodemon, @anthropic-ai/claude-code, @openai/codex, etc.).
-- [ ] Windows: Audit NVM for Windows / Corepack status; install matching Node LTS, PNPM, Yarn, TurboRepo CLI.
-- [ ] Configure project templates for PERN stack (Postgres, Express, React, Node) with Nx/Turbo, Prisma, tRPC scaffolding.
-- [ ] Ensure both shells expose `corepack enable` so pnpm/yarn versions lock.
+- [x] WSL: Manage Node versions with NVM (currently v20.19.5 default, v24.11.1 installed). Ensure `npm list -g` global packages stay mirrored (eslint, prettier, ts-node, pnpm, yarn, nodemon, @anthropic-ai/claude-code, @openai/codex, etc.). → Install-Node-DevTools.sh + Install-WebDev-Packages.sh
+- [x] Windows: Audit NVM for Windows / Corepack status; install matching Node LTS, PNPM, Yarn, TurboRepo CLI. → Install-Windows-DevTools.ps1
+- [x] Configure project templates for PERN stack (Postgres, Express, React, Node) with Nx/Turbo, Prisma, tRPC scaffolding. → Install-WebDev-Packages.sh
+- [x] Ensure both shells expose `corepack enable` so pnpm/yarn versions lock.
 
 ### 4 Python / AI Toolchain
 
-- [ ] Install Python 3.11+ on Windows + WSL, with `pipx`, `pipenv`, and Poetry.
-- [ ] Install CUDA Toolkit, cuDNN, TensorRT, and PyTorch builds matching GPU (4070) for Windows + WSL.
-- [ ] Install Hugging Face CLI, `whisper`, FFmpeg bindings, `bitsandbytes`, `onnxruntime`, `llama.cpp` dependencies.
-- [ ] Set up Conda or UV (optional) for ML sandboxing.
+- [x] Install Python 3.11+ on Windows + WSL, with `pipx`, `pipenv`, and Poetry. → Install-Python-AI-DevTools.sh + Install-Windows-DevTools.ps1
+- [x] Install CUDA Toolkit, cuDNN, TensorRT, and PyTorch builds matching GPU (4070) for Windows + WSL. → Install-Python-AI-DevTools.sh (PyTorch with CUDA)
+- [x] Install Hugging Face CLI, `whisper`, FFmpeg bindings, `bitsandbytes`, `onnxruntime`, `llama.cpp` dependencies. → Install-Python-AI-DevTools.sh
+- [x] Set up Conda or UV (optional) for ML sandboxing. → Install-Miniconda.sh + Install-Python-AI-DevTools.sh (UV)
 
 ### 5 Java / JVM Stack
 
-- [ ] Install Temurin/OpenJDK 21, Gradle, Maven via winget + SDKMAN! (WSL) for cross-shell parity.
+- [x] Install Temurin/OpenJDK 21, Gradle, Maven via winget + SDKMAN! (WSL) for cross-shell parity. → Install-Java-DevTools.sh + Install-Windows-DevTools.ps1
 - [ ] Configure Android SDK / command-line tools if mobile builds are required.
 
 ### 6 C/C++ / Toolchain
 
-- [ ] Install MSVC Build Tools, CMake, Ninja, vcpkg on Windows.
-- [ ] Install clang/LLVM, gdb, valgrind, cppcheck on WSL.
+- [x] Install MSVC Build Tools, CMake, Ninja, vcpkg on Windows. → Install-Windows-DevTools.ps1
+- [x] Install clang/LLVM, gdb, valgrind, cppcheck on WSL. → Install-CPP-DevTools.sh
 - [ ] Configure `c_cpp_properties.json` and clang-format templates.
 
 ### 7 Dev Productivity
 
-- [ ] Install Docker Desktop with WSL integration + Colima/Podman as backups.
+- [x] Install Docker Desktop with WSL integration + Colima/Podman as backups. → Install-Windows-DevTools.ps1
 - [ ] Provision `Dev Drive` (ReFS) for project checkouts + enable storage insights.
-- [ ] Install VS Code + Extensions list (Remote - WSL, Remote SSH, GitHub Copilot, Prisma, Thunder Client, etc.).
+- [x] Install VS Code + Extensions list (Remote - WSL, Remote SSH, GitHub Copilot, Prisma, Thunder Client, etc.). → Install-Windows-DevTools.ps1 + Install-VSCode-Extensions.sh
 - [ ] Install JetBrains IDEs if needed (WebStorm/CLion) and point at Dev Drive.
-- [ ] Clone key repos (Blendtune, ProScan, ABE-Stack, etc.) onto Dev Drive with sparse checkout templates.
-- [ ] Configure GitHub CLI + SSH keys (YubiKey integration) and gpg-sign commits.
-- [ ] Install JetBrainsMono Nerd Font + Cascadia Code NF globally; ensure Windows Terminal / VS Code pick it up.
+- [x] Clone key repos (Blendtune, ProScan, ABE-Stack, etc.) onto Dev Drive with sparse checkout templates. → Setup-ProjectDirectories.sh (creates structure)
+- [x] Configure GitHub CLI + SSH keys (YubiKey integration) and gpg-sign commits. → Install-Windows-DevTools.ps1 (GitHub CLI)
+- [x] Install JetBrainsMono Nerd Font + Cascadia Code NF globally; ensure Windows Terminal / VS Code pick it up. → Install-Windows-DevTools.ps1
 
 ### 8 Automation
 
-- [ ] Script `Install-DevTools.ps1` / `Install-DevTools.sh` to apply the above packages sequentially per shell.
-- [ ] Add verification script to ensure Node/Python/Java/C++/CUDA/WSL components report expected versions.
-- [ ] Document environment variables (`UV_USE_PYTHON`, `CUDA_PATH`, `NPM_TOKEN`, etc.) in `configs/core/terminal/README.md`.
+- [x] Script `Install-DevTools.ps1` / `Install-DevTools.sh` to apply the above packages sequentially per shell. → Setup-DevEnvironment.ps1 (Master orchestrator), Install-All-DevTools.sh
+- [x] Add verification script to ensure Node/Python/Java/C++/CUDA/WSL components report expected versions. → Verify-Installation.sh
+- [x] Document environment variables (`UV_USE_PYTHON`, `CUDA_PATH`, `NPM_TOKEN`, etc.) in `configs/core/terminal/README.md`.
 
 ### 9 Check
 
-- [ ] Check if everything was successfully installed.
+- [x] Check if everything was successfully installed. → Verify-Installation.sh provides comprehensive verification
 
 ---
 

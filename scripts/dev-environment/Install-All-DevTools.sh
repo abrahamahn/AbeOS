@@ -60,9 +60,12 @@ log_info "Starting comprehensive development environment installation..."
 log_info "This will install tools for:"
 log_info "  • WSL/Linux development"
 log_info "  • Node.js/JavaScript ecosystem"
+log_info "  • Web development packages"
 log_info "  • Python/AI/ML toolchain"
+log_info "  • AI CLI tools"
 log_info "  • Java/JVM development"
 log_info "  • C/C++ development"
+log_info "  • VS Code extensions"
 log_info ""
 
 # Ask for confirmation
@@ -111,20 +114,36 @@ log_section "Step 1/5: Installing WSL/Linux Development Tools"
 run_install "Install-WSL-DevTools.sh" || log_warning "WSL tools installation had issues"
 
 # 2. Node.js stack
-log_section "Step 2/5: Installing Node.js/JavaScript Stack"
+log_section "Step 2/9: Installing Node.js/JavaScript Stack"
 run_install "Install-Node-DevTools.sh" || log_warning "Node.js installation had issues"
 
-# 3. Python/AI stack
-log_section "Step 3/5: Installing Python/AI Toolchain"
+# 3. Web development packages
+log_section "Step 3/9: Installing Web Development Packages"
+run_install "Install-WebDev-Packages.sh" || log_warning "Web dev packages installation had issues"
+
+# 4. Python/AI stack
+log_section "Step 4/9: Installing Python/AI Toolchain"
 run_install "Install-Python-AI-DevTools.sh" || log_warning "Python/AI installation had issues"
 
-# 4. Java/JVM stack
-log_section "Step 4/5: Installing Java/JVM Stack"
+# 5. Miniconda (Python package manager)
+log_section "Step 5/9: Installing Miniconda"
+run_install "Install-Miniconda.sh" || log_warning "Miniconda installation had issues"
+
+# 6. AI CLI tools
+log_section "Step 6/9: Installing AI CLI Tools"
+run_install "Install-AI-CLIs.sh" || log_warning "AI CLIs installation had issues"
+
+# 7. Java/JVM stack
+log_section "Step 7/9: Installing Java/JVM Stack"
 run_install "Install-Java-DevTools.sh" || log_warning "Java installation had issues"
 
-# 5. C/C++ stack
-log_section "Step 5/5: Installing C/C++ Toolchain"
+# 8. C/C++ stack
+log_section "Step 8/9: Installing C/C++ Toolchain"
 run_install "Install-CPP-DevTools.sh" || log_warning "C/C++ installation had issues"
+
+# 9. VS Code extensions
+log_section "Step 9/9: Installing VS Code Extensions"
+run_install "Install-VSCode-Extensions.sh" || log_warning "VS Code extensions installation had issues"
 
 # Calculate installation time
 END_TIME=$(date +%s)
@@ -150,10 +169,14 @@ fi
 echo ""
 echo "Installed components:"
 echo "  ✓ WSL/Linux development tools"
-echo "  ✓ Node.js/JavaScript ecosystem"
-echo "  ✓ Python/AI/ML toolchain"
-echo "  ✓ Java/JVM development stack"
-echo "  ✓ C/C++ development tools"
+echo "  ✓ Node.js/JavaScript ecosystem (NVM, Node 20/24, pnpm, yarn)"
+echo "  ✓ Web development packages (Vite, Prisma, TypeScript, etc.)"
+echo "  ✓ Python/AI/ML toolchain (PyTorch, TensorFlow, Transformers)"
+echo "  ✓ Miniconda (Python package manager)"
+echo "  ✓ AI CLI tools (Anthropic, OpenAI, Gemini, Aider)"
+echo "  ✓ Java/JVM development stack (SDKMAN!, Java 21/17/11, Gradle, Maven)"
+echo "  ✓ C/C++ development tools (GCC, Clang, debugging tools)"
+echo "  ✓ VS Code extensions (80+ extensions)"
 echo ""
 echo "Next steps:"
 echo "  1. Restart your shell: source ~/.bashrc"

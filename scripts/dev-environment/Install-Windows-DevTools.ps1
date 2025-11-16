@@ -61,25 +61,15 @@ Log-Info "Installing development tools via winget..."
 $WingetPackages = @(
     "Git.Git"
     "Microsoft.VisualStudioCode"
-    "Microsoft.VisualStudio.2022.BuildTools"
     "Microsoft.PowerShell"
     "Microsoft.WindowsTerminal"
     "JanDeDobbeleer.OhMyPosh"
     "Docker.DockerDesktop"
     "Python.Python.3.12"
     # "OpenJS.NodeJS.LTS"  # Skip - conflicts with NVM
-    "Kitware.CMake"
-    "Ninja-build.Ninja"
-    "LLVM.LLVM"
-    "JetBrains.Toolbox"
-    "Notepad++.Notepad++"
-    "7zip.7zip"
     "GitHub.cli"
-    "Microsoft.PowerToys"
-    "Postman.Postman"
     "Oracle.JavaRuntimeEnvironment"
-    "EclipseAdoptium.Temurin.21.JDK"
-    # Gradle/Maven via Chocolatey instead (better package names)
+    # Removed bloat: CMake, Ninja, LLVM, JetBrains Toolbox, Notepad++, 7zip, PowerToys, Postman, Eclipse Temurin
 )
 
 foreach ($package in $WingetPackages) {
@@ -110,22 +100,17 @@ $ChocoPackages = @(
     "vcredist140"       # VC++ Redistributables (correct package)
     "dotnet-sdk"
     # "nodejs-lts"      # Skip - using NVM instead
-    "gradle"            # Correct package name
-    "maven"             # Correct package name
     "yarn"
     "pnpm"
-    "miniconda3"        # Python package/env manager
-    "starship"          # Modern prompt
     "httpie"            # HTTP client
-    "ripgrep"
     "fd"
-    "fzf"
     "jq"
     "yq"
     "make"
     "wget"
     "curl"
     # "openssh"         # Use Windows built-in capability instead
+    # Removed bloat: gradle, maven, miniconda3, starship, ripgrep, fzf
 )
 
 foreach ($package in $ChocoPackages) {
@@ -252,20 +237,6 @@ foreach ($path in $DevPaths) {
 
 Log-Success "Directory structure created"
 
-# Install vcpkg (C++ package manager)
-Log-Info "Installing vcpkg..."
-$vcpkgPath = "C:\tools\vcpkg"
-if (-not (Test-Path $vcpkgPath)) {
-    git clone https://github.com/Microsoft/vcpkg.git $vcpkgPath
-    & "$vcpkgPath\bootstrap-vcpkg.bat"
-
-    # Set environment variable
-    [System.Environment]::SetEnvironmentVariable("VCPKG_ROOT", $vcpkgPath, [System.EnvironmentVariableTarget]::User)
-    Log-Success "vcpkg installed"
-} else {
-    Log-Info "vcpkg already installed"
-}
-
 # Install Rust (optional but useful)
 Log-Info "Installing Rust..."
 if (-not (Get-Command rustc -ErrorAction SilentlyContinue)) {
@@ -292,17 +263,14 @@ Write-Host ""
 Write-Host "Installed components:" -ForegroundColor White
 Write-Host "  ✓ WSL2 (Windows Subsystem for Linux)" -ForegroundColor Green
 Write-Host "  ✓ Git, GitHub CLI" -ForegroundColor Green
-Write-Host "  ✓ Visual Studio Code + Build Tools" -ForegroundColor Green
+Write-Host "  ✓ Visual Studio Code" -ForegroundColor Green
 Write-Host "  ✓ Windows Terminal + Oh My Posh" -ForegroundColor Green
 Write-Host "  ✓ Docker Desktop" -ForegroundColor Green
 Write-Host "  ✓ Python 3.12" -ForegroundColor Green
-Write-Host "  ✓ Node.js (LTS) + NVM for Windows" -ForegroundColor Green
-Write-Host "  ✓ Java (Temurin 21), Gradle, Maven" -ForegroundColor Green
-Write-Host "  ✓ CMake, Ninja, LLVM" -ForegroundColor Green
-Write-Host "  ✓ vcpkg (C++ package manager)" -ForegroundColor Green
+Write-Host "  ✓ Node.js (NVM for Windows)" -ForegroundColor Green
+Write-Host "  ✓ Java Runtime Environment" -ForegroundColor Green
 Write-Host "  ✓ Rust, Go" -ForegroundColor Green
-Write-Host "  ✓ PowerToys, Postman, Notepad++" -ForegroundColor Green
-Write-Host "  ✓ Modern CLI tools (ripgrep, fd, fzf, jq, yq)" -ForegroundColor Green
+Write-Host "  ✓ Modern CLI tools (fd, jq, yq)" -ForegroundColor Green
 Write-Host "  ✓ Fonts (Cascadia Code, JetBrains Mono)" -ForegroundColor Green
 Write-Host ""
 Write-Host "Next steps:" -ForegroundColor Yellow
