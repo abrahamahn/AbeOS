@@ -51,7 +51,7 @@ This installs:
 
 #### Option 2: Complete Developer Environment (Full - ~2 hrs)
 
-See **[QUICKSTART.md](./QUICKSTART.md)** or **[SETUP-GUIDE.md](./SETUP-GUIDE.md)**
+See **[docs/manual/quickstart.md](./docs/manual/quickstart.md)** or **[docs/manual/setup-guide.md](./docs/manual/setup-guide.md)**
 
 ```powershell
 # Windows (PowerShell as Admin)
@@ -108,11 +108,14 @@ This installs:
 ```
 C:\AbeOS
 ├── setup.ps1                    # Master setup script
-├── QUICKSTART.md                # Fast setup guide
-├── SETUP-GUIDE.md               # Complete setup documentation
-├── TODO.md                      # Detailed roadmap
 ├── README.md                    # This file
 ├── .gitignore
+│
+├── docs/                        # 📚 All documentation
+│   ├── manual/                  # User guides and references
+│   ├── dev/                     # Developer and debugging docs
+│   ├── PROJECT-STRUCTURE.md     # Complete file structure
+│   └── ARCHITECTURE.md          # System architecture
 │
 ├── configs/
 │   ├── core/
@@ -257,6 +260,27 @@ cd C:\AbeOS\scripts\dev-environment
 .\Install-Windows-DevTools.ps1         # WSL2, Docker, Git, VS Code, etc.
 ```
 
+## 📚 Documentation
+
+Comprehensive documentation is available in the [`docs/`](./docs/) directory:
+
+### User Documentation ([`docs/manual/`](./docs/manual/))
+- **[Quick Start](./docs/manual/quickstart.md)** - Get started in 5 minutes
+- **[Installation Guide](./docs/manual/installation-guide.md)** - Detailed setup instructions
+- **[Setup Guide](./docs/manual/setup-guide.md)** - Complete walkthrough
+- **[Quick Reference](./docs/manual/quick-reference.md)** - Command cheat sheet
+- **[Audio Plugins List](./docs/manual/audio-plugins-list.md)** - 400+ audio production plugins
+
+### Developer Documentation ([`docs/dev/`](./docs/dev/))
+- **[WSL Debugging](./docs/dev/debug-wsl-setup.md)** - WSL configuration and troubleshooting
+- **[PowerShell Profiles](./docs/dev/debug-powershell-profiles.md)** - Profile unification guide
+- **[Phase 3 Fixes](./docs/dev/phase3-fixes.md)** - Comprehensive fixes and learnings
+- **[Changelog](./docs/dev/changelog.md)** - Project changelog
+
+### Architecture Documentation
+- **[Project Structure](./docs/PROJECT-STRUCTURE.md)** - Complete file layout and navigation
+- **[Architecture Overview](./docs/ARCHITECTURE.md)** - System design and data flow
+
 ## 📊 Logging
 
 All scripts generate detailed logs in `C:\AbeOS\logs\`:
@@ -344,8 +368,10 @@ MIT License - Feel free to use and modify for your own setup.
 
 For questions or issues:
 1. Check the logs in `C:\AbeOS\logs\`
-2. Review `TODO.md` for implementation details
-3. Open an issue on GitHub
+2. Review **[docs/dev/todo.md](./docs/dev/todo.md)** for implementation details
+3. See **[docs/dev/](./docs/dev/)** for debugging guides
+4. Check **[docs/PROJECT-STRUCTURE.md](./docs/PROJECT-STRUCTURE.md)** for navigation
+5. Open an issue on GitHub
 
 ---
 
