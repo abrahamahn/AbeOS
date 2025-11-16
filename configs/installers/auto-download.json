@@ -1,0 +1,131 @@
+{
+  "packages": {
+    "Docker Desktop": {
+      "description": "Docker Desktop for Windows",
+      "category": "development",
+      "winget": "Docker.DockerDesktop",
+      "choco": "docker-desktop",
+      "url": "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe",
+      "priority": "high"
+    },
+    "Visual Studio Code": {
+      "description": "Code Editor",
+      "category": "development",
+      "winget": "Microsoft.VisualStudioCode",
+      "choco": "vscode",
+      "url": "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user",
+      "priority": "high"
+    },
+    "OBS Studio": {
+      "description": "Open Broadcaster Software",
+      "category": "streaming",
+      "winget": "OBSProject.OBSStudio",
+      "choco": "obs-studio",
+      "github": "obsproject/obs-studio",
+      "assetPattern": "OBS-Studio.*-Windows-Installer\\.exe$",
+      "priority": "medium"
+    },
+    "VLC Media Player": {
+      "description": "Media Player",
+      "category": "media",
+      "winget": "VideoLAN.VLC",
+      "choco": "vlc",
+      "url": "https://get.videolan.org/vlc/last/win64/vlc-3.0.20-win64.exe",
+      "priority": "medium"
+    },
+    "7-Zip": {
+      "description": "File Archiver",
+      "category": "utility",
+      "winget": "7zip.7zip",
+      "choco": "7zip",
+      "url": "https://www.7-zip.org/a/7z2301-x64.exe",
+      "priority": "medium"
+    },
+    "Audacity": {
+      "description": "Audio Editor",
+      "category": "audio",
+      "winget": "Audacity.Audacity",
+      "github": "audacity/audacity",
+      "assetPattern": "audacity.*-64bit\\.exe$",
+      "priority": "low"
+    },
+    "Reaper": {
+      "description": "Digital Audio Workstation",
+      "category": "audio",
+      "url": "https://www.reaper.fm/files/6.x/reaper682_x64-install.exe",
+      "manual": false,
+      "notes": "Direct download from official site",
+      "priority": "high"
+    },
+    "FL Studio": {
+      "description": "Digital Audio Workstation",
+      "category": "audio",
+      "manual": true,
+      "url": "https://www.image-line.com/fl-studio-download/",
+      "notes": "Requires account login - manual download required",
+      "priority": "high"
+    },
+    "Ableton Live": {
+      "description": "Digital Audio Workstation",
+      "category": "audio",
+      "manual": true,
+      "url": "https://www.ableton.com/en/trial/",
+      "notes": "Requires account creation - manual download required",
+      "priority": "high"
+    },
+    "NVIDIA GeForce Game Ready Driver": {
+      "description": "NVIDIA Graphics Driver",
+      "category": "driver",
+      "manual": true,
+      "url": "https://www.nvidia.com/Download/index.aspx",
+      "notes": "Hardware-specific, requires manual selection",
+      "priority": "critical"
+    },
+    "AMD Adrenalin Driver": {
+      "description": "AMD Graphics Driver",
+      "category": "driver",
+      "manual": true,
+      "url": "https://www.amd.com/en/support",
+      "notes": "Hardware-specific, requires manual selection",
+      "priority": "critical"
+    },
+    "MSI Afterburner": {
+      "description": "GPU Overclocking Utility",
+      "category": "utility",
+      "url": "https://download.msi.com/uti_exe/vga/MSIAfterburnerSetup.zip",
+      "manual": false,
+      "notes": "Direct download available",
+      "priority": "low"
+    },
+    "Git": {
+      "description": "Version Control System",
+      "category": "development",
+      "winget": "Git.Git",
+      "choco": "git",
+      "github": "git-for-windows/git",
+      "assetPattern": "Git.*-64-bit\\.exe$",
+      "priority": "high"
+    },
+    "Node.js LTS": {
+      "description": "JavaScript Runtime",
+      "category": "development",
+      "winget": "OpenJS.NodeJS.LTS",
+      "choco": "nodejs-lts",
+      "url": "https://nodejs.org/dist/v20.11.0/node-v20.11.0-x64.msi",
+      "priority": "high"
+    },
+    "Python 3.12": {
+      "description": "Python Programming Language",
+      "category": "development",
+      "winget": "Python.Python.3.12",
+      "choco": "python312",
+      "url": "https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe",
+      "priority": "high"
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-11-16",
+    "description": "Auto-download configuration for AbeOS package management"
+  }
+}
