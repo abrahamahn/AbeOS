@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./Install-WSL-DevTools.sh)",
+      "Bash(for file in Install-WebDev-Packages.sh Install-AI-CLIs.sh Install-Miniconda.sh Configure-OhMyPosh-Theme.sh)",
+      "Bash(command -v:*)",
+      "Bash(command -v java:*)",
+      "Bash(java -version:*)",
+      "Bash(test:*)",
+      "Bash(./Install-Java-DevTools.sh:*)",
+      "Bash(./Install-CPP-DevTools.sh)",
+      "Bash(source ~/.bashrc)",
+      "Bash(./Install-WebDev-Packages.sh:*)",
+      "Bash(./Install-AI-CLIs.sh)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

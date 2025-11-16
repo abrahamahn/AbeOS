@@ -1,0 +1,9 @@
+# Remove Windows NodeJS (handles spaces and escapes)
+PATH=$(echo "$PATH" | tr ':' '\n' | grep -vE '/mnt/c/Program(\\)? Files/nodejs' | paste -sd:)
+export PATH
+
+if [ -f /mnt/c/AbeOS/configs/core/terminal/bashrc.core ]; then
+  . /mnt/c/AbeOS/configs/core/terminal/bashrc.core
+else
+  echo "AbeOS bash profile not found at /mnt/c/AbeOS/configs/core/terminal/bashrc.core" >&2
+fi

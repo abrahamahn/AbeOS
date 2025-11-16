@@ -1,0 +1,78 @@
+# ===========================
+# ABEOS CLEAN .GITIGNORE
+# ===========================
+
+# ---- CORE OS ASSETS (large) ----
+assets/installations/
+assets/cursors/
+assets/fonts/
+assets/overlays/
+assets/wallpapers/
+
+# Keep folder structure
+!assets/**/.gitkeep
+
+# ---- PERSONAL OR HEAVY DATA ----
+Production/
+Gaming/
+personal/
+
+# ---- BINARY FILES ----
+*.exe
+*.msi
+*.dll
+*.vst3
+*.vst
+*.dylib
+*.zip
+*.7z
+*.rar
+*.iso
+
+# (but keep scripts)
+!scripts/**/*.ps1
+!scripts/**/*.sh
+
+# ---- SYSTEM / OS CACHE ----
+Thumbs.db
+Desktop.ini
+
+# ---- VS Code Caches ----
+configs/core/vscode/data/
+configs/core/vscode/extensions/
+configs/core/vscode/Cached*
+configs/core/vscode/Cache*
+configs/core/vscode/**/Cache*
+configs/core/vscode/**/GPUCache*
+configs/core/vscode/**/Code Cache*
+configs/core/vscode/**/Dawn*
+configs/core/vscode/**/Shared*
+configs/core/vscode/**/Session*
+configs/core/vscode/**/User/workspaceStorage
+
+# Keep VS Code settings only
+!configs/core/vscode/settings.json
+
+# ---- IDEs ----
+.vscode/
+.idea/
+*.code-workspace
+
+# ---- TEMP ----
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# ---- NODE ----
+node_modules/
+
+# ---- PYTHON ----
+__pycache__/
+*.pyc
+
+# ---- MISC ----
+logs/
+*.log

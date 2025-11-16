@@ -1,0 +1,13 @@
+{
+  "drivers": [
+    {
+      "id": "example-driver",
+      "name": "Example Driver",
+      "installer": "ExampleDriverSetup.exe",
+      "arguments": "/quiet /norestart",
+      "enabled": false,
+      "requiresReboot": true,
+      "notes": "Replace with your actual driver installer and silent arguments."
+    }
+  ]
+}

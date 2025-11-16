@@ -1,0 +1,135 @@
+# VS Code Extensions for AbeOS Development Environment
+# Install all with: cat extensions.txt | grep -v '^#' | xargs -L 1 code --install-extension
+
+# Remote Development
+ms-vscode-remote.remote-wsl
+ms-vscode-remote.remote-ssh
+ms-vscode-remote.remote-containers
+ms-vscode.remote-explorer
+
+# AI Assistants
+github.copilot
+github.copilot-chat
+anthropic.claude-dev
+
+# Languages - JavaScript/TypeScript
+dbaeumer.vscode-eslint
+esbenp.prettier-vscode
+ms-vscode.vscode-typescript-next
+bradlc.vscode-tailwindcss
+prisma.prisma
+graphql.vscode-graphql
+graphql.vscode-graphql-syntax
+styled-components.vscode-styled-components
+
+# Languages - Python
+ms-python.python
+ms-python.vscode-pylance
+ms-python.black-formatter
+charliermarsh.ruff
+ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
+
+# Languages - Java
+redhat.java
+vscjava.vscode-java-debug
+vscjava.vscode-java-test
+vscjava.vscode-maven
+vscjava.vscode-gradle
+
+# Languages - C/C++
+ms-vscode.cpptools
+ms-vscode.cpptools-extension-pack
+ms-vscode.cmake-tools
+twxs.cmake
+
+# Languages - Rust
+rust-lang.rust-analyzer
+vadimcn.vscode-lldb
+
+# Languages - Go
+golang.go
+
+# Web Development
+formulahendry.auto-rename-tag
+formulahendry.auto-close-tag
+zignd.html-css-class-completion
+christian-kohler.path-intellisense
+christian-kohler.npm-intellisense
+
+# Database
+mtxr.sqltools
+mtxr.sqltools-driver-pg
+mtxr.sqltools-driver-mysql
+mongodb.mongodb-vscode-language-client
+
+# Docker & Kubernetes
+ms-azuretools.vscode-docker
+ms-kubernetes-tools.vscode-kubernetes-tools
+
+# Git
+eamodio.gitlens
+mhutchie.git-graph
+donjayamanne.githistory
+
+# API Development
+humao.rest-client
+rangav.vscode-thunder-client
+42crunch.vscode-openapi
+
+# Markdown & Documentation
+yzhang.markdown-all-in-one
+davidanson.vscode-markdownlint
+bierner.markdown-mermaid
+bierner.markdown-preview-github-styles
+
+# Code Quality
+sonarsource.sonarlint-vscode
+streetsidesoftware.code-spell-checker
+aaron-bond.better-comments
+wayou.vscode-todo-highlight
+
+# Productivity
+vscodevim.vim
+alefragnani.bookmarks
+alefragnani.project-manager
+usernamehw.errorlens
+gruntfuggly.todo-tree
+oderwat.indent-rainbow
+pkief.material-icon-theme
+zhuangtongfa.material-theme
+github.github-vscode-theme
+
+# File Formats
+redhat.vscode-yaml
+tamasfe.even-better-toml
+dotenv.dotenv-vscode
+mechatroner.rainbow-csv
+
+# Testing
+hbenl.vscode-test-explorer
+orta.vscode-jest
+kavod-io.vscode-pytest-test-adapter
+
+# Utilities
+editorconfig.editorconfig
+shardulm94.trailing-spaces
+ryu1kn.partial-diff
+wix.vscode-import-cost
+eamodio.toggle-excluded-files
+
+# Live Share
+ms-vsliveshare.vsliveshare
+
+# Snippets
+dsznajder.es7-react-js-snippets
+xabikos.javascriptsnippets
+wholroyd.jinja
+
+# Formatting
+esbenp.prettier-vscode
+foxundermoon.shell-format
+
+# WSL Specific
+ms-vscode-remote.vscode-remote-extensionpack
