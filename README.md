@@ -311,6 +311,12 @@ All changes are reversible:
 - Failed steps don't block subsequent operations
 - Detailed error logging for troubleshooting
 
+### AbeOS Protection System
+- Located at `stages/08_automation/02_protection/Invoke-AbeOSProtectionSystem.ps1`
+- `PrepareForUpdate` disables shell mods, verifies services, exports registry hives, and creates a restore point
+- `PostUpdateRestore` re-enables MyDockFinder/Windhawk/TranslucentTB (or any modules listed in `configs/protection/protection-profile.json`)
+- Full usage guide in [`docs/manual/abeos-protection-system.md`](./docs/manual/abeos-protection-system.md)
+
 ## 🎯 Use Cases
 
 ### For Music Producers

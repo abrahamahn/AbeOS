@@ -1,0 +1,61 @@
+{
+  "RegistryBackup": {
+    "OutputDirectory": "C:\\AbeOS\\backups\\registry",
+    "Hives": [
+      "HKCU",
+      "HKLM"
+    ]
+  },
+  "CriticalServices": [
+    "AppXSvc",
+    "ClipSVC",
+    "StateRepository",
+    "ShellHWDetection",
+    "TokenBroker",
+    "UserManager",
+    "WpnService",
+    "DcomLaunch",
+    "Wuauserv"
+  ],
+  "Modules": [
+    {
+      "Name": "MyDockFinder",
+      "Processes": ["MyDockFinder"],
+      "DisableCommands": [
+        "Stop-Process -Name MyDockFinder -Force -ErrorAction SilentlyContinue"
+      ],
+      "EnableCommands": [
+        "Start-Process \"C:\\Program Files\\MyDockFinder\\MyDockFinder.exe\" -ErrorAction SilentlyContinue"
+      ]
+    },
+    {
+      "Name": "Windhawk",
+      "Processes": ["Windhawk"],
+      "DisableCommands": [
+        "Stop-Process -Name Windhawk -Force -ErrorAction SilentlyContinue"
+      ],
+      "EnableCommands": [
+        "Start-Process \"$env:LOCALAPPDATA\\Programs\\Windhawk\\windhawk.exe\" -ErrorAction SilentlyContinue"
+      ]
+    },
+    {
+      "Name": "TaskbarMods",
+      "Processes": [
+        "TranslucentTB",
+        "RoundedTB"
+      ],
+      "Services": [
+        "StartAllBack"
+      ],
+      "DisableCommands": [
+        "Stop-Process -Name TranslucentTB -Force -ErrorAction SilentlyContinue",
+        "Stop-Process -Name RoundedTB -Force -ErrorAction SilentlyContinue"
+      ],
+      "EnableCommands": [
+        "Start-Process \"C:\\Program Files\\TranslucentTB\\TranslucentTB.exe\" -ErrorAction SilentlyContinue",
+        "Start-Process \"C:\\Program Files\\RoundedTB\\RoundedTB.exe\" -ErrorAction SilentlyContinue",
+        "Start-Service -Name StartAllBack -ErrorAction SilentlyContinue"
+      ]
+    }
+  ]
+}
