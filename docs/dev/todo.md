@@ -23,12 +23,10 @@ _(for Music Production 🎹 + Gaming 🎮 + Coding 💻 + Streaming 📡 + macOS
 - [x] Remove OEM and bloatware via `O&O AppBuster`
 - [x] Remove OneDrivie and decouple it as a default User folders.
 - [x] Set local user folders (i.e.: Documents, Pictures, Videos, Downloads, etc)
-- [x] Run
 - [x] Enable Ultimate Performance power plan
 - [x] Disable Hibernation, Fast Startup, SysMain
 - [x] Optimize file indexing + Explorer performance
 - [x] Set pagefile to manual fixed size
-- [ ] Enable BitLocker for all drives
 - [x] Sync Microsoft account (for license, backup)
 
 ### 2. Hardware Drivers & BIOS
@@ -42,57 +40,42 @@ _(for Music Production 🎹 + Gaming 🎮 + Coding 💻 + Streaming 📡 + macOS
 
 ### 1 Shell Foundations
 
-- [x] Capture current PowerShell profile into repo (`configs/core/terminal/Microsoft.PowerShell_profile.ps1`) and keep `$PROFILE` synced.
-- [x] Capture current `~/.bashrc` into `configs/core/terminal/bashrc` and source it from WSL installs.
-- [x] Ensure both shells load the shared Oh My Posh theme from `configs/core/terminal/abe.omp.json`.
+- [x] Capture current PowerShell profile into repo (`configs/terminal/Microsoft.PowerShell_profile.ps1`) and keep `$PROFILE` synced.
+- [x] Capture current `~/.bashrc` into `configs/terminal/bashrc` and source it from WSL installs.
+- [x] Ensure both shells load the shared Oh My Posh theme from `configs/terminal/abe.omp.json`.
 - [x] Align default working directories (`C:\projects` vs `/mnt/c/projects`) and helper aliases (`cdproj`, `mcl`, etc.).
 
 ### 2 WSL2 / Linux Toolchain
 
 - [x] Confirm WSL2 features enabled + Ubuntu distro updated (`wsl --update`, `apt upgrade`).
-- [x] Install build essentials (gcc/g++, make, cmake, ninja), `pkg-config`, `libssl-dev`, `zlib1g-dev`. → Install-WSL-DevTools.sh
-- [x] Install FFmpeg, ImageMagick, `ripgrep`, `fd`, `fzf`, `jq`, `yq`. → Install-WSL-DevTools.sh
-- [x] Configure `direnv` or `pyenv` if needed for per-project envs.
 
 ### 3 Node.js / JavaScript Stack
 
 - [x] WSL: Manage Node versions with NVM (currently v20.19.5 default, v24.11.1 installed). Ensure `npm list -g` global packages stay mirrored (eslint, prettier, ts-node, pnpm, yarn, nodemon, @anthropic-ai/claude-code, @openai/codex, etc.). → Install-Node-DevTools.sh + Install-WebDev-Packages.sh
-- [x] Windows: Audit NVM for Windows / Corepack status; install matching Node LTS, PNPM, Yarn, TurboRepo CLI. → Install-Windows-DevTools.ps1
-- [x] Configure project templates for PERN stack (Postgres, Express, React, Node) with Nx/Turbo, Prisma, tRPC scaffolding. → Install-WebDev-Packages.sh
-- [x] Ensure both shells expose `corepack enable` so pnpm/yarn versions lock.
+- [x] Windows: Audit NVM for Windows / Corepack status; install matching Node LTS, PNPM, Yarn. → Install-Windows-DevTools.ps1
+- [x] Configure project templates for PERN stack (Postgres, Node, Tailwind CLI)
 
 ### 4 Python / AI Toolchain
 
-- [x] Install Python 3.11+ on Windows + WSL, with `pipx`, `pipenv`, and Poetry. → Install-Python-AI-DevTools.sh + Install-Windows-DevTools.ps1
+- [x] Install Python 3.11+ on Windows + WSL. → Install-Python-AI-DevTools.sh + Install-Windows-DevTools.ps1
 - [x] Install CUDA Toolkit, cuDNN, TensorRT, and PyTorch builds matching GPU (4070) for Windows + WSL. → Install-Python-AI-DevTools.sh (PyTorch with CUDA)
-- [x] Install Hugging Face CLI, `whisper`, FFmpeg bindings, `bitsandbytes`, `onnxruntime`, `llama.cpp` dependencies. → Install-Python-AI-DevTools.sh
-- [x] Set up Conda or UV (optional) for ML sandboxing. → Install-Miniconda.sh + Install-Python-AI-DevTools.sh (UV)
+- [x] Install Hugging Face CLI, `whisper`, FFmpeg bindings, dependencies. → Install-Python-AI-DevTools.sh
+- [x] Set up Conda for ML sandboxing. → Install-Miniconda.sh + Install-Python-AI-DevTools.sh (UV)
 
-### 5 Java / JVM Stack
+### 6 Dev Productivity
 
-- [x] Install Temurin/OpenJDK 21, Gradle, Maven via winget + SDKMAN! (WSL) for cross-shell parity. → Install-Java-DevTools.sh + Install-Windows-DevTools.ps1
-- [ ] Configure Android SDK / command-line tools if mobile builds are required.
-
-### 6 C/C++ / Toolchain
-
-- [x] Install MSVC Build Tools, CMake, Ninja, vcpkg on Windows. → Install-Windows-DevTools.ps1
-- [x] Install clang/LLVM, gdb, valgrind, cppcheck on WSL. → Install-CPP-DevTools.sh
-- [ ] Configure `c_cpp_properties.json` and clang-format templates.
-
-### 7 Dev Productivity
-
-- [x] Install Docker Desktop with WSL integration + Colima/Podman as backups. → Install-Windows-DevTools.ps1
-- [ ] Provision `Dev Drive` (ReFS) for project checkouts + enable storage insights.
+- [x] Install Docker Desktop with WSL integration → Install-Windows-DevTools.ps1
+- [x] Install PgAdmin4, Pycharm, WSL
 - [x] Install VS Code + Extensions list (Remote - WSL, Remote SSH, GitHub Copilot, Prisma, Thunder Client, etc.). → Install-Windows-DevTools.ps1 + Install-VSCode-Extensions.sh
-- [x] Clone key repos (Blendtune, ProScan, ABE-Stack, etc.) onto Dev Drive with sparse checkout templates. → Setup-ProjectDirectories.sh (creates structure)
+- [x] Clone key repos from githubb.com/abrahamahn/ (Blendtune, ProScan, ABE-Stack, etc.) onto Dev Drive with sparse checkout templates. → Setup-ProjectDirectories.sh (creates structure)
 - [x] Configure GitHub CLI + SSH keys (YubiKey integration) and gpg-sign commits. → Install-Windows-DevTools.ps1 (GitHub CLI)
-- [x] Install JetBrainsMono Nerd Font + Cascadia Code NF globally; ensure Windows Terminal / VS Code pick it up. → Install-Windows-DevTools.ps1
+- [x] CaskaydiaCove Nerd Font Mono globally; ensure Windows Terminal / VS Code pick it up. → Install-Windows-DevTools.ps1
 
 ### 8 Automation
 
-- [x] Script `Install-DevTools.ps1` / `Install-DevTools.sh` to apply the above packages sequentially per shell. → Setup-DevEnvironment.ps1 (Master orchestrator), Install-All-DevTools.sh
-- [x] Add verification script to ensure Node/Python/Java/C++/CUDA/WSL components report expected versions. → Verify-Installation.sh
-- [x] Document environment variables (`UV_USE_PYTHON`, `CUDA_PATH`, `NPM_TOKEN`, etc.) in `configs/core/terminal/README.md`.
+- [ ] Script `Install-DevTools.ps1` / `Install-DevTools.sh` to apply the above packages sequentially per shell. → Setup-DevEnvironment.ps1 (Master orchestrator), Install-All-DevTools.sh
+- [ ] Add verification script to ensure Node/Python/Java/C++/CUDA/WSL components report expected versions. → Verify-Installation.sh
+- [ ] Document environment variables (`UV_USE_PYTHON`, `CUDA_PATH`, `NPM_TOKEN`, etc.) in `configs/core/terminal/README.md`.
 
 ### 9 Check
 
@@ -104,7 +87,7 @@ _(for Music Production 🎹 + Gaming 🎮 + Coding 💻 + Streaming 📡 + macOS
 
 ### 1. Platforms & Tools
 
-- [x] Install Steam.
+- [x] Install Steam + Steam Games
   [x] Install Emulators: PS1–PS4, Dream Sega, N64, Xbox
 - [x] Organize all ROMs under `C:\Gaming\ROMS`
 - [x] Install Lossless Scaling, ReShade, SpecialK
@@ -144,7 +127,7 @@ _(for Music Production 🎹 + Gaming 🎮 + Coding 💻 + Streaming 📡 + macOS
 
 ### 3. GPU-Aware Mode Switching
 
-- [x] Implement Afterburner + GHelper profiles:
+- [ ] Implement Afterburner + GHelper profiles:
   - Creator Mode → 85W GPU, Balanced Fans
   - Performance Mode → Max Clocks, Turbo Fans
 - [ ] Apply via:
@@ -176,153 +159,7 @@ _(for Music Production 🎹 + Gaming 🎮 + Coding 💻 + Streaming 📡 + macOS
 
 ---
 
-## 📱 PHASE 6 — iOS INTEROPERABILITY
-
-### 1. File Transfer
-
-* [ ] Install LocalSend (Windows + iOS)
-* [ ] Add context menu: “Send to iPhone via LocalSend”
-* [ ] Backup fallback: Snapdrop web app
-
-### 2. Clipboard Sync
-
-* [ ] Use LocalSend text sharing or PushBullet API
-* [ ] PowerShell bridge: monitor clipboard and push to iOS
-* [ ] Add AutoHotKey shortcut: `Ctrl+C` → sync clipboard
-
-### 3. File Sync
-
-* [ ] Setup Syncthing: `C:\Production\Mobile` ↔ iPhone “Files”
-* [ ] Sync Obsidian vaults for project notes
-
----
-
-## 🔐 PHASE 7 — BACKUP, SECURITY & RELIABILITY
-
-### 1. Backup Strategy (3–2–1)
-
-| Layer    | Tool                     | Frequency                      | Destination  |
-| -------- | ------------------------ | ------------------------------ | ------------ |
-| Local    | Macrium Reflect / Hasleo | Weekly Full, Daily Incremental | E:\Images    |
-| External | Veeam Agent              | 15-min Backup for Production   | F:\Veeam     |
-| Cloud    | rclone + Backblaze B2    | Nightly                        | `b2://abeos` |
-
-### 2. Automation
-
-* [ ] `Daily-Maintenance.ps1`
-
-  * Winget upgrade all
-  * Clean temp + caches
-  * Registry snapshot
-  * Backup system logs
-* [ ] `Auto-Backup.ps1`
-
-  * Mirror C:\Production → E:\Backups\Daily
-* [ ] Schedule:
-
-  * Logon → Mode-Switcher.ps1 (Performance)
-  * OBS Launch → Set Creator Mode
-  * 3 AM → Daily Maintenance
-
-### 3. Security
-
-* [ ] AppLocker (Pro/Enterprise) → whitelist only signed apps
-* [ ] Defender Firewall → outbound block except whitelisted
-* [ ] YubiKey → Windows Hello + Git auth
-* [ ] AdGuard Home → local DNS filtering
-* [ ] Windows Sandbox → test plugins safely
-* [ ] Registry export nightly → `C:\AbeOS\configs\core\backup\reg\`
-
-#### 3.1 Content Filtering & Parental Controls
-
-**Goal:** Block porn, gambling, NSFW, malicious, and harmful websites system-wide
-
-**Multi-Layer Approach:**
-
-* [x] **DNS-Level Filtering (Primary)**
-  * [x] Configure DNS to use family-safe servers:
-    * Cloudflare Family (1.1.1.3 / 1.0.0.3) - Blocks malware + adult content
-    * OpenDNS FamilyShield (208.67.222.123 / 208.67.220.123)
-    * CleanBrowsing Family (185.228.168.168 / 185.228.169.168)
-  * [ ] Apply via: Network adapter settings + Router settings (double protection)
-  * [ ] Script: `Set-SafeDNS.ps1` → Auto-configure all adapters
-
-* [ ] **Local DNS Filtering (AdGuard Home / Pi-hole)**
-  * [ ] Install AdGuard Home locally (runs as Windows service)
-  * [ ] Import blocklists:
-    * OISD Big List (comprehensive)
-    * Steven Black's hosts (malware + adult)
-    * Gambling blocklist
-    * Energized Ultimate
-  * [ ] Point system DNS to 127.0.0.1 (localhost)
-  * [ ] Script: `Install-AdGuardHome.ps1` → Automated setup
-
-* [ ] **Browser-Level Protection**
-  * [ ] Enable SafeSearch (Google, Bing, DuckDuckGo)
-  * [ ] Install browser extensions:
-    * uBlock Origin (with adult content filters)
-    * WebFilter Pro
-  * [ ] Script: `Configure-SafeSearch.ps1` → Lock SafeSearch on
-
-* [ ] **Windows Built-in Controls**
-  * [ ] Enable Microsoft Family Safety
-  * [ ] Configure Windows Defender SmartScreen
-  * [ ] Block adult content in Microsoft Edge
-  * [ ] Script: `Enable-FamilySafety.ps1`
-
-* [ ] **Network-Level Backup**
-  * [ ] Configure router-level DNS filtering
-  * [ ] Enable router's parental controls (ASUS ROG router)
-  * [ ] Fallback if local DNS bypassed
-
-* [ ] **Monitoring & Reporting**
-  * [ ] AdGuard Home dashboard (localhost:3000)
-  * [ ] Weekly reports of blocked requests
-  * [ ] Alert on bypass attempts
-  * [ ] Script: `Get-FilteringReport.ps1`
-
-**Scripts to Create:**
-* `Set-SafeDNS.ps1` - Configure DNS servers on all adapters
-* `Install-AdGuardHome.ps1` - Install and configure AdGuard Home
-* `Import-Blocklists.ps1` - Add comprehensive blocklists
-* `Configure-SafeSearch.ps1` - Lock SafeSearch in browsers
-* `Enable-FamilySafety.ps1` - Configure Windows Family Safety
-* `Test-ContentFilter.ps1` - Verify blocking is working
-* `Get-FilteringReport.ps1` - Generate weekly reports
-
-### 4. Disaster Recovery
-
-* [ ] `AbeOS.iso` (NTLite custom image + drivers)
-* [ ] Ventoy USB boot → AbeOS + Hirens + Ubuntu
-* [ ] `setup.ps1` → full reinstall automation
-* [ ] One-click restore via Macrium or Hasleo
-
----
-
-## 🧠 PHASE 8 — AUTOMATION & MAINTENANCE
-
-### Core Scripts
-
-* [ ] `Mode-Switcher.ps1` → Creator / Performance toggle
-* [ ] `Reset-Audio.ps1` → restart audio stack
-* [ ] `Check-StreamingReady.ps1` → verify OBS + VoiceMeeter
-* [ ] `New-Symlinks.ps1` → recreate junctions
-* [ ] `Health-Report.ps1` → logs status summary
-
-### Scheduled Jobs
-
-* [ ] `Daily-Maintenance.ps1` at 3 AM
-* [ ] `Auto-Backup.ps1` nightly
-* [ ] OBS launch event triggers Creator Mode
-
-### Logging
-
-* [ ] All scripts write to `/logs/system.log`
-* [ ] Daily summary → Toast notification
-
----
-
-## 🎹 PHASE 9 — MUSIC PRODUCTION ENVIRONMENT
+## 🎹 PHASE 6 — MUSIC PRODUCTION ENVIRONMENT
 
 ### 1. DAW + Plugins
 
@@ -361,8 +198,154 @@ _(for Music Production 🎹 + Gaming 🎮 + Coding 💻 + Streaming 📡 + macOS
 
 ---
 
+## 📱 PHASE 7 — iOS INTEROPERABILITY
 
-## 🚀 PHASE 10 — FUTURE EXPANSIONS
+### 1. File Transfer (Airdrop)
+
+* [ ] Install LocalSend (Windows + iOS)
+* [ ] Add context menu: “Send to iPhone via LocalSend”
+* [ ] Backup fallback: Snapdrop web app
+
+### 2. Clipboard Sync
+
+* [ ] Use LocalSend text sharing or PushBullet API
+* [ ] PowerShell bridge: monitor clipboard and push to iOS
+* [ ] Add AutoHotKey shortcut: `Ctrl+C` → sync clipboard
+
+### 3. File Sync
+
+* [ ] Setup Syncthing: `C:\Production\Mobile` ↔ iPhone “Files”
+* [ ] Sync Obsidian vaults for project notes
+
+---
+
+## 🔐 PHASE 8 — BACKUP, SECURITY & RELIABILITY
+
+### 1. Backup Strategy (3–2–1)
+
+| Layer    | Tool                     | Frequency                      | Destination  |
+| -------- | ------------------------ | ------------------------------ | ------------ |
+| Local    | Macrium Reflect / Hasleo | Weekly Full, Daily Incremental | E:\Images    |
+| External | Veeam Agent              | 15-min Backup for Production   | F:\Veeam     |
+| Cloud    | rclone + Backblaze B2    | Nightly                        | `b2://abeos` |
+
+### 2. Automation
+
+* [ ] `Daily-Maintenance.ps1`
+
+  * Winget upgrade all
+  * Clean temp + caches
+  * Registry snapshot
+  * Backup system logs
+* [ ] `Auto-Backup.ps1`
+
+  * Mirror C:\Production → E:\Backups\Daily
+* [ ] Schedule:
+
+  * Logon → Mode-Switcher.ps1 (Performance)
+  * OBS Launch → Set Creator Mode
+  * 3 AM → Daily Maintenance
+
+### 3. Security
+
+* [ ] AppLocker (Pro/Enterprise) → whitelist only signed apps
+* [ ] Defender Firewall → outbound block except whitelisted
+* [ ] YubiKey → Windows Hello + Git auth
+* [ ] AdGuard Home → local DNS filtering
+* [ ] Windows Sandbox → test plugins safely
+* [ ] Registry export nightly → `C:\AbeOS\configs\core\backup\reg\`
+- [ ] Encrypt SSD with Bitcrypt or something
+
+#### 4 Content Filtering & Parental Controls
+
+**Goal:** Block porn, gambling, NSFW, malicious, and harmful websites system-wide
+
+**Multi-Layer Approach:**
+
+- [x] **DNS-Level Filtering (Primary)**
+- [x] Configure DNS to use family-safe servers:
+- [ ] Cloudflare Family (1.1.1.3 / 1.0.0.3) - Blocks malware + adult content
+- [ ] OpenDNS FamilyShield (208.67.222.123 / 208.67.220.123)
+- [ ] CleanBrowsing Family (185.228.168.168 / 185.228.169.168)
+- [ ] Apply via: Network adapter settings + Router settings (double protection)
+- [ ] Script: `Set-SafeDNS.ps1` → Auto-configure all adapters
+- [ ] **Local DNS Filtering (AdGuard Home / Pi-hole)**
+- [ ] Install AdGuard Home locally (runs as Windows service)
+- [ ] Import blocklists:
+    * OISD Big List (comprehensive)
+    * Steven Black's hosts (malware + adult)
+    * Gambling blocklist
+    * Energized Ultimate
+- [ ] Point system DNS to 127.0.0.1 (localhost)
+- [ ] Script: `Install-AdGuardHome.ps1` → Automated setup
+- [ ] **Browser-Level Protection**
+- [ ] Enable SafeSearch (Google, Bing, DuckDuckGo)
+- [ ] Install browser extensions:
+- uBlock Origin (with adult content filters)
+- WebFilter Pro
+- [ ] Script: `Configure-SafeSearch.ps1` → Lock SafeSearch on
+
+- [ ] **Windows Built-in Controls**
+- [ ] Enable Microsoft Family Safety
+- [ ] Configure Windows Defender SmartScreen
+- [ ] Block adult content in Microsoft Edge-
+- [ ] Script: `Enable-FamilySafety.ps1`
+
+* [ ] **Network-Level Backup**
+- [ ] Configure router-level DNS filtering
+- [ ] Enable router's parental controls (ASUS ROG router)
+- [ ] Fallback if local DNS bypassed
+
+* [ ] **Monitoring & Reporting**
+  * [ ] AdGuard Home dashboard (localhost:3000)
+  * [ ] Weekly reports of blocked requests
+  * [ ] Alert on bypass attempts
+  * [ ] Script: `Get-FilteringReport.ps1`
+
+**Scripts to Create:**
+* `Set-SafeDNS.ps1` - Configure DNS servers on all adapters
+* `Install-AdGuardHome.ps1` - Install and configure AdGuard Home
+* `Import-Blocklists.ps1` - Add comprehensive blocklists
+* `Configure-SafeSearch.ps1` - Lock SafeSearch in browsers
+* `Enable-FamilySafety.ps1` - Configure Windows Family Safety
+* `Test-ContentFilter.ps1` - Verify blocking is working
+* `Get-FilteringReport.ps1` - Generate weekly reports
+
+### 4. Disaster Recovery
+
+* [ ] `AbeOS.iso` (NTLite custom image + drivers)
+* [ ] Ventoy USB boot → AbeOS + Hirens + Ubuntu
+* [ ] `setup.ps1` → full reinstall automation
+* [ ] One-click restore via Macrium or Hasleo
+---
+
+## 🧠 PHASE 9 — AUTOMATION & MAINTENANCE
+
+### Core Scripts
+
+* [ ] `Mode-Switcher.ps1` → Creator / Performance toggle
+* [ ] `Reset-Audio.ps1` → restart audio stack
+* [ ] `Check-StreamingReady.ps1` → verify OBS + VoiceMeeter
+* [ ] `New-Symlinks.ps1` → recreate junctions
+* [ ] `Health-Report.ps1` → logs status summary
+
+### Scheduled Jobs
+
+* [ ] `Daily-Maintenance.ps1` at 3 AM
+* [ ] `Auto-Backup.ps1` nightly
+* [ ] OBS launch event triggers Creator Mode
+
+### Logging
+
+* [ ] All scripts write to `/logs/system.log`
+* [ ] Daily summary → Toast notification
+
+---
+## 🚀 PHASE 10 — CLEANUP & BACKUP
+- [ ] Do a full snapshot backup to external SSD 1
+- [ ] Do a local file transfer backup to external SSD 2, 3 for production libraries and projects
+
+## 🚀 PHASE 11 — FUTURE EXPANSIONS
 
 * [ ] Build “AbeOS Control Center” GUI (PowerShell or Tauri)
 * [ ] Add Auto Mode Detection (OBS/game triggers)
