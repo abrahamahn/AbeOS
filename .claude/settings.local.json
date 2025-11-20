@@ -11,7 +11,9 @@
       "Bash(./Install-CPP-DevTools.sh)",
       "Bash(source ~/.bashrc)",
       "Bash(./Install-WebDev-Packages.sh:*)",
-      "Bash(./Install-AI-CLIs.sh)"
+      "Bash(./Install-AI-CLIs.sh)",
+      "Bash(powershell -Command \"Write-Host ''VST2_files.txt:''; (Get-Content ''C:\\AbeOS\\VST2_files.txt'' | Measure-Object -Line).Lines; Write-Host ''''; Write-Host ''VST3_files.txt:''; (Get-Content ''C:\\AbeOS\\VST3_files.txt'' | Measure-Object -Line).Lines\")",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []

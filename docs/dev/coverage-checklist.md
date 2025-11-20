@@ -4,103 +4,78 @@
 
 ### Prerequisites
 
-| Tool | Windows (pwsh) | Linux (WSL) | Script | Status |
-|------|----------------|-------------|--------|--------|
-| PowerShell 7+ | ✅ Install-Windows-DevTools.ps1 | ✅ apt install | Built-in | ✅ COVERED |
-| Node.js LTS | ✅ winget/NVM | ✅ NVM | Install-Node-DevTools.sh | ✅ COVERED |
-| Python 3.12+ | ✅ winget | ✅ apt | Install-Python-AI-DevTools.sh | ✅ COVERED |
-| Git | ✅ winget | ✅ apt | Both scripts | ✅ COVERED |
-| curl, wget, unzip | ✅ choco | ✅ apt | Install-WSL-DevTools.sh | ✅ COVERED |
-| Chocolatey | ✅ Install-Windows-DevTools.ps1 | N/A | Windows script | ✅ COVERED |
+| Tool              | Windows (pwsh)                 | Linux (WSL)   | Script                        | Status    |
+| ----------------- | ------------------------------ | ------------- | ----------------------------- | --------- |
+| PowerShell 7+     | ✅ Install-Windows-DevTools.ps1 | ✅ apt install | Built-in                      | ✅ COVERED |
+| Node.js 24 LTS    | ✅ winget/NVM                   | ✅ NVM         | Install-Node-DevTools.sh      | ✅ COVERED |
+| Python 3.12+      | ✅ winget                       | ✅ apt         | Install-Python-AI-DevTools.sh | ✅ COVERED |
+| Git               | ✅ winget                       | ✅ apt         | Both scripts                  | ✅ COVERED |
+| curl, wget, unzip | ✅ choco                        | ✅ apt         | Install-WSL-DevTools.sh       | ✅ COVERED |
+| Chocolatey        | ✅ Install-Windows-DevTools.ps1 | N/A           | Windows script                | ✅ COVERED |
 
 ---
 
 ## Web Development (PERN Stack)
 
-| Tool | Purpose | Script | Status |
-|------|---------|--------|--------|
-| **pnpm** | Fast package manager | Install-Node-DevTools.sh | ✅ COVERED |
-| **Vite** | Dev server | Install-WebDev-Packages.sh | ✅ NEW |
-| **create-vite** | Scaffolding | Install-WebDev-Packages.sh | ✅ NEW |
-| **create-next-app** | Next.js | Install-WebDev-Packages.sh | ✅ NEW |
-| **express-generator** | API scaffolding | Install-WebDev-Packages.sh | ✅ NEW |
-| **Prisma** | ORM | Install-WebDev-Packages.sh | ✅ NEW |
-| **TypeScript** | TS compiler | Install-Node-DevTools.sh | ✅ COVERED |
-| **ts-node** | TS execution | Install-Node-DevTools.sh | ✅ COVERED |
-| **ESLint** | Linting | Install-Node-DevTools.sh | ✅ COVERED |
-| **Prettier** | Formatting | Install-Node-DevTools.sh | ✅ COVERED |
-| **Tailwind CLI** | CSS framework | Install-WebDev-Packages.sh | ✅ NEW |
-| **PostgreSQL client** | DB CLI | Install-WebDev-Packages.sh | ✅ NEW |
-| **Docker** | Containers | Install-Windows-DevTools.ps1 | ✅ COVERED |
+| Tool                  | Purpose              | Script                       | Status    |
+| --------------------- | -------------------- | ---------------------------- | --------- |
+| **pnpm**              | Fast package manager | Install-Node-DevTools.sh     | ✅ COVERED |
+| **Vite**              | Dev server           | Install-WebDev-Packages.sh   | ✅ NEW     |
+| **TypeScript**        | TS compiler          | Install-Node-DevTools.sh     | ✅ COVERED |
+| **ts-node**           | TS execution         | Install-Node-DevTools.sh     | ✅ COVERED |
+| **ESLint**            | Linting              | Install-Node-DevTools.sh     | ✅ COVERED |
+| **Prettier**          | Formatting           | Install-Node-DevTools.sh     | ✅ COVERED |
+| **Tailwind CLI**      | CSS framework        | Install-WebDev-Packages.sh   | ✅ NEW     |
+| **PostgreSQL client** | DB CLI               | Install-WebDev-Packages.sh   | ✅ NEW     |
+| **Docker**            | Containers           | Install-Windows-DevTools.ps1 | ✅ COVERED |
 
 ---
 
 ## Machine Learning (Python)
 
-| Tool | Purpose | Script | Status |
-|------|---------|--------|--------|
-| **uv** | Fast Python pkg mgr | Install-Python-AI-DevTools.sh | ✅ COVERED |
-| **PyTorch** | ML framework | Install-Python-AI-DevTools.sh | ✅ COVERED |
-| **PyTorch CUDA** | GPU support | Install-Python-AI-DevTools.sh | ✅ COVERED |
-| **JupyterLab** | Notebooks | Install-Python-AI-DevTools.sh | ✅ COVERED |
-| **pandas** | Data science | Install-Python-AI-DevTools.sh | ✅ COVERED |
-| **numpy** | Numerical computing | Install-Python-AI-DevTools.sh | ✅ COVERED |
-| **scikit-learn** | ML library | Install-Python-AI-DevTools.sh | ✅ COVERED |
-| **matplotlib** | Visualization | Install-Python-AI-DevTools.sh | ✅ COVERED |
-| **seaborn** | Statistical viz | Install-Python-AI-DevTools.sh | ✅ COVERED |
-| **transformers** | Hugging Face | Install-Python-AI-DevTools.sh | ✅ COVERED |
-| **datasets** | HF datasets | Install-Python-AI-DevTools.sh | ✅ COVERED |
-| **poetry** | Dependency mgmt | Install-Python-AI-DevTools.sh | ✅ COVERED |
-| **Miniconda** | Conda env manager | Install-Miniconda.sh | ✅ NEW |
+| Tool             | Purpose             | Script                        | Status    |
+| ---------------- | ------------------- | ----------------------------- | --------- |
+| **PyTorch CUDA** | GPU support         | Install-Python-AI-DevTools.sh | ✅ COVERED |
+| **JupyterLab**   | Notebooks           | Install-Python-AI-DevTools.sh | ✅ COVERED |
+| **pandas**       | Data science        | Install-Python-AI-DevTools.sh | ✅ COVERED |
+| **numpy**        | Numerical computing | Install-Python-AI-DevTools.sh | ✅ COVERED |
+| **scikit-learn** | ML library          | Install-Python-AI-DevTools.sh | ✅ COVERED |
+| **matplotlib**   | Visualization       | Install-Python-AI-DevTools.sh | ✅ COVERED |
+| **seaborn**      | Statistical viz     | Install-Python-AI-DevTools.sh | ✅ COVERED |
+| **datasets**     | HF datasets         | Install-Python-AI-DevTools.sh | ✅ COVERED |
+| **Miniconda**    | Conda env manager   | Install-Miniconda.sh          | ✅ NEW     |
 
 ---
 
 ## General Coding & Productivity
 
-| Tool | Purpose | Script | Status |
-|------|---------|--------|--------|
-| **VS Code** | Editor | Install-Windows-DevTools.ps1 | ✅ COVERED |
-| **Oh My Posh** | Prompt | Configure-OhMyPosh-Theme.sh | ✅ NEW |
-| **zoxide** | Smart cd | Install-WSL-DevTools.sh | ✅ COVERED |
-| **fzf** | Fuzzy finder | Install-WSL-DevTools.sh | ✅ COVERED |
-| **ripgrep** | Fast grep | Install-WSL-DevTools.sh | ✅ COVERED |
-| **bat** | Cat with syntax | Install-WSL-DevTools.sh | ✅ COVERED |
-| **eza** | Modern ls | Install-WSL-DevTools.sh | ✅ COVERED |
-| **starship** | Cross-shell prompt | *Optional* | ⚠️ OPTIONAL |
-| **tmux** | Terminal multiplexer | Install-WSL-DevTools.sh | ✅ COVERED |
-| **httpie** | API testing | Install-WSL-DevTools.sh | ✅ COVERED |
-| **jq** | JSON processor | Install-WSL-DevTools.sh | ✅ COVERED |
+| Tool           | Purpose | Script                       | Status    |
+| -------------- | ------- | ---------------------------- | --------- |
+| **VS Code**    | Editor  | Install-Windows-DevTools.ps1 | ✅ COVERED |
+| **Oh My Posh** | Prompt  | Configure-OhMyPosh-Theme.sh  | ✅ NEW     |
 
 ---
 
 ## AI Coding Assistants
 
-| Tool | Purpose | Script | Status |
-|------|---------|--------|--------|
-| **Google Gemini CLI** | Gemini API | Install-AI-CLIs.sh | ✅ NEW |
-| **Anthropic Claude** | Claude API | Install-AI-CLIs.sh | ✅ NEW |
-| **OpenAI CLI** | OpenAI API | Install-AI-CLIs.sh | ✅ NEW |
-| **Aider** | AI pair programming | Install-AI-CLIs.sh | ✅ NEW |
-| **GitHub Copilot CLI** | Copilot (via gh) | Install-AI-CLIs.sh | ✅ NEW |
-| **pipx** | Isolated CLI tools | Install-Python-AI-DevTools.sh | ✅ COVERED |
+| Tool                  | Purpose             | Script             | Status |
+| --------------------- | ------------------- | ------------------ | ------ |
+| **Google Gemini CLI** | Gemini API          | Install-AI-CLIs.sh | ✅ NEW  |
+| **Anthropic Claude**  | Claude API          | Install-AI-CLIs.sh | ✅ NEW  |
+| **OpenAI CLI**        | OpenAI API          | Install-AI-CLIs.sh | ✅ NEW  |
+| **Aider**             | AI pair programming | Install-AI-CLIs.sh | ✅ NEW  |
 
 ---
 
 ## Additional Tools Not in Original List
 
-| Tool | Purpose | Script | Why Added |
-|------|---------|--------|-----------|
-| **vcpkg** | C++ packages | Install-CPP-DevTools.sh | C++ development |
-| **Conan** | C++ packages | Install-CPP-DevTools.sh | Alternative to vcpkg |
-| **SDKMAN!** | Java versions | Install-Java-DevTools.sh | Java version mgmt |
-| **Gradle** | Java build | Install-Java-DevTools.sh | Java projects |
-| **Maven** | Java build | Install-Java-DevTools.sh | Java projects |
-| **Kotlin** | JVM language | Install-Java-DevTools.sh | Modern JVM dev |
-| **Rust** | Systems programming | Install-Windows-DevTools.ps1 | Growing ecosystem |
-| **Go** | Systems programming | Install-Windows-DevTools.ps1 | Cloud-native dev |
-| **Bun** | Fast JS runtime | Install-Node-DevTools.sh | Modern alternative |
-| **Nx** | Monorepo tool | Install-Node-DevTools.sh | Large projects |
-| **Turbo** | Monorepo tool | Install-Node-DevTools.sh | Build optimization |
+| Tool      | Purpose             | Script                       | Why Added          |
+| --------- | ------------------- | ---------------------------- | ------------------ |
+| **Rust**  | Systems programming | Install-Windows-DevTools.ps1 | Growing ecosystem  |
+| **Go**    | Systems programming | Install-Windows-DevTools.ps1 | Cloud-native dev   |
+| **Bun**   | Fast JS runtime     | Install-Node-DevTools.sh     | Modern alternative |
+| **Nx**    | Monorepo tool       | Install-Node-DevTools.sh     | Large projects     |
+| **Turbo** | Monorepo tool       | Install-Node-DevTools.sh     | Build optimization |
 
 ---
 

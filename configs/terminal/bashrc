@@ -1,0 +1,7 @@
+########## ABEOS CORE LOADER ##########
+if [ -f /mnt/c/AbeOS/configs/core/terminal/bashrc.core ]; then
+    . /mnt/c/AbeOS/configs/core/bashrc.core
+else
+    echo "Missing bashrc.core at /mnt/c/AbeOS/configs/terminal/bashrc.core" >&2
+fi
+

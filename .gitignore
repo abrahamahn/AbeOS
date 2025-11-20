@@ -3,19 +3,11 @@
 # ===========================
 
 # ---- CORE OS ASSETS (large) ----
-assets/installations/
-assets/cursors/
-assets/fonts/
-assets/overlays/
-assets/wallpapers/
+assets/
+assets/**
 
 # Keep folder structure
 !assets/**/.gitkeep
-
-# ---- PERSONAL OR HEAVY DATA ----
-Production/
-Gaming/
-personal/
 
 # ---- BINARY FILES ----
 *.exe

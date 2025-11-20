@@ -15,81 +15,20 @@ _(for Music Production 🎹 + Gaming 🎮 + Coding 💻 + Streaming 📡 + macOS
 > - Full disaster recovery and automated maintenance
 
 **Last Updated:** `November 2025`
-
----
-
-## 🧩 ARCHITECTURE OVERVIEW
-
-### 🏗️ Layer Model
-
-| Layer               | Type     | Description                                                    |
-| ------------------- | -------- | -------------------------------------------------------------- |
-| **Windows OS Base** | System   | Clean Windows 11 installation (factory or stripped image)      |
-| **AbeOS Overlay**   | Overlay  | Custom environment stored in `C:\AbeOS` (no core OS overwrite) |
-| **Modules**         | Optional | Deep integrations: Audio, GPU, Security, Automation            |
-| **Profiles**        | Runtime  | Mode toggles: Creator / Performance / Streaming / Coding       |
-| **Backups**         | Recovery | Automated full & incremental backups                           |
-
-### 🧱 Folder Structure
-
-```
-
-C:\AbeOS
-├── /configs          # Settings, profiles, registry exports
-│   ├── vscode/
-│   ├── core/
-│   │   ├── terminal/
-│   │   ├── backup/
-│   │   └── vscode/
-│   ├── apps/
-│   │   ├── voicemeeter/
-│   │   ├── obs/
-│   │   └── ghelper/
-│   ├── ui/
-│   │   └── themes/
-│   ├── manifest/
-│   └── installers/
-├── /stages               # Automation organized by lifecycle
-│   ├── 01_baseline/
-│   └── 02_music_production/
-├── /modules              # Shared utility scripts (audio/perf/etc.)
-│   ├── audio/
-│   ├── performance/
-│   ├── revert/
-│   └── lib/
-├── /assets
-│   ├── wallpapers/
-│   ├── icons/
-│   ├── cursors/
-│   ├── fonts/
-│   └── overlays/
-├── /Production
-│   ├── VST2/
-│   ├── VST3/
-│   ├── Samples/
-│   └── Projects/
-├── /Gaming
-│   ├── ROMS/
-│   └── Profiles/
-└── SYSTEM_SETUP.md
-
-```
-
----
-
 ## ✅ PHASE 1 — BASELINE SYSTEM SETUP
 
 ### 1. Windows Core Optimization
 
-- [x] Clean install Windows 11 Pro
+- [x] Clean install Windows 11 Home
 - [x] Remove OEM and bloatware via `O&O AppBuster`
-- [x] Cacadia code NerdFont
-- [x] Disable telemetry via `Privacy.sexy` using its standard script
+- [x] Remove OneDrivie and decouple it as a default User folders.
+- [x] Set local user folders (i.e.: Documents, Pictures, Videos, Downloads, etc)
+- [x] Run
 - [x] Enable Ultimate Performance power plan
 - [x] Disable Hibernation, Fast Startup, SysMain
 - [x] Optimize file indexing + Explorer performance
 - [x] Set pagefile to manual fixed size
-- [x] Enable BitLocker for all drives
+- [ ] Enable BitLocker for all drives
 - [x] Sync Microsoft account (for license, backup)
 
 ### 2. Hardware Drivers & BIOS
@@ -145,7 +84,6 @@ C:\AbeOS
 - [x] Install Docker Desktop with WSL integration + Colima/Podman as backups. → Install-Windows-DevTools.ps1
 - [ ] Provision `Dev Drive` (ReFS) for project checkouts + enable storage insights.
 - [x] Install VS Code + Extensions list (Remote - WSL, Remote SSH, GitHub Copilot, Prisma, Thunder Client, etc.). → Install-Windows-DevTools.ps1 + Install-VSCode-Extensions.sh
-- [ ] Install JetBrains IDEs if needed (WebStorm/CLion) and point at Dev Drive.
 - [x] Clone key repos (Blendtune, ProScan, ABE-Stack, etc.) onto Dev Drive with sparse checkout templates. → Setup-ProjectDirectories.sh (creates structure)
 - [x] Configure GitHub CLI + SSH keys (YubiKey integration) and gpg-sign commits. → Install-Windows-DevTools.ps1 (GitHub CLI)
 - [x] Install JetBrainsMono Nerd Font + Cascadia Code NF globally; ensure Windows Terminal / VS Code pick it up. → Install-Windows-DevTools.ps1
@@ -166,25 +104,15 @@ C:\AbeOS
 
 ### 1. Platforms & Tools
 
-- [ ] Install Steam.
-- [ ] Install Emulators: PS1–PS4, GBA, N64, Switch
-- [ ] Organize all ROMs under `C:\Gaming\ROMS`
-- [ ] Configure Playnite frontend launcher
-- [ ] Install Lossless Scaling, ReShade, SpecialK
-- [ ] Benchmark with CapFrameX + RTSS
+- [x] Install Steam.
+  [x] Install Emulators: PS1–PS4, Dream Sega, N64, Xbox
+- [x] Organize all ROMs under `C:\Gaming\ROMS`
+- [x] Install Lossless Scaling, ReShade, SpecialK
+- [x] Benchmark with CapFrameX + RTSS
 
 ### 2. Performance & GPU Settings
 
-- [ ] Optimize NVIDIA Control Panel:
-  - Low Latency Mode = Ultra
-  - Texture filtering = High Quality
-  - Threaded Optimization = On
-- [ ] Create `PerformanceMode` script:
-  - Max GPU clocks
-  - Max fan speed
-  - Disable background services
-- [ ] Integrate with `Mode-Switcher.ps1`
-- [ ] Validate game FPS, temps, and latency
+- [x] Optimize NVIDIA Control Panel
 
 ---
 
@@ -192,82 +120,59 @@ C:\AbeOS
 
 ### 1. OBS & Encoder Setup
 
-- [ ] Install OBS + StreamFX
-- [ ] Create scenes:
+- [X] Install OBS + StreamLabs
+- [x] Create scenes:
   - Game + Chat
   - DAW + Mixer
   - Just Chatting
-- [ ] NVENC Settings:
-  - Preset: P5 (Quality)
-  - Lookahead: Off
-  - B-Frames: 2
-  - Bitrate: 6K Twitch / 10K YouTube
-  - Psycho Visual Tuning: On
-- [ ] Add Hotkeys:
+- [x] NVENC Settings
+- [x] Add Hotkeys:
   - `Ctrl+Shift+S` → Start Stream
   - `Ctrl+Shift+R` → Record Session
 
 ### 2. Audio Routing (VoiceMeeter)
 
-- [ ] Route:
+- [x ] Install Voicemeeter Banana
+- [x ] Route:
   - Mic → Input 1
   - FL Studio → AUX1
   - Game Audio → AUX2
   - Output → OBS Virtual Cable
-- [ ] Save profiles:
+- [x ] Save profiles:
   - `Music.xml`, `Gaming.xml`, `Streaming.xml`
-- [ ] Integrate in `Mode-Switcher.ps1`
+- [ x] Integrate in `Mode-Switcher.ps1`
 
 ### 3. GPU-Aware Mode Switching
 
-- [ ] Implement Afterburner + GHelper profiles:
+- [x] Implement Afterburner + GHelper profiles:
   - Creator Mode → 85W GPU, Balanced Fans
   - Performance Mode → Max Clocks, Turbo Fans
 - [ ] Apply via:
   ```powershell
   .\stages\08_automation\01_mode_switcher\Mode-Switcher.ps1 Creator
   ```
-
-```
-
-### 4. Stream Controls
-
-* [ ] Install Touch Portal / Deckboard / Stream Deck
-* [ ] Add macros: Scene switch, mic mute, chat toggle
-* [ ] Integrate Sunshine + Moonlight for remote stream
-* [ ] Enable Discord Overlay for collabs
-
 ---
 
 ## 🍎 PHASE 5 — UI CUSTOMIZATION (macOS + Cyberpunk Fusion)
 
 ### 1. Visual Enhancements
 
-* [ ] MicaForEveryone → window blur
-* [ ] TranslucentTB + RoundedTB → taskbar rounding
-* [ ] StartAllBack → macOS Dock + menu
-* [ ] WinStep Nexus → Dock replacement
-* [ ] SecureUXTheme → theme patching (optional)
-* [ ] Lively Wallpaper → animated backgrounds
-* [ ] WindowFX → smooth animations
+- [x] Install Mica For Everyone + Explorer Mica for translucent Window Effects
+- [x] Install StartAllBack, and init themes with customized docks
+- [x] Set Windows 11 default settings personalization into dark mode, accent colors.
+- [x] Set Transparency Effects and Animation Effects 'On'
+- [x] Set custom static wallpaper
 
 ### 2. Fonts & Icons
 
-* [ ] SF Pro Display + JetBrains Mono NF
-* [ ] macOS-style icon pack
-* [ ] Custom cursors (AeroLite / macOS)
-* [ ] Apply color scheme:
+- [x] CaskaydiaCove Nerd Font Mono Nerd Font Mono
+- [x] macOS-style icon pack
+- [x] Custom cursors (AeroLite / macOS)
+- [x] Apply color scheme:
 
-  * Day = Pastel Sonoma
-  * Night = Cyberpunk Neon
-  * AutoDarkMode = time-based switch
-app
 ### 3. Gestures & Input
 
-* [ ] GestureSign → three-finger desktop swipe
-* [ ] AutoHotKey v2 → custom window shortcuts
-* [ ] PowerToys FancyZones → snap zones
-* [ ] Rainmeter Dynamic Island Widget
+- [x] Custom Settings on Bluetooth & Devices > Touchpad
 
 ---
 
@@ -334,8 +239,8 @@ app
 
 **Multi-Layer Approach:**
 
-* [ ] **DNS-Level Filtering (Primary)**
-  * [ ] Configure DNS to use family-safe servers:
+* [x] **DNS-Level Filtering (Primary)**
+  * [x] Configure DNS to use family-safe servers:
     * Cloudflare Family (1.1.1.3 / 1.0.0.3) - Blocks malware + adult content
     * OpenDNS FamilyShield (208.67.222.123 / 208.67.220.123)
     * CleanBrowsing Family (185.228.168.168 / 185.228.169.168)

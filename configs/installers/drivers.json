@@ -1,13 +1,107 @@
 {
-  "drivers": [
-    {
-      "id": "example-driver",
-      "name": "Example Driver",
-      "installer": "ExampleDriverSetup.exe",
-      "arguments": "/quiet /norestart",
-      "enabled": false,
-      "requiresReboot": true,
-      "notes": "Replace with your actual driver installer and silent arguments."
+  "manifest_version": "2.0",
+  "created_date": "2025-11-16",
+  "system_info": {
+    "device": "ASUS ROG Zephyrus G14",
+    "os": "Windows",
+    "purpose": "Comprehensive asset installation tracking and restoration"
+  },
+  "categories": {
+    "drivers": {
+      "description": "Hardware drivers and firmware for ASUS ROG Zephyrus G14",
+      "base_path": "assets/installations/drivers",
+      "items": [
+        {
+          "name": "AMD Chipset Driver",
+          "file": "AMD_Chipset_DriverOnly_ROG_AMD_B_V1.2.0.124Sub28_40187.exe",
+          "version": "1.2.0.124",
+          "type": "Chipset"
+        },
+        {
+          "name": "ASUS BIOS Update",
+          "file": "ASUS_GA403UI_308_BIOS_Update.exe",
+          "version": "308",
+          "type": "BIOS"
+        },
+        {
+          "name": "ASUS Audio Driver",
+          "file": "ASUS_Z_V9.529.820.15.7_15929_4.exe",
+          "version": "9.529.820.15.7",
+          "type": "Audio"
+        },
+        {
+          "name": "ASUS Firmware Update Tool",
+          "file": "ASUSSLASHFWUpdateTool_GA403_OneKey_v014.exe",
+          "version": "014",
+          "type": "Firmware"
+        },
+        {
+          "name": "Dolby Audio Driver",
+          "file": "Audio_DriverOnly_Dolby_ROG_Realtek_B_V6.0.9683.1_38619.exe",
+          "version": "6.0.9683.1",
+          "type": "Audio"
+        },
+        {
+          "name": "SmartAMP Cirrus Driver",
+          "file": "SmartAMP_Cirrus_DCH_ROG_Cirrus_B_V25.26.50.500_40186.exe",
+          "version": "25.26.50.500",
+          "type": "Audio"
+        },
+        {
+          "name": "MediaTek Bluetooth Driver",
+          "file": "Bluetooth_ROG_MediaTek_B_V1.1037.2.433Sub1_38516.exe",
+          "version": "1.1037.2.433",
+          "type": "Bluetooth"
+        },
+        {
+          "name": "Realtek Card Reader Driver",
+          "file": "CardReader_ROG_Realtek_B_V10.0.26100.21373_38634.exe",
+          "version": "10.0.26100.21373",
+          "type": "Card Reader"
+        },
+        {
+          "name": "NVIDIA Graphics Driver",
+          "file": "Graphic_DCH_ROG_SD_NVIDIA_B_V32.0.15.6607_41273_1.exe",
+          "version": "32.0.15.6607",
+          "type": "Graphics"
+        },
+        {
+          "name": "Microsoft Extension Pack",
+          "file": "MSFT_MEP_ROG_Microsoft_B_V1.0.33.0_38639.exe",
+          "version": "1.0.33.0",
+          "type": "System"
+        },
+        {
+          "name": "Parade Retimer Driver",
+          "file": "Parade_Retimer_ROG_Parade_B_V1.0.016.00_38025.exe",
+          "version": "1.0.016.00",
+          "type": "System"
+        },
+        {
+          "name": "ASUS Precision Touchpad Driver",
+          "file": "PrecisionTouchPad_ROG_ASUS_B_V16.0.0.23Sub4_38162.exe",
+          "version": "16.0.0.23",
+          "type": "Touchpad"
+        },
+        {
+          "name": "MediaTek Wireless LAN Driver",
+          "file": "WirelessLan_ROG_MediaTek_B_V3.4.2.1046Sub1_38521.exe",
+          "version": "3.4.2.1046",
+          "type": "WiFi"
+        }
+      ]
+    },
+    "bios": {
+      "description": "BIOS firmware files",
+      "base_path": "assets/installations/bios",
+      "items": [
+        {
+          "name": "GA403UI BIOS 308",
+          "file": "GA403UIAS.308",
+          "version": "308",
+          "model": "GA403UI"
+        }
+      ]
     }
-  ]
+  }
 }

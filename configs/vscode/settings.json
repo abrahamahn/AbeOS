@@ -1,7 +1,9 @@
 {
-  // Editor
+  // ----------------------------------------------------
+  // 📝 EDITOR
+  // ----------------------------------------------------
   "editor.fontSize": 14,
-  "editor.fontFamily": "'CaskaydiaCove Nerd Font', 'JetBrainsMono Nerd Font', 'Cascadia Code', Consolas, monospace",
+  "editor.fontFamily": "'CaskaydiaCove Nerd Font', 'JetBrainsMono Nerd Font', Consolas, monospace",
   "editor.fontLigatures": true,
   "editor.lineHeight": 22,
   "editor.cursorBlinking": "smooth",
@@ -24,11 +26,14 @@
   "editor.rulers": [80, 120],
   "editor.stickyScroll.enabled": true,
 
-  // Files
+  // ----------------------------------------------------
+  // 📁 FILES
+  // ----------------------------------------------------
   "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.eol": "\n",
+
   "files.exclude": {
     "**/.git": true,
     "**/.DS_Store": true,
@@ -43,15 +48,18 @@
     "**/build": true,
     "**/.turbo": true
   },
+
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
     "**/node_modules/**": true,
-    "**/.venv/**": true,
-    "**/venv/**": true
+    "**/venv/**": true,
+    "**/.venv/**": true
   },
 
-  // Terminal
+  // ----------------------------------------------------
+  // 🖥 TERMINAL
+  // ----------------------------------------------------
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font Mono', 'JetBrainsMono Nerd Font Mono'",
   "terminal.integrated.cursorBlinking": true,
@@ -66,40 +74,48 @@
     }
   },
 
-  // Workbench
+  // ----------------------------------------------------
+  // 🎨 WORKBENCH / UI
+  // ----------------------------------------------------
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.startupEditor": "welcomePageInEmptyWorkbench",
+  "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
   "workbench.editor.closeOnFileDelete": true,
   "workbench.list.smoothScrolling": true,
   "workbench.tree.indent": 20,
 
-  // Git
+  // ----------------------------------------------------
+  // 🔧 GIT / GITLENS
+  // ----------------------------------------------------
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "git.openRepositoryInParentFolders": "always",
   "git.decorations.enabled": true,
-  "gitlens.hovers.currentLine.over": "line",
+
   "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": true,
 
-  // Language Specific
+  // ----------------------------------------------------
+  // 📦 JAVASCRIPT & TYPESCRIPT
+  // ----------------------------------------------------
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.importModuleSpecifier": "relative",
 
-  // JavaScript/TypeScript
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit"
-    }
+    "editor.codeActionsOnSave": { "source.fixAll.eslint": "explicit" }
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit"
-    }
+    "editor.codeActionsOnSave": { "source.fixAll.eslint": "explicit" }
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -117,74 +133,62 @@
       "source.organizeImports": "explicit"
     }
   },
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "typescript.preferences.importModuleSpecifier": "relative",
-  "javascript.preferences.importModuleSpecifier": "relative",
 
-  // Python
+  // ESLint
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+
+  // ----------------------------------------------------
+  // 🐍 PYTHON
+  // ----------------------------------------------------
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
+    "editor.tabSize": 4,
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit"
-    },
-    "editor.tabSize": 4
-  },
-  "python.analysis.typeCheckingMode": "basic",
-  "python.analysis.autoImportCompletions": true,
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": false,
-  "python.linting.ruffEnabled": true,
-  "python.formatting.provider": "black",
-  "python.testing.pytestEnabled": true,
-  "python.testing.unittestEnabled": false,
-
-  // JSON
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  // Markdown
-  "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
-    "editor.wordWrap": "on",
-    "editor.quickSuggestions": {
-      "comments": "on",
-      "strings": "on",
-      "other": "on"
     }
   },
 
-  // YAML
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+
+  "python.linting.enabled": true,
+  "python.linting.ruffEnabled": true,
+  "python.linting.pylintEnabled": false,
+
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+
+  // ----------------------------------------------------
+  // 🔧 OTHER LANGUAGES
+  // ----------------------------------------------------
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
 
-  // C/C++
-  "[c]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools",
-    "editor.tabSize": 4
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": { "comments": "on", "strings": "on", "other": "on" }
   },
-  "[cpp]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools",
-    "editor.tabSize": 4
-  },
+
+  "[c]": { "editor.defaultFormatter": "ms-vscode.cpptools", "editor.tabSize": 4 },
+  "[cpp]": { "editor.defaultFormatter": "ms-vscode.cpptools", "editor.tabSize": 4 },
   "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4 }",
 
-  // Shell
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format",
     "editor.tabSize": 4
   },
 
-  // Extensions Configuration
-
-  // Prettier
+  // ----------------------------------------------------
+  // 🎨 PRETTIER
+  // ----------------------------------------------------
   "prettier.semi": true,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
@@ -192,41 +196,18 @@
   "prettier.tabWidth": 2,
   "prettier.arrowParens": "always",
 
-  // ESLint
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "eslint.workingDirectories": [
-    { "mode": "auto" }
-  ],
-
-  // Tailwind CSS
+  // ----------------------------------------------------
+  // 🧩 EXTENSIONS
+  // ----------------------------------------------------
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
 
-  // GitLens
-  "gitlens.codeLens.enabled": false,
-  "gitlens.statusBar.enabled": true,
-
-  // Error Lens
   "errorLens.enabled": true,
   "errorLens.enabledDiagnosticLevels": ["error", "warning"],
 
-  // TODO Tree
-  "todo-tree.general.tags": [
-    "BUG",
-    "HACK",
-    "FIXME",
-    "TODO",
-    "XXX",
-    "[ ]",
-    "[x]"
-  ],
+  "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]"],
   "todo-tree.highlights.defaultHighlight": {
     "icon": "alert",
     "type": "text",
@@ -236,36 +217,44 @@
     "iconColour": "#ffff00"
   },
 
-  // Remote Development
-  "remote.SSH.remotePlatform": {
-    "localhost": "linux"
-  },
+  // ----------------------------------------------------
+  // 🌐 REMOTE / WSL
+  // ----------------------------------------------------
+  "remote.SSH.remotePlatform": { "localhost": "linux" },
   "remote.WSL.fileWatcher.polling": true,
 
-  // Security
+  // ----------------------------------------------------
+  // 🔐 SECURITY
+  // ----------------------------------------------------
   "security.workspace.trust.untrustedFiles": "prompt",
   "security.workspace.trust.banner": "always",
   "security.workspace.trust.startupPrompt": "always",
 
-  // Performance
+  // ----------------------------------------------------
+  // ⚡ PERFORMANCE
+  // ----------------------------------------------------
   "search.followSymlinks": false,
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true,
-    "**/*.code-search": true,
     "**/venv": true,
     "**/.venv": true,
+    "**/*.code-search": true,
     "**/dist": true,
     "**/build": true,
     "**/.next": true,
     "**/.turbo": true
   },
 
-  // Other
+  // ----------------------------------------------------
+  // 🧭 MISC
+  // ----------------------------------------------------
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "update.mode": "start",
+
+  // Disable all telemetry
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false
 }

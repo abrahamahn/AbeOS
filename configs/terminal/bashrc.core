@@ -1,0 +1,43 @@
+########## REMOVE WINDOWS NODE RUNTIME ##########
+PATH=$(echo "$PATH" | tr ':' '\n' | grep -vE '/mnt/c/Program(\\)? Files( \(x86\))?/nodejs' | paste -sd :)
+export PATH
+
+########## NVM + COREPACK ##########
+export NVM_DIR="$HOME/.nvm"
+[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"
+[[ -s "$NVM_DIR/bash_completion" ]] && \. "$NVM_DIR/bash_completion"
+command -v corepack >/dev/null && corepack enable
+
+########## OH MY POSH ##########
+if command -v oh-my-posh >/dev/null; then
+    eval "$(oh-my-posh init bash --config '/mnt/c/AbeOS/configs/terminal/abe.omp.json')"
+fi
+
+########## ALIASES ##########
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+########## SMART LS ON WINDOWS DRIVES ##########
+if [[ "$PWD" == /mnt/c/* ]]; then
+    function ls {
+        command ls --color=auto \
+            -I "NTUSER.*" \
+            -I "ntuser.*" \
+            -I "*.regtrans-ms" \
+            -I "*.TM.blf" \
+            -I "*.TMContainer*" \
+            "$@"
+    }
+    export -f ls
+fi
+
+function cdproj { cd /mnt/c/projects; }
+
+########## INTERACTIVE ONLY ##########
+case $- in *i*) ;; *) return ;; esac
+HISTCONTROL=ignoreboth
+shopt -s histappend
+HISTSIZE=2000
+HISTFILESIZE=4000
+shopt -s checkwinsize

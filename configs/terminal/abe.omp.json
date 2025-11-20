@@ -1,0 +1,136 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "transient_prompt": {
+    "enabled": false
+  },
+  "continuation_prompt": {
+    "template": ""
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "style": "primary",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "os",
+          "style": "diamond",
+          "background": "#0c7bbb",
+          "foreground": "#ffffff",
+          "leading_diamond": "\u256d\u2500\ue0b2",
+          "properties": {
+            "alpine": "\uf300",
+            "arch": "\uf303",
+            "centos": "\uf304",
+            "debian": "\uf306",
+            "elementary": "\uf309",
+            "fedora": "\uf30a",
+            "gentoo": "\uf30d",
+            "linux": "\ue712",
+            "macos": "\ue711",
+            "manjaro": "\uf312",
+            "mint": "\uf30f",
+            "opensuse": "\uf314",
+            "raspbian": "\uf315",
+            "ubuntu": "\uf31c",
+            "windows": "\ue70f"
+          },
+          "template": " {{ if .WSL }}\ue712 on {{ end }}{{ .Icon }}  "
+        },
+        {
+          "type": "session",
+          "style": "powerline",
+          "background": "#4a2a7a",
+          "foreground": "#d7aaff",
+          "powerline_symbol": "\ue0b0",
+          "template": " {{ if .Env.WSL_DISTRO_NAME }}bash (wsl){{ else if eq .Shell \"pwsh\" }}pwsh{{ else if eq .Shell \"bash\" }}bash{{ else }}{{ .Shell }}{{ end }} "
+        },
+        {
+          "type": "session",
+          "style": "powerline",
+          "background": "#2d4263",
+          "foreground": "#00fff9",
+          "powerline_symbol": "\ue0b0",
+          "template": " {{ .UserName }} "
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "background_templates": ["transparent"],
+          "foreground": "#ff9ab8",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#ff7a9f{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#e1bee7{{ end }}",
+            "{{ if gt .Ahead 0 }}#e1bee7{{ end }}",
+            "{{ if gt .Behind 0 }}#e1bee7{{ end }}"
+          ],
+          "properties": {
+            "branch_template": "{{ trunc 25 .Branch }}",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "template": "{{ .UpstreamIcon }} {{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}",
+          "trailing_diamond": "\ue0b4"
+        },
+        {
+          "type": "node",
+          "style": "plain",
+          "foreground": "#aaffaa",
+          "properties": {
+            "fetch_version": true,
+            "display_mode": "always"
+          },
+          "template": " \ue718 {{ .Full }}"
+        },
+        {
+          "type": "python",
+          "style": "plain",
+          "foreground": "#ffaaff",
+          "properties": {
+            "display_mode": "always"
+          },
+          "template": " \ue73c {{ .Full }}"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "style": "secondary",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#0c7bbb",
+          "template": "\u2070\u2500"
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "#ff9ab8",
+          "properties": {
+            "style": "full",
+            "max_width": 50
+          },
+          "template": "{ {{ .Path }} }",
+          "trailing_space": true
+        },
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "#00fff9",
+          "foreground_templates": ["{{ if gt .Code 0 }}#ff006e{{ end }}"],
+          "properties": {
+            "always_enabled": true
+          },
+          "template": " \ue286 "
+        }
+      ]
+    }
+  ],
+  "final_space": true,
+  "version": 3
+}

@@ -1,0 +1,1456 @@
+{
+  "$schema": "https://abeos.dev/schemas/installed-programs.json",
+  "description": "Installed Win32 inventory merged with offline installer manifest.",
+  "generatedAt": "2025-11-16T10:17:02Z",
+  "sourceReport": "/mnt/c/full-installed-report/installed_programs.txt",
+  "filtersApplied": [
+    "Excluded entries flagged as SystemComponent",
+    "Excluded DisplayName containing Windows/Security Update/Update for",
+    "Excluded publishers containing Microsoft/Windows",
+    "Excluded install paths under C:/Windows",
+    "Manually excluded audio plugins tracked in configs/installers/audio-plugins.json",
+    "Merged applications-asset-manifest.json"
+  ],
+  "applications": [
+    {
+      "id": "net-sdk",
+      "name": ".NET SDK",
+      "version": "8.0.416",
+      "publisher": null,
+      "category": "Development Runtime",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": ".NET SDK",
+          "file": "dotnet-sdk-8.0.416-win-x64.exe",
+          "version": "8.0.416",
+          "category": "Development Runtime"
+        }
+      ]
+    },
+    {
+      "id": "ableton-usb-audio-driver-v5-68-0",
+      "name": "Ableton USB Audio Driver v5.68.0",
+      "version": "5.68.0",
+      "publisher": "Ableton",
+      "installDate": "2025-11-10",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /X{A823612A-AA91-4911-886A-7C589452C65C}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 2.51,
+      "registryKey": "{A823612A-AA91-4911-886A-7C589452C65C}",
+      "estimatedInstaller": "MsiExec.exe /X{A823612A-AA91-4911-886A-7C589452C65C}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "apogee-usb-audio-driver-v5-68-0",
+      "name": "Apogee USB Audio Driver v5.68.0",
+      "version": "5.68.0",
+      "publisher": "Apogee",
+      "installDate": "2025-11-10",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /X{558C1E2D-5BDC-4CCA-94F4-78544445B4AF}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 2.67,
+      "registryKey": "{558C1E2D-5BDC-4CCA-94F4-78544445B4AF}",
+      "estimatedInstaller": "MsiExec.exe /X{558C1E2D-5BDC-4CCA-94F4-78544445B4AF}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "arturia-software-center-2-11-0",
+      "name": "Arturia Software Center 2.11.0",
+      "version": "2.11.0",
+      "publisher": "Arturia",
+      "installDate": "2025-11-12",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": 68.38,
+      "registryKey": "Arturia Software Center_is1",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "asus-hotplug-controller",
+      "name": "ASUS Hotplug Controller",
+      "version": "3.0.0",
+      "publisher": "ASUS",
+      "installDate": "2025-11-12",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /I{167A9DAC-ED7E-42CC-9A58-9E7A0C24B91F}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 0.77,
+      "registryKey": "{167A9DAC-ED7E-42CC-9A58-9E7A0C24B91F}",
+      "estimatedInstaller": "MsiExec.exe /I{167A9DAC-ED7E-42CC-9A58-9E7A0C24B91F}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "asus-monitor-control",
+      "name": "ASUS Monitor Control",
+      "version": "1.0.15",
+      "publisher": "ASUS",
+      "installDate": "2025-11-12",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /I{EAA11E50-08F8-4014-AA24-166AC5FD2DCE}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 1.18,
+      "registryKey": "{EAA11E50-08F8-4014-AA24-166AC5FD2DCE}",
+      "estimatedInstaller": "MsiExec.exe /I{EAA11E50-08F8-4014-AA24-166AC5FD2DCE}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "bonjour",
+      "name": "Bonjour",
+      "version": "3.0.0.10",
+      "publisher": "Apple Inc.",
+      "installDate": "2025-10-20",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /X{6E3610B2-430D-4EB0-81E3-2B57E8B9DE8D}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 2.02,
+      "registryKey": "{6E3610B2-430D-4EB0-81E3-2B57E8B9DE8D}",
+      "estimatedInstaller": "MsiExec.exe /X{6E3610B2-430D-4EB0-81E3-2B57E8B9DE8D}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "bulk-crap-uninstaller",
+      "name": "Bulk Crap Uninstaller",
+      "version": "5.9.0",
+      "publisher": null,
+      "category": "System Utilities",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Bulk Crap Uninstaller",
+          "file": "BCUninstaller_5.9.0_setup_fixed.exe",
+          "version": "5.9.0",
+          "category": "System Utilities"
+        }
+      ]
+    },
+    {
+      "id": "claude-desktop",
+      "name": "Claude Desktop",
+      "version": null,
+      "publisher": null,
+      "category": "AI Assistant",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Claude Desktop",
+          "file": "Claude Setup.exe",
+          "category": "AI Assistant"
+        }
+      ]
+    },
+    {
+      "id": "cuda-deep-neural-network-library",
+      "name": "CUDA Deep Neural Network Library",
+      "version": "9.14.0",
+      "publisher": null,
+      "category": "AI/ML Framework",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "CUDA Deep Neural Network Library",
+          "file": "cudnn_9.14.0_windows.exe",
+          "version": "9.14.0",
+          "category": "AI/ML Framework"
+        }
+      ]
+    },
+    {
+      "id": "cudnn-development",
+      "name": "CUDNN Development",
+      "version": "9.14",
+      "publisher": "NVIDIA Corporation",
+      "installDate": "2025-11-12",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_cudnn_dev_cuda12.9_9.14",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "cudnn-runtime",
+      "name": "CUDNN Runtime",
+      "version": "9.14",
+      "publisher": "NVIDIA Corporation",
+      "installDate": "2025-11-12",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_cudnn_cuda12.9_9.14",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "cudnn-samples",
+      "name": "CUDNN Samples",
+      "version": "9.14",
+      "publisher": "NVIDIA Corporation",
+      "installDate": "2025-11-12",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_cudnn_samples_9.14",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "discord",
+      "name": "Discord",
+      "version": null,
+      "publisher": null,
+      "category": "Communication",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Discord",
+          "file": "DiscordSetup.exe",
+          "category": "Communication"
+        }
+      ]
+    },
+    {
+      "id": "docker-desktop",
+      "name": "Docker Desktop",
+      "version": "4.50.0",
+      "publisher": "Docker Inc.",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": 3142.81,
+      "registryKey": "Docker Desktop",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Docker Desktop",
+          "file": "Docker Desktop Installer.exe",
+          "category": "Development"
+        }
+      ]
+    },
+    {
+      "id": "ea-app",
+      "name": "EA App",
+      "version": null,
+      "publisher": null,
+      "category": "Gaming Platform",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "EA App",
+          "file": "EAappInstaller.exe",
+          "category": "Gaming Platform"
+        }
+      ]
+    },
+    {
+      "id": "ea-sports-fc-26",
+      "name": "EA SPORTS FC\u2122 26",
+      "version": null,
+      "publisher": "EA Canada",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "Steam App 3405690",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "expressvpn",
+      "name": "ExpressVPN",
+      "version": "12.104.0.128",
+      "publisher": "ExpressVPN",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": 393.7,
+      "registryKey": "{4524edb4-42af-4443-b1e1-5b609b5803e0}",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "ExpressVPN",
+          "file": "expressvpn_windows_12.104.0.128_release.exe",
+          "version": "12.104.0.128",
+          "category": "VPN"
+        }
+      ]
+    },
+    {
+      "id": "fl-studio",
+      "name": "FL Studio",
+      "version": "25.1.6",
+      "publisher": null,
+      "category": "DAW",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "FL Studio",
+          "file": "flstudio_win64_25.1.6.4997.exe",
+          "version": "25.1.6",
+          "category": "DAW"
+        }
+      ]
+    },
+    {
+      "id": "flexasio-1-10b",
+      "name": "FlexASIO 1.10b",
+      "version": "1.10b",
+      "publisher": "Etienne Dechamps",
+      "installDate": "2025-11-10",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": 80.93,
+      "registryKey": "FlexASIO_is1",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "ghelper",
+      "name": "GHelper",
+      "version": null,
+      "publisher": null,
+      "category": "ASUS Utilities",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "GHelper",
+          "file": "GHelper.exe",
+          "category": "ASUS Utilities"
+        }
+      ]
+    },
+    {
+      "id": "git",
+      "name": "Git",
+      "version": "2.51.2",
+      "publisher": "The Git Development Community",
+      "installDate": "2025-11-15",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": 344.94,
+      "registryKey": "Git_is1",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "github-cli",
+      "name": "GitHub CLI",
+      "version": "2.83.0",
+      "publisher": "GitHub, Inc.",
+      "installDate": "2025-11-15",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /X{B57D021D-9D20-43AA-A11E-E8AEDEF57103}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 53.45,
+      "registryKey": "{B57D021D-9D20-43AA-A11E-E8AEDEF57103}",
+      "estimatedInstaller": "MsiExec.exe /X{B57D021D-9D20-43AA-A11E-E8AEDEF57103}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "go-programming-language-amd64-go1-25-4",
+      "name": "Go Programming Language amd64 go1.25.4",
+      "version": "1.25.4",
+      "publisher": null,
+      "installDate": "2025-11-15",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /X{65596CA1-E6C4-47F5-8130-F3190EB4FEC0}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 232.22,
+      "registryKey": "{65596CA1-E6C4-47F5-8130-F3190EB4FEC0}",
+      "estimatedInstaller": "MsiExec.exe /X{65596CA1-E6C4-47F5-8130-F3190EB4FEC0}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "google-chrome",
+      "name": "Google Chrome",
+      "version": null,
+      "publisher": null,
+      "category": "Web Browser",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Google Chrome",
+          "file": "ChromeSetup.exe",
+          "category": "Web Browser"
+        }
+      ]
+    },
+    {
+      "id": "intellij-idea-ultimate",
+      "name": "IntelliJ IDEA Ultimate",
+      "version": "2025.2.3",
+      "publisher": null,
+      "category": "IDE",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "IntelliJ IDEA Ultimate",
+          "file": "ideaIU-2025.2.3.exe",
+          "version": "2025.2.3",
+          "category": "IDE"
+        }
+      ]
+    },
+    {
+      "id": "java-8-update-471-64-bit",
+      "name": "Java 8 Update 471 (64-bit)",
+      "version": "8.0.4710.9",
+      "publisher": "Oracle Corporation",
+      "installDate": "2025-11-15",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /X{77924AE4-039E-4CA4-87B4-2F64180471F0}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 113.24,
+      "registryKey": "{77924AE4-039E-4CA4-87B4-2F64180471F0}",
+      "estimatedInstaller": "MsiExec.exe /X{77924AE4-039E-4CA4-87B4-2F64180471F0}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "kakaotalk",
+      "name": "KakaoTalk",
+      "version": "25.9.0.4790",
+      "publisher": "Kakao Corp.",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "KakaoTalk",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "miniconda",
+      "name": "Miniconda",
+      "version": null,
+      "publisher": null,
+      "category": "Python Environment",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Miniconda",
+          "file": "Miniconda3-latest-Windows-x86_64.exe",
+          "category": "Python Environment"
+        }
+      ]
+    },
+    {
+      "id": "mixed-in-key",
+      "name": "Mixed In Key",
+      "version": "8.5.2411.0",
+      "publisher": null,
+      "category": "DJ/Music Software",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Mixed In Key",
+          "file": "MixedInKeySetupNew_8_5_2411_0.exe",
+          "version": "8.5.2411.0",
+          "category": "DJ/Music Software"
+        }
+      ]
+    },
+    {
+      "id": "mortal-shell",
+      "name": "Mortal Shell",
+      "version": null,
+      "publisher": "Cold Symmetry",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "Steam App 1110910",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "msi-afterburner",
+      "name": "MSI Afterburner",
+      "version": "4.6.6",
+      "publisher": null,
+      "category": "GPU Utilities",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "MSI Afterburner",
+          "file": "MSIAfterburnerInstaller466.exe",
+          "version": "4.6.6",
+          "category": "GPU Utilities"
+        }
+      ]
+    },
+    {
+      "id": "msi-afterburner-4-6-6",
+      "name": "MSI Afterburner 4.6.6",
+      "version": "4.6.6",
+      "publisher": "MSI Co., LTD",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "Afterburner",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "mydockfinder",
+      "name": "MyDockFinder",
+      "version": null,
+      "publisher": "MyDockFinder",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "Steam App 1787090",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "node-js",
+      "name": "Node.js",
+      "version": "24.11.1",
+      "publisher": "Node.js Foundation",
+      "installDate": "2025-11-15",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /I{5ABA83F0-49A0-42C9-A3E8-47F80193A9AD}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 102.68,
+      "registryKey": "{5ABA83F0-49A0-42C9-A3E8-47F80193A9AD}",
+      "estimatedInstaller": "MsiExec.exe /I{5ABA83F0-49A0-42C9-A3E8-47F80193A9AD}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "version": "4.21.1",
+      "publisher": null,
+      "category": "Productivity",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Notion",
+          "file": "Notion Setup 4.21.1.exe",
+          "version": "4.21.1",
+          "category": "Productivity"
+        }
+      ]
+    },
+    {
+      "id": "notion-calendar",
+      "name": "Notion Calendar",
+      "version": "1.132.0",
+      "publisher": null,
+      "category": "Productivity",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Notion Calendar",
+          "file": "Notion Calendar Setup 1.132.0.exe",
+          "version": "1.132.0",
+          "category": "Productivity"
+        }
+      ]
+    },
+    {
+      "id": "nvidia-app",
+      "name": "NVIDIA App",
+      "version": "11.0.5.266",
+      "publisher": null,
+      "category": "GPU Utilities",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "NVIDIA App",
+          "file": "NVIDIA_app_v11.0.5.266.exe",
+          "version": "11.0.5.266",
+          "category": "GPU Utilities"
+        }
+      ]
+    },
+    {
+      "id": "nvidia-app-11-0-5-266",
+      "name": "NVIDIA App 11.0.5.266",
+      "version": "11.0.5.266",
+      "publisher": "NVIDIA Corporation",
+      "installDate": "2025-11-15",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_Display.NvApp",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "nvidia-broadcast-1-4-0-39",
+      "name": "NVIDIA Broadcast 1.4.0.39",
+      "version": "1.4.0.39",
+      "publisher": "NVIDIA Corporation",
+      "installDate": "2025-10-16",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_NVIDIABroadcast",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "nvidia-cuda-toolkit-12-9",
+      "name": "NVIDIA CUDA Toolkit 12.9",
+      "version": "12.9",
+      "publisher": "NVIDIA Corporation",
+      "installDate": "2025-10-16",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_CUDAToolkit_12.9",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "nvidia-frameview-sdk-1-5-11504-36206172",
+      "name": "NVIDIA FrameView SDK 1.5.11504.36206172",
+      "version": "1.5.11504.36206172",
+      "publisher": "NVIDIA Corporation",
+      "installDate": "2025-11-15",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_FrameViewSdk",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "nvidia-graphics-driver-581-57",
+      "name": "NVIDIA Graphics Driver 581.57",
+      "version": "581.57",
+      "publisher": "NVIDIA Corporation",
+      "installDate": "2025-11-12",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_Display.Driver",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "nvidia-hd-audio-driver-1-4-5-0",
+      "name": "NVIDIA HD Audio Driver 1.4.5.0",
+      "version": "1.4.5.0",
+      "publisher": "NVIDIA Corporation",
+      "installDate": "2025-11-12",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_HDAudio.Driver",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "nvidia-nsight-compute-2025-2-1",
+      "name": "NVIDIA Nsight Compute 2025.2.1",
+      "version": "25.2.1.0",
+      "publisher": "NVIDIA Corporation",
+      "installDate": "2025-10-16",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /X{C40134D1-C78B-4879-B3BC-A14F208A8B46}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 915.73,
+      "registryKey": "{C40134D1-C78B-4879-B3BC-A14F208A8B46}",
+      "estimatedInstaller": "MsiExec.exe /X{C40134D1-C78B-4879-B3BC-A14F208A8B46}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "nvidia-nsight-systems-2025-1-3",
+      "name": "NVIDIA Nsight Systems 2025.1.3",
+      "version": "25.1.3.140",
+      "publisher": "NVIDIA Corporation",
+      "installDate": "2025-10-16",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /X{99EEABF5-7586-4562-B2D1-008620242D09}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 1147.42,
+      "registryKey": "{99EEABF5-7586-4562-B2D1-008620242D09}",
+      "estimatedInstaller": "MsiExec.exe /X{99EEABF5-7586-4562-B2D1-008620242D09}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "nvidia-physx-system-software-9-23-1019",
+      "name": "NVIDIA PhysX System Software 9.23.1019",
+      "version": "9.23.1019",
+      "publisher": "NVIDIA Corporation",
+      "installDate": "2025-10-16",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_Display.PhysX",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "playnite",
+      "name": "Playnite",
+      "version": null,
+      "publisher": null,
+      "category": "Game Launcher",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Playnite",
+          "file": "PlayniteInstaller.exe",
+          "category": "Game Launcher"
+        }
+      ]
+    },
+    {
+      "id": "plugin-alliance-installation-manager",
+      "name": "Plugin Alliance Installation Manager",
+      "version": "1.4.0",
+      "publisher": "Plugin Alliance by Native Instruments",
+      "installDate": "2025-10-28",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /X{7F307B5B-D078-4428-AAF8-E39886599064}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 2.77,
+      "registryKey": "{7F307B5B-D078-4428-AAF8-E39886599064}",
+      "estimatedInstaller": "MsiExec.exe /X{7F307B5B-D078-4428-AAF8-E39886599064}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "postgresql",
+      "name": "PostgreSQL",
+      "version": "18.0-2",
+      "publisher": null,
+      "category": "Database",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "PostgreSQL",
+          "file": "postgresql-18.0-2-windows-x64.exe",
+          "version": "18.0-2",
+          "category": "Database"
+        }
+      ]
+    },
+    {
+      "id": "powershell",
+      "name": "PowerShell",
+      "version": "7.5.3",
+      "publisher": null,
+      "category": "Terminal/Shell",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "PowerShell",
+          "file": "PowerShell-7.5.3-win-x64.exe",
+          "version": "7.5.3",
+          "category": "Terminal/Shell"
+        }
+      ]
+    },
+    {
+      "id": "pycharm",
+      "name": "PyCharm",
+      "version": "2025.2.3",
+      "publisher": null,
+      "category": "IDE",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "PyCharm",
+          "file": "pycharm-2025.2.3.exe",
+          "version": "2025.2.3",
+          "category": "IDE"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "version": "3.13.9",
+      "publisher": null,
+      "category": "Programming Language",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Python",
+          "file": "python-3.13.9-amd64.exe",
+          "version": "3.13.9",
+          "category": "Programming Language"
+        }
+      ]
+    },
+    {
+      "id": "python-launcher",
+      "name": "Python Launcher",
+      "version": "3.14.150.0",
+      "publisher": "Python Software Foundation",
+      "installDate": "2025-10-16",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /X{87108F9B-23F3-4E96-8A88-E9CD5F46F008}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 1.52,
+      "registryKey": "{87108F9B-23F3-4E96-8A88-E9CD5F46F008}",
+      "estimatedInstaller": "MsiExec.exe /X{87108F9B-23F3-4E96-8A88-E9CD5F46F008}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "python-launcher",
+      "name": "Python Launcher",
+      "version": "3.13.9150.0",
+      "publisher": "Python Software Foundation",
+      "installDate": "2025-10-16",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /X{AF96FA1B-8F24-4D71-97C1-217906F87665}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 1.52,
+      "registryKey": "{AF96FA1B-8F24-4D71-97C1-217906F87665}",
+      "estimatedInstaller": "MsiExec.exe /X{AF96FA1B-8F24-4D71-97C1-217906F87665}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "revo-uninstaller",
+      "name": "Revo Uninstaller",
+      "version": null,
+      "publisher": null,
+      "category": "System Utilities",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Revo Uninstaller",
+          "file": "revosetup.exe",
+          "category": "System Utilities"
+        }
+      ]
+    },
+    {
+      "id": "revo-uninstaller-2-6-2",
+      "name": "Revo Uninstaller 2.6.2",
+      "version": "2.6.2",
+      "publisher": "VS Revo Group, Ltd.",
+      "installDate": "2025-11-13",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": 31.93,
+      "registryKey": "{A28DBDA2-3CC7-4ADC-8BFE-66D7743C6C97}_is1",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "rivatuner-statistics-server-7-3-7",
+      "name": "RivaTuner Statistics Server 7.3.7",
+      "version": "7.3.7",
+      "publisher": "Unwinder",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "RTSS",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "rust-1-91-msvc-64-bit",
+      "name": "Rust 1.91 (MSVC 64-bit)",
+      "version": "1.91.1.0",
+      "publisher": "The Rust Project Developers",
+      "installDate": "2025-11-15",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /I{58A3FC32-BA51-4334-8DE8-9ED1DD97B1E7}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 1343.68,
+      "registryKey": "{58A3FC32-BA51-4334-8DE8-9ED1DD97B1E7}",
+      "estimatedInstaller": "MsiExec.exe /I{58A3FC32-BA51-4334-8DE8-9ED1DD97B1E7}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "slack",
+      "name": "Slack",
+      "version": null,
+      "publisher": null,
+      "category": "Communication",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Slack",
+          "file": "SlackSetup.exe",
+          "category": "Communication"
+        }
+      ]
+    },
+    {
+      "id": "steam",
+      "name": "Steam",
+      "version": null,
+      "publisher": null,
+      "category": "Gaming Platform",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Steam",
+          "file": "SteamSetup.exe",
+          "category": "Gaming Platform"
+        }
+      ]
+    },
+    {
+      "id": "veracrypt",
+      "name": "VeraCrypt",
+      "version": "1.26.24",
+      "publisher": null,
+      "category": "Encryption",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "VeraCrypt",
+          "file": "VeraCrypt Setup 1.26.24.exe",
+          "version": "1.26.24",
+          "category": "Encryption"
+        }
+      ]
+    },
+    {
+      "id": "visual-studio-code",
+      "name": "Visual Studio Code",
+      "version": "1.105.1",
+      "publisher": null,
+      "category": "Code Editor",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Visual Studio Code",
+          "file": "VSCodeUserSetup-x64-1.105.1.exe",
+          "version": "1.105.1",
+          "category": "Code Editor"
+        }
+      ]
+    },
+    {
+      "id": "visual-studio-community",
+      "name": "Visual Studio Community",
+      "version": null,
+      "publisher": null,
+      "category": "IDE",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Visual Studio Community",
+          "file": "vs_Community.exe",
+          "category": "IDE"
+        }
+      ]
+    },
+    {
+      "id": "vlc-media-player",
+      "name": "VLC Media Player",
+      "version": "3.0.21",
+      "publisher": null,
+      "category": "Media Player",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "VLC Media Player",
+          "file": "vlc-3.0.21-win64.exe",
+          "version": "3.0.21",
+          "category": "Media Player"
+        }
+      ]
+    },
+    {
+      "id": "windhawk",
+      "name": "Windhawk",
+      "version": null,
+      "publisher": null,
+      "category": "Windows Customization",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Windhawk",
+          "file": "windhawk_setup.exe",
+          "category": "Windows Customization"
+        }
+      ]
+    },
+    {
+      "id": "windhawk-v1-6",
+      "name": "Windhawk v1.6",
+      "version": "1.6",
+      "publisher": "Ramen Software",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": "Windhawk",
+      "estimatedInstaller": null,
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "windows-desktop-runtime",
+      "name": "Windows Desktop Runtime",
+      "version": "8.0.21",
+      "publisher": null,
+      "category": "Runtime",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Windows Desktop Runtime",
+          "file": "windowsdesktop-runtime-8.0.21-win-x64.exe",
+          "version": "8.0.21",
+          "category": "Runtime"
+        }
+      ]
+    },
+    {
+      "id": "yarn",
+      "name": "Yarn",
+      "version": "1.22.22",
+      "publisher": "Yarn Contributors",
+      "installDate": "2025-11-15",
+      "installLocation": null,
+      "uninstall": {
+        "interactive": "MsiExec.exe /X{9C4264B2-06A3-4D5E-99B8-6EC942052E5D}",
+        "quiet": null
+      },
+      "estimatedSizeMB": 5.11,
+      "registryKey": "{9C4264B2-06A3-4D5E-99B8-6EC942052E5D}",
+      "estimatedInstaller": "MsiExec.exe /X{9C4264B2-06A3-4D5E-99B8-6EC942052E5D}",
+      "source": "installed_programs.txt"
+    },
+    {
+      "id": "zoom",
+      "name": "Zoom",
+      "version": null,
+      "publisher": null,
+      "category": "Communication",
+      "installDate": null,
+      "installLocation": null,
+      "uninstall": {
+        "interactive": null,
+        "quiet": null
+      },
+      "estimatedSizeMB": null,
+      "registryKey": null,
+      "estimatedInstaller": null,
+      "source": "applications-asset-manifest.json",
+      "assets": [
+        {
+          "basePath": "assets/installations/applications",
+          "name": "Zoom",
+          "file": "ZoomInstallerFull.exe",
+          "category": "Communication"
+        }
+      ]
+    }
+  ],
+  "assetManifest": {
+    "manifestVersion": "2.0",
+    "createdDate": "2025-11-16",
+    "basePath": "assets/installations/applications",
+    "lastMerged": "2025-11-16T10:17:02Z"
+  }
+}

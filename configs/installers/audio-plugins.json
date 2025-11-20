@@ -110,7 +110,20 @@
             "vst3": true
           },
           "center": true,
-          "collection": "V Collection"
+          "collection": "V Collection",
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "bx_digital V3",
+              "type": "dll"
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Oxford Inflator Native v3",
+              "file": "Oxford_Inflator_Native_v3.12.0[64]P.exe",
+              "version": "3.12.0"
+            }
+          ]
         },
         {
           "id": "air-vacuum-pro",
@@ -134,7 +147,15 @@
             "vst2": false,
             "vst3": false
           },
-          "center": false
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "discoDSP OB-Xd",
+              "file": "Obxd312.exe",
+              "version": "3.1.2"
+            }
+          ]
         },
         {
           "id": "kilohearts-phase-plant",
@@ -365,7 +386,19 @@
             "vst2": false,
             "vst3": false
           },
-          "center": false
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Reveal Sound Spire",
+              "files": [
+                "Reveal_Sound_Spire_VST3-1.5.19-5343.msi",
+                "Reveal_Sound_Spire_x64-1.5.19-5343.msi"
+              ],
+              "version": "1.5.19",
+              "license": "spire.lic"
+            }
+          ]
         },
         {
           "id": "serato-sample",
@@ -377,7 +410,15 @@
             "vst2": false,
             "vst3": false
           },
-          "center": false
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Serato Sample",
+              "file": "Serato Sample 2.1.0.exe",
+              "version": "2.1.0"
+            }
+          ]
         },
         {
           "id": "sonic-academy-ana",
@@ -401,7 +442,63 @@
             "vst2": false,
             "vst3": false
           },
-          "center": false
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "TAL-Reverb-2",
+              "package": "TAL-Reverb-2 vst3",
+              "files": [
+                "tal_reverb_2_installer_vst3_64.msi",
+                "TAL-Reverb-2-64.dll"
+              ]
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "TAL-Filter-2",
+              "file": "tal_filter_2_installer_vst3_64.msi"
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Nicky Romero Kickstart 2",
+              "file": "Nicky Romero - Kickstart 2.0.8 Setup.exe",
+              "version": "2.0.8",
+              "licenses": [
+                "Kickstart2_License.lic",
+                "NickyRomaroLicense.exe"
+              ]
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "iZotope Insight 2",
+              "file": "iZotope_Insight_2_v2_6_0.exe",
+              "version": "2.6.0"
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "D16 Group Decimort 2",
+              "file": "Decimort 2 - 2.1.6 (x64).msi",
+              "version": "2.1.6"
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Flux Tape Cassette 2",
+              "file": "Tape+Cassette+2+v1.3.0+64-bit.exe",
+              "version": "1.3.0"
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "AIR Music Xpand!2",
+              "package": "AIR Music/Xpand!2_2.4.0_Setup",
+              "version": "2.4.0"
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Youlean Loudness Meter 2",
+              "file": "Youlean Loudness Meter 2 - V2.5.13 Installer.exe",
+              "version": "2.5.13"
+            }
+          ]
         },
         {
           "id": "sonic-charge-synplant",
@@ -425,7 +522,18 @@
             "vst2": false,
             "vst3": false
           },
-          "center": false
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "TAL-NoiseMaker",
+              "package": "TAL-NoiseMaker.vst3",
+              "files": [
+                "tal_noisemaker_installer_vst3_64.msi",
+                "TAL-NoiseMaker-64.dll"
+              ]
+            }
+          ]
         },
         {
           "id": "tal-u-no-lx",
@@ -437,7 +545,15 @@
             "vst2": false,
             "vst3": false
           },
-          "center": false
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "TAL-U-NO-LX",
+              "file": "tal_u_no_lx_v2_installer_vst3_64.msi",
+              "license": "TAL-U-NO-LX_SerialKey.txt"
+            }
+          ]
         },
         {
           "id": "tal-vocoder-2",
@@ -449,11 +565,18 @@
             "vst2": false,
             "vst3": false
           },
-          "center": false
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "TAL-Vocoder-2",
+              "file": "tal_vocoder_2_installer_vst3_64.msi"
+            }
+          ]
         },
         {
-          "id": "u-he-dark-zebra",
-          "name": "Dark Zebra",
+          "id": "u-he-zebrahz",
+          "name": "ZebraHZ (Dark Zebra)",
           "publisher": "u-he",
           "type": "Synth",
           "installed": true,
@@ -461,7 +584,15 @@
             "vst2": false,
             "vst3": false
           },
-          "center": false
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "The Dark Zebra",
+              "file": "The Dark Zebra 2.9.4 Win Installer.exe",
+              "version": "2.9.4"
+            }
+          ]
         },
         {
           "id": "u-he-diva",
@@ -473,7 +604,15 @@
             "vst2": false,
             "vst3": false
           },
-          "center": false
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "u-he Diva",
+              "file": "Diva-148-Winstaller.exe",
+              "version": "1.4.8"
+            }
+          ]
         },
         {
           "id": "u-he-hive-2",
@@ -498,6 +637,26 @@
             "vst3": false
           },
           "center": false
+        },
+        {
+          "id": "u-he-podolski",
+          "name": "Podolski",
+          "publisher": "u-he",
+          "type": "Synth",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "u-he Podolski",
+              "file": "Podolski-123-Winstaller.exe",
+              "version": "1.2.3"
+            }
+          ]
         },
         {
           "id": "u-he-triple-cheese",
@@ -557,7 +716,15 @@
             "vst2": false,
             "vst3": false
           },
-          "center": false
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Vengeance Avenger",
+              "file": "WIN_Avenger_1_8_7.exe",
+              "version": "1.8.7"
+            }
+          ]
         },
         {
           "id": "vital",
@@ -569,7 +736,15 @@
             "vst2": false,
             "vst3": false
           },
-          "center": false
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Vital",
+              "file": "VitalInstaller.exe",
+              "content": "FactoryContent.vitalbank"
+            }
+          ]
         },
         {
           "id": "xfer-serum-1",
@@ -593,7 +768,326 @@
             "vst2": false,
             "vst3": false
           },
-          "center": false
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Xfer Serum 2",
+              "file": "Install_Xfer_Serum2_2.0.23.exe",
+              "version": "2.0.23"
+            }
+          ]
+        },
+        {
+          "id": "xfer-serum",
+          "name": "Xfer Serum",
+          "publisher": "Xfer",
+          "type": "Synth",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Xfer Serum",
+              "file": "Install_Xfer_Serum_136b8.exe",
+              "version": "1.36b8"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "xfer-serum-2-update",
+          "name": "Xfer Serum 2 Update",
+          "publisher": "Xfer",
+          "type": "Synth",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Xfer Serum 2 Update",
+              "file": "Install_Xfer_Serum2_Update_2.0.23.exe",
+              "version": "2.0.23"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "u-he-hive",
+          "name": "u-he Hive",
+          "publisher": "u-he",
+          "type": "Synth",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "u-he Hive",
+              "file": "Hive-212-Winstaller.exe",
+              "version": "2.1.2"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "u-he-bazille-cm-101",
+          "name": "u-he Bazille CM-101",
+          "publisher": "u-he",
+          "type": "Synth",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "u-he Bazille CM-101",
+              "file": "BazilleCM-101-Winstaller.exe"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "kv331-synthmaster",
+          "name": "KV331 SynthMaster",
+          "publisher": "KV331",
+          "type": "Synth",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "KV331 SynthMaster",
+              "file": "SynthMaster29Setup.exe",
+              "version": "2.9"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "kv331-synthmaster-one",
+          "name": "KV331 SynthMaster One",
+          "publisher": "KV331",
+          "type": "Synth",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "KV331 SynthMaster One",
+              "file": "SynthMasterOneSetup.exe"
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Sonic Charge Synplant Collection One",
+              "file": "Synplant Collection One.exe"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "surrealistic-mg-1-plus",
+          "name": "Surrealistic MG-1 Plus",
+          "publisher": "Surrealistic",
+          "type": "Synth",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Surrealistic MG-1 Plus",
+              "file": "Surrealistic-MG-1-Plus-Installer-Windows-x64.exe"
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Creative FX Collection Plus",
+              "file": "CreativeFXCollectionPlus_Setup.exe"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "u-he-zebra-legacy",
+          "name": "u-he Zebra Legacy",
+          "publisher": "u-he",
+          "type": "Synth",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "u-he Zebra Legacy",
+              "package": "Zebra_Legacy_294_16765_Win",
+              "version": "2.9.4",
+              "files": [
+                "Zebra2-294-Winstaller.exe",
+                "Zebra2 Chronospheres.uhe-soundset",
+                "Zebra2 Crystallia.uhe-soundset",
+                "Zebra2 Energy.uhe-soundset",
+                "Zebra2 Inspiration.uhe-soundset",
+                "Zebra2 NYC.uhe-soundset",
+                "Zebra2 Oldies.uhe-soundset",
+                "Zebra2 Science.uhe-soundset",
+                "Zebra2 Skools.uhe-soundset",
+                "Zebra2 Soliton.uhe-soundset",
+                "Zebra2 Stratospheres.uhe-soundset",
+                "Zebra2 Transmission.uhe-soundset",
+                "Zebra2 Traveller.uhe-soundset",
+                "Zebra2 Vision.uhe-soundset",
+                "Zebra2 Zebratron.uhe-soundset"
+              ]
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "sonic-charge-plugins-2024",
+          "name": "Sonic Charge Plugins 2024",
+          "publisher": "Sonic",
+          "type": "Synth",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Sonic Charge Plugins 2024",
+              "package": "Sonic Charge Plugins 2024.08.30",
+              "file": "Install Sonic Charge Plugins.exe"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "sonic-charge-plugins-2022",
+          "name": "Sonic Charge Plugins 2022",
+          "publisher": "Sonic",
+          "type": "Synth",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Sonic Charge Plugins 2022",
+              "file": "Install Sonic Charge Plugins 2022.11.25.exe"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "sonic-academy-a-n-a",
+          "name": "Sonic Academy A.N.A",
+          "publisher": "Sonic",
+          "type": "Synth",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Sonic Academy A.N.A",
+              "package": "Sonic Academy A.N.A v1.50",
+              "version": "1.50",
+              "license": "A.N.A.license",
+              "files": [
+                "Sonic Academy A.N.A_v1.50.exe",
+                "Sonic Academy A.N.A Warm Saw Addon.exe",
+                "ANA License Key Installer.exe"
+              ]
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Type A",
+              "file": "Type A 1.3.3.exe",
+              "version": "1.3.3"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "dada-life-endless-smile",
+          "name": "Dada Life Endless Smile",
+          "publisher": "Dada",
+          "type": "Synth",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Dada Life Endless Smile",
+              "files": [
+                "Endless Smile-1.3.1-Installer [Abraham J Ahn I8FUQBKO28].exe",
+                "Endless Smile-1.3.1-Installer [Abraham J. Ahn 6TQ5DPUI37].exe"
+              ],
+              "version": "1.3.1"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "dada-life-sausage-fattener",
+          "name": "Dada Life Sausage Fattener",
+          "publisher": "Dada",
+          "type": "Synth",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Dada Life Sausage Fattener",
+              "file": "SausageFattener-1.4.1-Installer [Abraham J. Ahn 132QNQ2431].exe",
+              "version": "1.4.1"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
         }
       ]
     },
@@ -623,7 +1117,15 @@
             "vst3": true
           },
           "center": true,
-          "collection": "Komplete 12 Ultimate"
+          "collection": "Komplete 12 Ultimate",
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "TAL-Reverb-4",
+              "package": "install_TAL-Reverb-4",
+              "file": "tal_reverb_4_installer_vst3_64.msi"
+            }
+          ]
         },
         {
           "id": "ni-the-giant",
@@ -648,7 +1150,14 @@
             "vst2": false,
             "vst3": false
           },
-          "center": false
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Omnisphere 2",
+              "package": "Omnisphere 2 Download Manager"
+            }
+          ]
         },
         {
           "id": "spectrasonics-trilian",
@@ -660,7 +1169,14 @@
             "vst2": false,
             "vst3": false
           },
-          "center": false
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Trilian",
+              "package": "Trilian Download Manager"
+            }
+          ]
         },
         {
           "id": "spectrasonics-keyscape",
@@ -689,7 +1205,42 @@
             "vst2": false,
             "vst3": false
           },
-          "center": false
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "TAL-Reverb-3",
+              "package": "TAL-Reverb-3.vst3",
+              "files": [
+                "tal_reverb_3_installer_vst3_64.msi",
+                "TAL-Reverb-3-64.dll"
+              ]
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Cableguys ShaperBox 3",
+              "file": "Cableguys - ShaperBox 3.6 Setup.exe",
+              "version": "3.6",
+              "license": "ShaperBox3_License.lic"
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Vertigo VSM-3",
+              "type": "dll"
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "iZotope Nectar 3",
+              "file": "iZotope_Nectar_v3_3_0_a.exe",
+              "version": "3.3.0"
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Boz Digital Bark of Dog 3",
+              "file": "Bark_of_Dog_3_3.0.1_Windows.exe",
+              "version": "3.0.1"
+            }
+          ]
         },
         {
           "id": "ni-damage",
@@ -767,7 +1318,20 @@
             "vst3": true
           },
           "center": true,
-          "collection": "Komplete 12 Ultimate"
+          "collection": "Komplete 12 Ultimate",
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "KV331 SynthMaster Player",
+              "file": "SynthMaster29PlayerSetup.exe",
+              "version": "2.9"
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "bx_rockrack V3 Player",
+              "type": "dll"
+            }
+          ]
         },
         {
           "id": "ni-india",
@@ -819,7 +1383,17 @@
             "vst3": true
           },
           "center": true,
-          "collection": "Komplete 12 Ultimate"
+          "collection": "Komplete 12 Ultimate",
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "PTEq-X",
+              "files": [
+                "PTEq-X.dll",
+                "PTEq-X.vst3"
+              ]
+            }
+          ]
         },
         {
           "id": "ni-massive-x-factory",
@@ -975,7 +1549,10 @@
             "name": "Coffee the Pun",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
             "center": true
           },
           {
@@ -983,7 +1560,10 @@
             "name": "Coral Baxter",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
             "center": true
           },
           {
@@ -991,7 +1571,10 @@
             "name": "Jet",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
             "center": true
           },
           {
@@ -999,15 +1582,28 @@
             "name": "Pensado EQ 2",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
-            "center": true
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
+            "center": true,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Maag EQ2",
+                "type": "dll"
+              }
+            ]
           },
           {
             "id": "acustica-sienna-free",
             "name": "Sienna Free",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
             "center": true
           },
           {
@@ -1015,7 +1611,10 @@
             "name": "Titanium 3 Basstard",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
             "center": true
           }
         ],
@@ -1025,8 +1624,19 @@
             "name": "Pro-Q 3",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
-            "center": true
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
+            "center": true,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "FabFilter Pro-Q 3",
+                "file": "ffproq327x64.exe",
+                "version": "3.27"
+              }
+            ]
           }
         ],
         "waves": [
@@ -1035,7 +1645,10 @@
             "name": "CLA Vocals",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
             "center": true
           },
           {
@@ -1043,7 +1656,10 @@
             "name": "J37 Tape",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
             "center": true
           },
           {
@@ -1051,7 +1667,10 @@
             "name": "SSL G-Master Buss",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
             "center": true
           }
         ],
@@ -1061,7 +1680,10 @@
             "name": "Decapitator",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
             "center": true,
             "collection": "Soundtoys 5"
           },
@@ -1070,7 +1692,10 @@
             "name": "EchoBoy",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
             "center": true,
             "collection": "Soundtoys 5"
           },
@@ -1079,7 +1704,10 @@
             "name": "Little AlterBoy",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
             "center": true,
             "collection": "Soundtoys 5"
           }
@@ -1090,32 +1718,80 @@
             "name": "Room",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": false, "vst3": false},
-            "center": false
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Valhalla Room",
+                "file": "ValhallaRoomWin_V2_0_5.exe",
+                "version": "2.0.5",
+                "license": "ValhallaRoom-KeyfileFor-Abe-Ahn.vkeyfile"
+              }
+            ]
           },
           {
             "id": "valhalla-shimmer",
             "name": "Shimmer",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": false, "vst3": false},
-            "center": false
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Valhalla Shimmer",
+                "file": "ValhallaShimmerWin_V1_2_2v2.exe",
+                "version": "1.2.2",
+                "license": "ValhallaShimmer-KeyfileFor-Abe-Ahn.vkeyfile"
+              }
+            ]
           },
           {
             "id": "valhalla-ubermod",
             "name": "UberMod",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": false, "vst3": false},
-            "center": false
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Valhalla UberMod",
+                "file": "ValhallaUberModWin_V1_1_6v3.exe",
+                "version": "1.1.6",
+                "license": "ValhallaUberMod-KeyfileFor-Abe-Ahn.vkeyfile"
+              }
+            ]
           },
           {
             "id": "valhalla-vintageverb",
             "name": "VintageVerb",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": false, "vst3": false},
-            "center": false
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Valhalla Vintage Verb",
+                "file": "ValhallaVintageVerbWin_V4_0_5.exe",
+                "version": "4.0.5",
+                "license": "ValhallaVintageVerb-KeyfileFor-Abe-Ahn.vkeyfile"
+              }
+            ]
           }
         ],
         "izotope": [
@@ -1124,7 +1800,10 @@
             "name": "Ozone 9 Advanced",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
             "center": true,
             "collection": "Music Production Suite 3"
           },
@@ -1133,7 +1812,10 @@
             "name": "Neutron 3 Advanced",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
             "center": true,
             "collection": "Music Production Suite 3"
           },
@@ -1142,7 +1824,10 @@
             "name": "Nectar 3",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
             "center": true,
             "collection": "Music Production Suite 3"
           },
@@ -1151,17 +1836,2507 @@
             "name": "RX 7 Standard",
             "type": "FX",
             "installed": true,
-            "formats": {"vst2": true, "vst3": true},
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
             "center": true,
             "collection": "Music Production Suite 3"
+          },
+          {
+            "id": "izotope-rx-7-audio-editor",
+            "name": "iZotope RX 7 Audio Editor",
+            "publisher": "iZotope",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "iZotope RX 7 Audio Editor",
+                "file": "iZotope_RX_7_Audio_Editor_7_01.exe",
+                "version": "7.01"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "izotope-stutter-edit",
+            "name": "iZotope Stutter Edit",
+            "publisher": "iZotope",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "iZotope Stutter Edit",
+                "file": "iZotope_Stutter_Edit_v1_05c.exe",
+                "version": "1.05c"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "izotope-vinyl",
+            "name": "iZotope Vinyl",
+            "publisher": "iZotope",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "iZotope Vinyl",
+                "file": "iZotope_Vinyl_v1_13_0.exe",
+                "version": "1.13.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "izotope-product-portal",
+            "name": "iZotope Product Portal",
+            "publisher": "iZotope",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "iZotope Product Portal",
+                "file": "iZotope_Product_Portal_v1_4_9.exe",
+                "version": "1.4.9"
+              },
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Output Portal",
+                "file": "Portal-1.2.1.282-windows-x64-installer_Per.exe",
+                "version": "1.2.1.282"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "d16-group": [
+          {
+            "id": "d16-decimort-2",
+            "name": "Decimort 2",
+            "type": "FX",
+            "installed": true,
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
+            "center": true,
+            "notes": "Bitcrusher / coloration"
+          },
+          {
+            "id": "d16-frontier",
+            "name": "Frontier",
+            "type": "FX",
+            "installed": true,
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
+            "center": true,
+            "notes": "Limiter / maximizer",
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "D16 Group Frontier",
+                "file": "Frontier-1.2.2(x64).msi",
+                "version": "1.2.2"
+              }
+            ]
+          },
+          {
+            "id": "d16-repeater",
+            "name": "Repeater",
+            "type": "FX",
+            "installed": true,
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
+            "center": true,
+            "notes": "Delay (Slate + D16)",
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "D16 Group Repeater",
+                "file": "Repeater-1.2.5(x64).msi",
+                "version": "1.2.5"
+              }
+            ]
+          }
+        ],
+        "fielding-dsp": [
+          {
+            "id": "fielding-reviver",
+            "name": "Reviver",
+            "type": "FX",
+            "installed": true,
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
+            "center": true,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Slate Digital Reviver",
+                "file": "ReviverWin64v139.msi",
+                "version": "1.39"
+              }
+            ]
+          }
+        ],
+        "sonible": [
+          {
+            "id": "sonible-entropy-eq-plus",
+            "name": "entropyEQ+",
+            "type": "FX",
+            "installed": true,
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
+            "center": true,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "sonible entropy:EQ",
+                "file": "entropyEQ_1.0.6.exe",
+                "version": "1.0.6"
+              }
+            ]
+          },
+          {
+            "id": "sonible-smartcomp",
+            "name": "smartComp",
+            "type": "FX",
+            "installed": true,
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
+            "center": true,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "sonible smart:comp",
+                "file": "smartcomp_1.2.0.exe",
+                "version": "1.2.0"
+              }
+            ]
+          },
+          {
+            "id": "sonible-smarteq-2",
+            "name": "smartEQ 2",
+            "type": "FX",
+            "installed": true,
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
+            "center": true,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "sonible smart:EQ 2",
+                "file": "smartEQ2_1.2.1.exe",
+                "version": "1.2.1"
+              }
+            ]
+          },
+          {
+            "id": "sonible-smart-reverb",
+            "name": "sonible smart:reverb",
+            "publisher": "sonible",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "sonible smart:reverb",
+                "file": "smartreverb_1.1.4.exe",
+                "version": "1.1.4"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "sonible-freiraum",
+            "name": "sonible freiraum",
+            "publisher": "sonible",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "sonible freiraum",
+                "file": "freiraum_1.1.5.exe",
+                "version": "1.1.5"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "soundtheory": [
+          {
+            "id": "soundtheory-gullfoss",
+            "name": "Gullfoss",
+            "type": "FX",
+            "installed": true,
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
+            "center": true,
+            "notes": "Intelligent EQ",
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Gullfoss",
+                "file": "Gullfoss 1.11.8 Installer.exe",
+                "version": "1.11.8"
+              }
+            ]
+          }
+        ],
+        "oeksound": [
+          {
+            "id": "oeksound-soothe2",
+            "name": "soothe2",
+            "type": "FX",
+            "installed": true,
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
+            "center": true,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Oeksound Soothe2",
+                "file": "soothe2_v133_Win.exe",
+                "version": "1.33"
+              }
+            ]
+          }
+        ],
+        "klevgrand": [
+          {
+            "id": "klevgrand-svep",
+            "name": "Svep",
+            "type": "FX",
+            "installed": true,
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
+            "center": true,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Klevgrand Svep",
+                "file": "Svep.exe"
+              }
+            ]
+          }
+        ],
+        "u-he": [
+          {
+            "id": "u-he-protoverb",
+            "name": "Protoverb",
+            "type": "FX",
+            "installed": true,
+            "formats": {
+              "vst2": true,
+              "vst3": true
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "u-he Protoverb",
+                "file": "Protoverb-101-Winstaller.exe",
+                "version": "1.0.1"
+              }
+            ]
+          }
+        ],
+        "effects_mixing": [
+          {
+            "id": "xfer-ott",
+            "name": "Xfer OTT",
+            "publisher": "Xfer",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Xfer OTT",
+                "file": "Install_Xfer_OTT_137.exe",
+                "version": "1.37"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "xfer-dimension-expander",
+            "name": "Xfer Dimension Expander",
+            "publisher": "Xfer",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Xfer Dimension Expander",
+                "file": "Install_Xfer_DimensionExpander_124.exe",
+                "version": "1.24"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "xfer-djm-filter",
+            "name": "Xfer DJM Filter",
+            "publisher": "Xfer",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Xfer DJM Filter",
+                "file": "Install_Xfer_DJMFilter_125.exe",
+                "version": "1.25"
+              },
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "elysia niveau filter",
+                "type": "dll"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "tal-chorus",
+            "name": "TAL-Chorus",
+            "publisher": "TAL-Chorus",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "TAL-Chorus",
+                "file": "tal_chorus_installer_vst3_64.msi"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "soundtoys-5-bundle",
+            "name": "Soundtoys 5 Bundle",
+            "publisher": "Soundtoys",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Soundtoys 5 Bundle",
+                "file": "SoundtoysV53Bundle_5.5.3.18786_64.exe",
+                "version": "5.5.3"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "polyverse-wider",
+            "name": "Polyverse Wider",
+            "publisher": "Polyverse",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Polyverse Wider",
+                "file": "Polyverse - Wider Setup (v2.0.0).exe",
+                "version": "2.0.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "cableguys-halftime",
+            "name": "Cableguys HalfTime",
+            "publisher": "Cableguys",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Cableguys HalfTime",
+                "file": "Cableguys - HalfTime 1.1.11 Setup.exe",
+                "version": "1.1.11",
+                "license": "HalfTime_License.lic"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "cableguys-pancake",
+            "name": "Cableguys PanCake",
+            "publisher": "Cableguys",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Cableguys PanCake",
+                "file": "Cableguys - PanCake 2.3.2 Setup.exe",
+                "version": "2.3.2"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "nicky-romero-kick",
+            "name": "Nicky Romero Kick",
+            "publisher": "Nicky",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Nicky Romero Kick",
+                "file": "Kick - Nicky Romero Edition V1.12b.exe",
+                "version": "1.12b",
+                "license": "KICK - Nicky Romero.license"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "u-he-satin",
+            "name": "u-he Satin",
+            "publisher": "u-he",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "u-he Satin",
+                "file": "Satin-133-Winstaller.exe",
+                "version": "1.3.3"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "baby_audio": [
+          {
+            "id": "baby-audio-taip",
+            "name": "Baby Audio TAIP",
+            "publisher": "Baby",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Baby Audio TAIP",
+                "file": "Baby Audio - TAIP - PC 1.6.exe",
+                "version": "1.6"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "baby-audio-super-vhs",
+            "name": "Baby Audio Super VHS",
+            "publisher": "Baby",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Baby Audio Super VHS",
+                "file": "PC13_Baby Audio - Super VHS - PC 1.3.exe",
+                "version": "1.3"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "baby-audio-magic-switch",
+            "name": "Baby Audio Magic Switch",
+            "publisher": "Baby",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Baby Audio Magic Switch",
+                "file": "Baby Audio - Magic Switch - PC 1.1.exe",
+                "version": "1.1"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "baby-audio-magic-dice",
+            "name": "Baby Audio Magic Dice",
+            "publisher": "Baby",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Baby Audio Magic Dice",
+                "file": "Baby Audio - Magic Dice - PC 1.1.exe",
+                "version": "1.1"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "baby-audio-pitch-drift",
+            "name": "Baby Audio Pitch Drift",
+            "publisher": "Baby",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Baby Audio Pitch Drift",
+                "file": "Baby Audio - Pitch Drift - PC 1.1.exe",
+                "version": "1.1"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "baby-audio-beat-slammer",
+            "name": "Baby Audio Beat Slammer",
+            "publisher": "Baby",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Baby Audio Beat Slammer",
+                "file": "Baby Audio - Beat Slammer - PC 1.2.exe",
+                "version": "1.2"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "baby-audio-warp",
+            "name": "Baby Audio Warp",
+            "publisher": "Baby",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Baby Audio Warp",
+                "file": "Baby Audio - Warp - PC 1.0.exe",
+                "version": "1.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "denise_audio": [
+          {
+            "id": "denise-bigkick",
+            "name": "Denise Bigkick",
+            "publisher": "Denise",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Denise Bigkick",
+                "file": "Install Bigkick 1.9.7 Windows.exe",
+                "version": "1.9.7"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "denise-stereo-savage",
+            "name": "Denise Stereo Savage",
+            "publisher": "Denise",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Denise Stereo Savage",
+                "file": "Install StereoSavage 2.1.1 Windows.exe",
+                "version": "2.1.1"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "denise-texture",
+            "name": "Denise Texture",
+            "publisher": "Denise",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Denise Texture",
+                "files": [
+                  "Install Texture 1.8.17 Windows.exe",
+                  "4819_Install+Texture+1.8.17+Windows.exe"
+                ],
+                "version": "1.8.17"
+              },
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Things Texture",
+                "file": "Things Texture 1.1.2.exe",
+                "version": "1.1.2"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "denise-pan-knob",
+            "name": "Denise Pan Knob",
+            "publisher": "Denise",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Denise Pan Knob",
+                "file": "Pan_Knob_2_2.0.8_Windows.exe",
+                "version": "2.0.8"
+              },
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Denise Width Knob",
+                "file": "Width_Knob_1.0.0_Windows.exe",
+                "version": "1.0.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "denise-panipulator",
+            "name": "Denise Panipulator",
+            "publisher": "Denise",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Denise Panipulator",
+                "file": "Panipulator_3_3.0.11_Windows.exe",
+                "version": "3.0.11"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "denise-transgressor",
+            "name": "Denise Transgressor",
+            "publisher": "Denise",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Denise Transgressor",
+                "file": "Transgressor_2.0.3_Windows.exe",
+                "version": "2.0.3"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "plugin_alliance": [
+          {
+            "id": "bx-digital-v3-mix",
+            "name": "bx_digital V3 Mix",
+            "publisher": "bx_digital",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "bx_digital V3 Mix",
+                "type": "dll"
+              },
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Dangerous BAX EQ Mix",
+                "type": "dll"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "bx-cleansweep-v2",
+            "name": "bx_cleansweep V2",
+            "publisher": "bx_cleansweep",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "bx_cleansweep V2",
+                "type": "dll"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "bx-console-ssl-4000-e",
+            "name": "bx_console SSL 4000 E",
+            "publisher": "bx_console",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "bx_console SSL 4000 E",
+                "type": "dll"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "bx-solo",
+            "name": "bx_solo",
+            "publisher": "bx_solo",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "bx_solo",
+                "type": "dll"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "bx-subfilter",
+            "name": "bx_subfilter",
+            "publisher": "bx_subfilter",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "bx_subfilter",
+                "type": "dll"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "spl-free-ranger",
+            "name": "SPL Free Ranger",
+            "publisher": "SPL",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "SPL Free Ranger",
+                "type": "dll"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "bettermaker-eq232d",
+            "name": "Bettermaker EQ232D",
+            "publisher": "Bettermaker",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Bettermaker EQ232D",
+                "type": "dll"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "dangerous-bax-eq-master",
+            "name": "Dangerous BAX EQ Master",
+            "publisher": "Dangerous",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Dangerous BAX EQ Master",
+                "type": "dll"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "ampeg-svtvr-classic",
+            "name": "Ampeg SVTVR Classic",
+            "publisher": "Ampeg",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Ampeg SVTVR Classic",
+                "type": "dll"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "plugin-alliance-manager",
+            "name": "Plugin Alliance Manager",
+            "publisher": "Plugin",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Plugin Alliance Manager",
+                "file": "PA-InstallationManager-v1.4.0.msi",
+                "version": "1.4.0"
+              },
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "MeldaProduction Plugin Manager",
+                "file": "MPluginManager_02_13_setup.exe",
+                "version": "2.13"
+              },
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "United Plugins Manager",
+                "file": "UnitedPluginsManager_02_07_setup.exe",
+                "version": "2.07"
+              },
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "HOFA-Plugins Manager",
+                "file": "HOFA-Plugins_Manager.exe"
+              },
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Vengeance V-Manager",
+                "file": "V-Manager.exe"
+              },
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Spectrasonics Download Manager",
+                "file": "Spectrasonics Download Manager.exe",
+                "note": "Installer is duplicated inside both Omnisphere and Trilian manager folders"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "chow_dsp": [
+          {
+            "id": "chowtapemodel",
+            "name": "ChowTapeModel",
+            "publisher": "ChowTapeModel",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "ChowTapeModel",
+                "file": "ChowTapeModel-Win-64bit-2.11.4.exe",
+                "version": "2.11.4"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "chowcentaur",
+            "name": "ChowCentaur",
+            "publisher": "ChowCentaur",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "ChowCentaur",
+                "file": "ChowCentaur-Win-1.4.0.exe",
+                "version": "1.4.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "chowkick",
+            "name": "ChowKick",
+            "publisher": "ChowKick",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "ChowKick",
+                "file": "ChowKick-Win-64bit-1.2.0.exe",
+                "version": "1.2.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "chowmatrix",
+            "name": "ChowMatrix",
+            "publisher": "ChowMatrix",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "ChowMatrix",
+                "files": [
+                  "ChowMatrix-Win-1.2.0.exe",
+                  "ChowMatrix-Win-1.3.0.exe"
+                ],
+                "version": "1.3.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "chowphaser",
+            "name": "ChowPhaser",
+            "publisher": "ChowPhaser",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "ChowPhaser",
+                "file": "ChowPhaser-Win-1.1.1.exe",
+                "version": "1.1.1"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "voxengo": [
+          {
+            "id": "voxengo-span",
+            "name": "Voxengo SPAN",
+            "publisher": "Voxengo",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Voxengo SPAN",
+                "file": "VoxengoSPAN_323_Win32_64_VST_VST3_AAX_setup.exe",
+                "version": "3.23"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "voxengo-msed",
+            "name": "Voxengo MSED",
+            "publisher": "Voxengo",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Voxengo MSED",
+                "file": "VoxengoMSED_312_Win32_64_VST_VST3_AAX_setup.exe",
+                "version": "3.12"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "voxengo-correlometer",
+            "name": "Voxengo Correlometer",
+            "publisher": "Voxengo",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Voxengo Correlometer",
+                "file": "VoxengoCorrelometer_19_Win32_64_VST_VST3_AAX_setup.exe",
+                "version": "1.9"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "voxengo-oldskool-verb",
+            "name": "Voxengo OldSkool Verb",
+            "publisher": "Voxengo",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Voxengo OldSkool Verb",
+                "file": "VoxengoOldSkoolVerb_213_Win32_64_VST_VST3_AAX_setup.exe",
+                "version": "2.13"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "voxengo-stereo-touch",
+            "name": "Voxengo Stereo Touch",
+            "publisher": "Voxengo",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Voxengo Stereo Touch",
+                "file": "VoxengoStereoTouch_218_Win32_64_VST_VST3_AAX_setup.exe",
+                "version": "2.18"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "voxengo-tempo-delay",
+            "name": "Voxengo Tempo Delay",
+            "publisher": "Voxengo",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Voxengo Tempo Delay",
+                "file": "VoxengoTempoDelay_28_Win32_64_VST_VST3_AAX_setup.exe",
+                "version": "2.8"
+              },
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Voxengo Latency Delay",
+                "file": "VoxengoLatencyDelay_211_Win32_64_VST_VST3_AAX_setup.exe",
+                "version": "2.11"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "voxengo-tube-amp",
+            "name": "Voxengo Tube Amp",
+            "publisher": "Voxengo",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Voxengo Tube Amp",
+                "file": "VoxengoTubeAmp_214_Win32_64_VST_VST3_AAX_setup.exe",
+                "version": "2.14"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "voxengo-overtone-geq",
+            "name": "Voxengo Overtone GEQ",
+            "publisher": "Voxengo",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Voxengo Overtone GEQ",
+                "file": "VoxengoOvertoneGEQ_118_Win32_64_VST_VST3_AAX_setup.exe",
+                "version": "1.18"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "tdr": [
+          {
+            "id": "tdr-kotelnikov",
+            "name": "TDR Kotelnikov",
+            "publisher": "TDR",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "TDR Kotelnikov",
+                "file": "TDR Kotelnikov - setup.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "tdr-molotok",
+            "name": "TDR Molotok",
+            "publisher": "TDR",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "TDR Molotok",
+                "file": "TDR Molotok - setup.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "tdr-nova",
+            "name": "TDR Nova",
+            "publisher": "TDR",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "TDR Nova",
+                "file": "TDR Nova - setup.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "tdr-prism",
+            "name": "TDR Prism",
+            "publisher": "TDR",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "TDR Prism",
+                "file": "TDR Prism - setup.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "tdr-vos-slickeq",
+            "name": "TDR VOS SlickEQ",
+            "publisher": "TDR",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "TDR VOS SlickEQ",
+                "file": "TDR VOS SlickEQ - setup.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "klanghelm": [
+          {
+            "id": "klanghelm-dc1a",
+            "name": "Klanghelm DC1A",
+            "publisher": "Klanghelm",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Klanghelm DC1A",
+                "file": "DC1A3-installer.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "klanghelm-ivgi2",
+            "name": "Klanghelm IVGI2",
+            "publisher": "Klanghelm",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Klanghelm IVGI2",
+                "file": "IVGI2-installer.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "klanghelm-mjuc",
+            "name": "Klanghelm MJUC",
+            "publisher": "Klanghelm",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Klanghelm MJUC",
+                "file": "MJUC-installer.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "eventide": [
+          {
+            "id": "eventide-blackhole",
+            "name": "Eventide Blackhole",
+            "publisher": "Eventide",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Eventide Blackhole",
+                "file": "Blackhole-3.10.0-windows_x64-installer.exe",
+                "version": "3.10.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "eventide-temperance-lite",
+            "name": "Eventide Temperance Lite",
+            "publisher": "Eventide",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Eventide Temperance Lite",
+                "file": "Temperance-Lite-1.0.1-windows_x64-installer.exe",
+                "version": "1.0.1"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "newfangled": [
+          {
+            "id": "newfangled-saturate",
+            "name": "Newfangled Saturate",
+            "publisher": "Newfangled",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Newfangled Saturate",
+                "file": "Newfangled-Saturate-1.14.0-windows-installer.exe",
+                "version": "1.14.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "newfangled-pendulate",
+            "name": "Newfangled Pendulate",
+            "publisher": "Newfangled",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Newfangled Pendulate",
+                "file": "Pendulate-1.7.0-windows-installer.exe",
+                "version": "1.7.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "slate_digital": [
+          {
+            "id": "slate-digital-fresh-air",
+            "name": "Slate Digital Fresh Air",
+            "publisher": "Slate",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Slate Digital Fresh Air",
+                "file": "fresh-air-win-1.1.1.exe",
+                "version": "1.1.1"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "black_rooster": [
+          {
+            "id": "black-rooster-canary",
+            "name": "Black Rooster Canary",
+            "publisher": "Black",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Black Rooster Canary",
+                "files": [
+                  "BlackRoosterAudio_Canary_VST_V3.0.0_B332.exe",
+                  "BlackRoosterAudio_Canary_VST3_V3.0.0_B332.exe"
+                ],
+                "version": "3.0.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "black-rooster-cypress-tt-15",
+            "name": "Black Rooster Cypress TT-15",
+            "publisher": "Black",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Black Rooster Cypress TT-15",
+                "files": [
+                  "BlackRoosterAudio_CypressTT15_VST_V3.0.0_B332.exe",
+                  "BlackRoosterAudio_CypressTT15_VST3_V3.0.0_B332.exe"
+                ],
+                "version": "3.0.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "black-rooster-magnetite",
+            "name": "Black Rooster Magnetite",
+            "publisher": "Black",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Black Rooster Magnetite",
+                "files": [
+                  "BlackRoosterAudio_Magnetite_VST_V3.0.0_B332.exe",
+                  "BlackRoosterAudio_Magnetite_VST3_V3.0.0_B332.exe"
+                ],
+                "version": "3.0.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "black-rooster-vhl-3c",
+            "name": "Black Rooster VHL-3C",
+            "publisher": "Black",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Black Rooster VHL-3C",
+                "files": [
+                  "BlackRoosterAudio_VHL3C_VST_V3.0.0_B332.exe",
+                  "BlackRoosterAudio_VHL3C_VST3_V3.0.0_B332.exe"
+                ],
+                "version": "3.0.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "wavesfactory": [
+          {
+            "id": "wavesfactory-cassette",
+            "name": "Wavesfactory Cassette",
+            "publisher": "Wavesfactory",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Wavesfactory Cassette",
+                "file": "Cassette 1.0.7.exe",
+                "version": "1.0.7"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "wavesfactory-echo-cat",
+            "name": "Wavesfactory Echo Cat",
+            "publisher": "Wavesfactory",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Wavesfactory Echo Cat",
+                "file": "Echo Cat 1.0.2.exe",
+                "version": "1.0.2"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "wavesfactory-spectre",
+            "name": "Wavesfactory Spectre",
+            "publisher": "Wavesfactory",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Wavesfactory Spectre",
+                "file": "Spectre 1.5.6.exe",
+                "version": "1.5.6"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "flux": [
+          {
+            "id": "flux-mini",
+            "name": "Flux Mini",
+            "publisher": "Flux",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Flux Mini",
+                "file": "Flux+Mini+2+v1.0.2+64-Bit.exe",
+                "version": "1.0.2"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "flux-center",
+            "name": "Flux Center",
+            "publisher": "Flux",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Flux Center",
+                "file": "FluxCenter-64-bit_Windows_Installer_(25.03.0.50464).exe"
+              },
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Arturia Software Center",
+                "file": "Arturia_Software_Center__2_11_0_3103.exe",
+                "version": "2.11.0.3103"
+              },
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "inMusic Software Center",
+                "file": "inMusic Software Center-1.34.0 Setup.exe",
+                "version": "1.34.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "oxford": [
+          {
+            "id": "oxford-inflator-native-v4",
+            "name": "Oxford Inflator Native v4",
+            "publisher": "Oxford",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Oxford Inflator Native v4",
+                "file": "Oxford_Inflator_Native_v4.02.4[5877]P.exe",
+                "version": "4.02.4"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          }
+        ],
+        "other_plugins": [
+          {
+            "id": "camel-audio-camelcrusher",
+            "name": "Camel Audio CamelCrusher",
+            "publisher": "Camel",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Camel Audio CamelCrusher",
+                "file": "CamelCrusher-Win-x64-CamelCrusher.Com-1-0-1.exe",
+                "version": "1.0.1"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "ohm-force-ohmicide",
+            "name": "Ohm Force Ohmicide",
+            "publisher": "Ohm",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Ohm Force Ohmicide",
+                "files": [
+                  "Ohmicide-137-win-vst-pro.exe",
+                  "Ohmicide-137-win64-vst-pro.exe"
+                ],
+                "version": "1.37"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "zynaptiq-subspace",
+            "name": "Zynaptiq SUBSPACE",
+            "publisher": "Zynaptiq",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Zynaptiq SUBSPACE",
+                "file": "Zynaptiq SUBSPACE 1.2.1 Setup x64.exe",
+                "version": "1.2.1"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "infected-mushroom-gatekeeper",
+            "name": "Infected Mushroom Gatekeeper",
+            "publisher": "Infected",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Infected Mushroom Gatekeeper",
+                "file": "Infected Mushroom - Gatekeeper Setup (v1.3.13).exe",
+                "version": "1.3.13"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "trackspacer",
+            "name": "Trackspacer",
+            "publisher": "Trackspacer",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Trackspacer",
+                "file": "Trackspacer 2.5.10.exe",
+                "version": "2.5.10"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "adptr-audio-metricab",
+            "name": "ADPTR Audio MetricAB",
+            "publisher": "ADPTR",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "ADPTR Audio MetricAB",
+                "type": "dll"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "kshmr-essentials",
+            "name": "KSHMR Essentials",
+            "publisher": "KSHMR",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "KSHMR Essentials",
+                "file": "KSHMR Essentials Installer - PC FULL VERSION.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "faw-sublab",
+            "name": "FAW SubLab",
+            "publisher": "FAW",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "FAW SubLab",
+                "file": "Sublab-Installer-v1.1.8.exe",
+                "version": "1.1.8"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "dawesome-kult",
+            "name": "Dawesome Kult",
+            "publisher": "Dawesome",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Dawesome Kult",
+                "file": "bloom_v1.1.2_win.exe",
+                "version": "1.1.2"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "dawesome-myth",
+            "name": "Dawesome Myth",
+            "publisher": "Dawesome",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Dawesome Myth",
+                "file": "Mirage Installer.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "meldaproduction-mthump",
+            "name": "MeldaProduction MThump",
+            "publisher": "MeldaProduction",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "MeldaProduction MThump",
+                "file": "MHThump_v4.0.2.157.msi",
+                "version": "4.0.2.157"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "aberrant-dsp-sketchcassette-ii",
+            "name": "Aberrant DSP SketchCassette II",
+            "publisher": "Aberrant",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Aberrant DSP SketchCassette II",
+                "file": "SketchCassette II v2.3 - Setup.exe",
+                "version": "2.3"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "boz-digital-tensjr",
+            "name": "Boz Digital TENSjr",
+            "publisher": "Boz",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Boz Digital TENSjr",
+                "file": "TENSjr-installer.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "goodhertz-vulf-compressor",
+            "name": "Goodhertz Vulf Compressor",
+            "publisher": "Goodhertz",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Goodhertz Vulf Compressor",
+                "file": "AIR Music/VacuumPro_1.1.1_Setup.exe",
+                "version": "1.1.1"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "outer-space",
+            "name": "Outer Space",
+            "publisher": "Outer",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Outer Space",
+                "file": "Outer Space 2.2.exe",
+                "version": "2.2"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "things-flip-eq",
+            "name": "Things Flip EQ",
+            "publisher": "Things",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Things Flip EQ",
+                "file": "Things Flip EQ 1.2.exe",
+                "version": "1.2"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "cherry-audio-voltage-modular",
+            "name": "Cherry Audio Voltage Modular",
+            "publisher": "Cherry",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Cherry Audio Voltage Modular",
+                "file": "Voltage-Modular-Installer-Windows-x64.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "aquarius",
+            "name": "Aquarius",
+            "publisher": "Aquarius",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Aquarius",
+                "file": "Setup Aquarius 3.0.109 build 1 Win.exe",
+                "version": "3.0.109"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "license-support",
+            "name": "License Support",
+            "publisher": "License",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "License Support",
+                "file": "License Support Win64.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "ojd",
+            "name": "OJD",
+            "publisher": "OJD",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "OJD",
+                "file": "Install.OJD.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "ace",
+            "name": "Ace",
+            "publisher": "Ace",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Ace",
+                "file": "Ace64.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "waveobserver",
+            "name": "WaveObserver",
+            "publisher": "WaveObserver",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "WaveObserver",
+                "file": "WaveObserver_WinSetup_1.7.0.exe",
+                "version": "1.7.0"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "sga1566",
+            "name": "SGA1566",
+            "publisher": "SGA1566",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "SGA1566",
+                "file": "SGA156664.exe"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "deltamodulator",
+            "name": "DeltaModulator",
+            "publisher": "DeltaModulator",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "DeltaModulator",
+                "file": "DeltaModulator_x64.dll"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "8-bit-shaper",
+            "name": "8-Bit Shaper",
+            "publisher": "8-Bit",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "8-Bit Shaper",
+                "file": "8-Bit Shaper.dll"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "op1-drum-util",
+            "name": "Op1 Drum Util",
+            "publisher": "Op1",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "Op1 Drum Util",
+                "file": "Op1DrumUtil.dll"
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
+          },
+          {
+            "id": "sp950",
+            "name": "SP950",
+            "publisher": "SP950",
+            "type": "FX",
+            "installed": false,
+            "formats": {
+              "vst2": false,
+              "vst3": false
+            },
+            "center": false,
+            "assets": [
+              {
+                "basePath": "assets/installations/plugins/Windows",
+                "name": "SP950",
+                "files": [
+                  "SP950.vst3",
+                  "MacOS/SP950.component",
+                  "MacOS/SP950.vst3"
+                ]
+              }
+            ],
+            "source": "plugins-asset-manifest.json"
           }
         ]
       },
-      "note": "Effects category contains 300+ plugins. See full list in PLUGINS.md. Organized by key publishers above."
+      "note": "Effects section groups the most-used processors by publisher. See PLUGINS.md for the extended catalog."
     },
     "tools": {
       "description": "Audio Production Utilities and Tools",
       "plugins": [
+        {
+          "id": "softube-central",
+          "name": "Softube Central",
+          "publisher": "Softube",
+          "type": "Manager",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "notes": "Installer and license manager for the Softube ecosystem.",
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Waves Central",
+              "file": "Install_Waves_Central.exe"
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Softube Central",
+              "file": "Softube Central Setup 2.1.2.exe",
+              "version": "2.1.2"
+            }
+          ]
+        },
         {
           "id": "mixed-in-key-8.5",
           "name": "Mixed In Key 8.5",
@@ -1188,6 +4363,19 @@
           "collection": "Komplete 12 Ultimate"
         },
         {
+          "id": "ni-ntkdaemon",
+          "name": "NTKDaemon",
+          "publisher": "Native Instruments",
+          "type": "Service",
+          "installed": true,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "notes": "Background service required for Native Access / Komplete installation management."
+        },
+        {
           "id": "sonarworks-reference-4",
           "name": "Reference 4",
           "publisher": "Sonarworks",
@@ -1197,7 +4385,22 @@
             "vst2": true,
             "vst3": true
           },
-          "center": true
+          "center": true,
+          "components": [
+            "Reference 4 VST Plugin (64-bit)",
+            "Reference 4 Systemwide"
+          ],
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Sonarworks Reference 4",
+              "files": [
+                "Sonarworks Reference 4 Studio Edition 4.4.9.11.exe",
+                "Reference4Setup.exe"
+              ],
+              "version": "4.4.9.11"
+            }
+          ]
         },
         {
           "id": "sononym",
@@ -1209,20 +4412,166 @@
             "vst2": true,
             "vst3": true
           },
-          "center": true
+          "center": true,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Sononym",
+              "file": "Sononym-1.5.6.exe",
+              "version": "1.5.6"
+            }
+          ]
+        },
+        {
+          "id": "refx-cloud",
+          "name": "reFX Cloud",
+          "publisher": "reFX",
+          "type": "Tools",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "reFX Cloud",
+              "file": "reFX_Cloud_3.0.22.exe",
+              "version": "3.0.22"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "kilohearts-installer",
+          "name": "Kilohearts Installer",
+          "publisher": "Kilohearts",
+          "type": "Tools",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Kilohearts Installer",
+              "file": "Kilohearts Installer [10SZfmf-zk9p4uPH9Wj3].exe"
+            },
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "XLN Online Installer",
+              "file": "XLN Online Installer.exe"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "klevgrand-helper",
+          "name": "Klevgrand Helper",
+          "publisher": "Klevgrand",
+          "type": "Tools",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Klevgrand Helper",
+              "file": "Klevgrand Helper Installer.exe"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "korg-software-pass",
+          "name": "KORG Software Pass",
+          "publisher": "KORG",
+          "type": "Tools",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "KORG Software Pass",
+              "file": "KORG Software Pass Installer.exe"
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
+        },
+        {
+          "id": "dolby-atmos-composer-essential",
+          "name": "Dolby Atmos Composer Essential",
+          "publisher": "Dolby",
+          "type": "Tools",
+          "installed": false,
+          "formats": {
+            "vst2": false,
+            "vst3": false
+          },
+          "center": false,
+          "assets": [
+            {
+              "basePath": "assets/installations/plugins/Windows",
+              "name": "Dolby Atmos Composer Essential",
+              "files": [
+                "Dolby Atmos Composer Essential.exe",
+                "Dolby-Atmos-Composer-Essential.zip"
+              ]
+            }
+          ],
+          "source": "plugins-asset-manifest.json"
         }
       ]
     }
   },
   "metadata": {
-    "totalPlugins": 410,
+    "totalPlugins": 229,
     "totalDAWs": 5,
-    "totalSynths": 43,
+    "totalSynths": 56,
     "totalRomplers": 6,
     "totalSamplers": 22,
-    "totalEffects": 300,
-    "totalTools": 4,
+    "totalEffects": 134,
+    "totalTools": 11,
     "targetSystem": "Windows 11 - ASUS Zephyrus G14",
     "installationNotes": "This is a comprehensive audio production setup. Installation scripts would need to handle license management, VST path configuration, and plugin registration."
+  },
+  "supportFiles": [
+    {
+      "basePath": "assets/installations/plugins/Windows",
+      "name": "Spectrasonics Download Manager Config",
+      "file": ".config",
+      "note": "Hidden config stored inside Spectrasonics manager folders",
+      "subcategory": "support_files"
+    },
+    {
+      "basePath": "assets/installations/plugins/Windows",
+      "name": "Plugins folder placeholder",
+      "file": ".gitkeep",
+      "note": "Keeps empty directories in version control",
+      "subcategory": "support_files"
+    },
+    {
+      "basePath": "assets/installations/plugins/Windows",
+      "name": "macOS metadata fork placeholder",
+      "file": "._Baby Audio - TAIP - PC 1.6.exe",
+      "note": "Artifact from macOS copy; safe to delete if desired",
+      "subcategory": "support_files"
+    }
+  ],
+  "assetManifest": {
+    "manifestVersion": "2.0",
+    "createdDate": "2025-11-16",
+    "basePath": "assets/installations/plugins/Windows",
+    "lastMerged": "2025-11-16T10:17:02Z"
   }
 }
