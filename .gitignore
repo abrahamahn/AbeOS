@@ -7,7 +7,7 @@ assets/
 assets/**
 
 .claude
-
+``
 # Keep folder structure
 !assets/**/.gitkeep
 
