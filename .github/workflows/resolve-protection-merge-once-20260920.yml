@@ -1,0 +1,63 @@
+name: Resolve protection merge once
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/resolve-protection-merge-once-20260920.yml]
+permissions:
+  contents: write
+jobs:
+  resolve:
+    if: github.repository == 'abrahamahn/AbeOS'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Resolve reviewed conflicts and validate without executing system changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh auth setup-git
+          git clone --quiet https://github.com/abrahamahn/AbeOS.git "$RUNNER_TEMP/abeos-resolve"
+          cd "$RUNNER_TEMP/abeos-resolve"
+          git checkout main
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          python3 - <<'PY'
+          import json, pathlib, subprocess, os
+          def git(*args, check=True):
+              return subprocess.run(['git', *args], check=check, text=True, capture_output=True)
+          branch = 'codex/remove-todo.md-from-project'
+          expected = 'ecb089f3eea241e5334f13d72ce166cb6b706f1f'
+          live = git('ls-remote', 'origin', 'refs/heads/' + branch).stdout.split()
+          assert live and live[0] == expected, 'Source branch moved; manual review required'
+          assert git('cat-file', '-e', 'HEAD:README.md', check=False).returncode != 0
+          base = git('rev-parse', 'HEAD').stdout.strip()
+          git('merge', '--no-commit', '--no-ff', expected, check=False)
+          conflicts = set(git('diff', '--name-only', '--diff-filter=U').stdout.splitlines())
+          assert conflicts == {'README.md', 'docs/dev/todo.md'}, conflicts
+          git('rm', 'README.md')
+          todo = git('show', 'HEAD:docs/dev/todo.md').stdout
+          anchor = '* [ ] `Health-Report.ps1` → logs status summary\n'
+          addition = '* [x] `Invoke-AbeOSProtectionSystem.ps1` → blocks Insider builds, snapshots registry, disables/restores shell mods around Windows Update\n'
+          assert todo.count(anchor) == 1 and addition not in todo
+          pathlib.Path('docs/dev/todo.md').write_text(todo.replace(anchor, anchor + addition))
+          git('add', 'docs/dev/todo.md')
+          json.loads(pathlib.Path('configs/protection/protection-profile.json').read_text())
+          git('diff', '--cached', '--check')
+          parse = "$tokens=$null; $errors=$null; [System.Management.Automation.Language.Parser]::ParseFile((Resolve-Path 'stages/08_automation/02_protection/Invoke-AbeOSProtectionSystem.ps1'), [ref]$tokens, [ref]$errors) | Out-Null; if ($errors.Count) { $errors | Format-List | Out-String | Write-Error; exit 1 }"
+          subprocess.run(['pwsh', '-NoLogo', '-NoProfile', '-NonInteractive', '-Command', parse], check=True)
+          changed = set(git('diff', '--cached', '--name-only').stdout.splitlines())
+          assert changed == {'configs/protection/protection-profile.json', 'docs/dev/todo.md', 'docs/manual/abeos-protection-system.md', 'stages/08_automation/02_protection/Invoke-AbeOSProtectionSystem.ps1'}, changed
+          git('commit', '-m', 'Merge protection automation while preserving current documentation layout', '-m', 'Keep the newer deletion of the obsolete root README; retain the new protection script, profile, manual, and checklist entry. Validated JSON, PowerShell syntax, and whitespace.')
+          tag = 'branch-cleanup-20260920-' + os.environ['GITHUB_RUN_ID'] + '/resolved/' + branch
+          git('push', '--atomic', '--force-with-lease=refs/heads/' + branch + ':' + expected,
+              'origin', 'HEAD:refs/heads/main', expected + ':refs/tags/' + tag, ':refs/heads/' + branch)
+          report = {'repository': 'abrahamahn/AbeOS', 'previous_main': base, 'source': expected,
+                    'merged_main': git('rev-parse', 'HEAD').stdout.strip(), 'backup_tag': tag,
+                    'checks': ['JSON parsed', 'PowerShell syntax parsed without execution', 'git diff --check'],
+                    'branch_deleted': branch}
+          print(json.dumps(report, indent=2))
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as out:
+              out.write('```json\n' + json.dumps(report, indent=2) + '\n```\n')
+          PY
