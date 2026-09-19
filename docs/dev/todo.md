@@ -328,6 +328,7 @@ _(for Music Production 🎹 + Gaming 🎮 + Coding 💻 + Streaming 📡 + macOS
 * [ ] `Check-StreamingReady.ps1` → verify OBS + VoiceMeeter
 * [ ] `New-Symlinks.ps1` → recreate junctions
 * [ ] `Health-Report.ps1` → logs status summary
+* [x] `Invoke-AbeOSProtectionSystem.ps1` → blocks Insider builds, snapshots registry, disables/restores shell mods around Windows Update
 
 ### Scheduled Jobs
 
