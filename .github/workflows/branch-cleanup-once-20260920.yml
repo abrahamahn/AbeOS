@@ -1,0 +1,10 @@
+name: One-time merged-branch cleanup
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/branch-cleanup-once-20260920.yml]
+permissions:
+  contents: write
+jobs:
+  cleanup:
+    uses: abrahamahn/agent-os/.github/workflows/branch-cleanup-once-20260920.yml@f9452a0f6a114fa339d5260206a2026f9089487f
