@@ -1,122 +1,76 @@
-#Requires -RunAsAdministrator
-<#
-.SYNOPSIS
-    AbeOS Power Plan Manager
-.DESCRIPTION
-    Create and switch between Creator and Performance power modes
-.PARAMETER Mode
-    The power mode to activate: Balanced, Performance, Creator
-.EXAMPLE
-    .\Set-PowerPlan.ps1 -Mode Performance
-.NOTES
-    Version: 1.0
-    Last Updated: November 2025
-#>
-
+# Set-PowerPlan.ps1 - Toggle ASUS ROG Zephyrus BIOS performance profile via ACPI WMI.
+# Matches G-Helper / Fn+F5 profiles written in BIOS.
+# Usage: .\Set-PowerPlan.ps1 <Silent|Balanced|Turbo>
 param(
-    [Parameter(Mandatory=$true)]
-    [ValidateSet("Balanced", "Performance", "Creator")]
-    [string]$Mode
+    [Parameter(Position = 0)]
+    [ValidateSet("Silent", "Balanced", "Turbo")]
+    [string]$Mode = "Balanced"
 )
 
 $ErrorActionPreference = "Stop"
 
-Write-Host "`n=== ABEOS POWER PLAN MANAGER ===" -ForegroundColor Cyan
+Write-Host "=== AbeOS Performance Profile ===" -ForegroundColor Cyan
+Write-Host ""
 
-function Get-AbeOSPowerPlan {
-    param([string]$Name)
+# ASUS ACPI performance mode device ID
+$PERF_DEVICE = [uint32]0x00120075
 
-    $plans = powercfg /list
-    foreach ($line in $plans) {
-        if ($line -match $Name -and $line -match '([0-9a-f-]{36})') {
-            return $matches[1]
-        }
-    }
-    return $null
+# BIOS mode values (matches G-Helper / ASUS ACPI)
+$modeValues = @{
+    "Balanced" = [uint32]0
+    "Turbo"    = [uint32]1
+    "Silent"   = [uint32]2
 }
 
+$modeNames = @{ 0 = "Balanced"; 1 = "Turbo"; 2 = "Silent" }
+
+# Connect to ASUS ATK WMI interface
 try {
-    switch ($Mode) {
-        "Balanced" {
-            Write-Host "Activating AbeOS Balanced Ultimate plan..." -ForegroundColor Yellow
-
-            $guid = Get-AbeOSPowerPlan "AbeOS - Balanced Ultimate"
-
-            if ($guid) {
-                powercfg -setactive $guid
-                Write-Host "[✓] Balanced mode activated" -ForegroundColor Green
-            } else {
-                Write-Host "[!] AbeOS Balanced plan not found. Run installation scripts first." -ForegroundColor Red
-                exit 1
-            }
-        }
-
-        "Performance" {
-            Write-Host "Creating/Activating Performance mode..." -ForegroundColor Yellow
-
-            # Check if performance plan exists
-            $guid = Get-AbeOSPowerPlan "AbeOS Performance"
-
-            if (-not $guid) {
-                # Create new performance plan
-                $guidOutput = powercfg -duplicatescheme SCHEME_BALANCED
-                $guid = ($guidOutput -split '\s+')[-1]
-                powercfg -changename $guid "AbeOS Performance"
-
-                # Max CPU performance
-                powercfg -setacvalueindex $guid SUB_PROCESSOR PROCTHROTTLEMIN 100
-                powercfg -setacvalueindex $guid SUB_PROCESSOR PROCTHROTTLEMAX 100
-                powercfg -setacvalueindex $guid SUB_PROCESSOR PERFBOOSTMODE 2
-                powercfg -setacvalueindex $guid SUB_PROCESSOR PERFINCPOL 2
-                powercfg -setacvalueindex $guid SUB_PROCESSOR PERFDECPOL 1
-
-                # Core parking
-                powercfg -setacvalueindex $guid SUB_PROCESSOR CPMINCORES 100
-                powercfg -setacvalueindex $guid SUB_PROCESSOR CPMAXCORES 100
-
-                # Disable idle
-                powercfg -setacvalueindex $guid SUB_PROCESSOR IDLEDISABLE 1 2>$null
-
-                Write-Host "[✓] Performance plan created" -ForegroundColor Green
-            }
-
-            powercfg -setactive $guid
-            Write-Host "[✓] Performance mode activated (Max GPU/CPU)" -ForegroundColor Green
-        }
-
-        "Creator" {
-            Write-Host "Creating/Activating Creator mode..." -ForegroundColor Yellow
-
-            # Check if creator plan exists
-            $guid = Get-AbeOSPowerPlan "AbeOS Creator"
-
-            if (-not $guid) {
-                # Create new creator plan (balanced with audio optimizations)
-                $guidOutput = powercfg -duplicatescheme SCHEME_BALANCED
-                $guid = ($guidOutput -split '\s+')[-1]
-                powercfg -changename $guid "AbeOS Creator"
-
-                # Balanced CPU (85% max to reduce heat/noise)
-                powercfg -setacvalueindex $guid SUB_PROCESSOR PROCTHROTTLEMAX 85
-
-                # Low latency for audio
-                powercfg -setacvalueindex $guid SUB_PCIE ASPM 0
-
-                # Prevent sleep during sessions
-                powercfg -setacvalueindex $guid SUB_SLEEP STANDBYIDLE 0
-
-                Write-Host "[✓] Creator plan created" -ForegroundColor Green
-            }
-
-            powercfg -setactive $guid
-            Write-Host "[✓] Creator mode activated (Balanced, Low Latency)" -ForegroundColor Green
-        }
-    }
-
-    Write-Host "`nCurrent power plan:" -ForegroundColor Cyan
-    powercfg /list | Select-String "\*"
-
+    $asus = Get-WmiObject -Namespace root\WMI -Class AsusAtkWmi_WMNB -ErrorAction Stop
 } catch {
-    Write-Host "ERROR: $($_.Exception.Message)" -ForegroundColor Red
+    Write-Host "[ERROR] ASUS ATK WMI interface not found." -ForegroundColor Red
+    Write-Host "Ensure ASUS ATK drivers or G-Helper is installed." -ForegroundColor Yellow
     exit 1
 }
+
+# Read current BIOS performance mode
+try {
+    $current = $asus.DSTS($PERF_DEVICE)
+    $currentValue = $current.Data -band 0xFF
+    $currentName = $(if ($modeNames.ContainsKey([int]$currentValue)) { $modeNames[[int]$currentValue] } else { "Unknown ($currentValue)" })
+    Write-Host "[CURRENT] $currentName" -ForegroundColor DarkGray
+} catch {
+    $currentName = "Unknown"
+    Write-Host "[WARN] Could not read current mode" -ForegroundColor Yellow
+}
+
+# Check if already in target mode
+if ($currentName -eq $Mode) {
+    Write-Host "[OK] Already on '$Mode' - no change needed." -ForegroundColor Green
+    exit 0
+}
+
+# Set the new BIOS performance mode
+$targetValue = $modeValues[$Mode]
+Write-Host "[SWITCHING] $Mode (ACPI value: $targetValue)" -ForegroundColor Yellow
+
+try {
+    $null = $asus.DEVS($PERF_DEVICE, $targetValue)
+
+    # Brief wait for BIOS to apply
+    Start-Sleep -Milliseconds 500
+
+    # Verify
+    $verify = $asus.DSTS($PERF_DEVICE)
+    $verifyValue = $verify.Data -band 0xFF
+    $verifyName = $(if ($modeNames.ContainsKey([int]$verifyValue)) { $modeNames[[int]$verifyValue] } else { "Unknown ($verifyValue)" })
+
+    Write-Host ""
+    Write-Host "[ACTIVE] $verifyName" -ForegroundColor Green
+} catch {
+    Write-Host "[ERROR] Failed to set mode: $_" -ForegroundColor Red
+    exit 1
+}
+
+Write-Host ""
+Write-Host "Done." -ForegroundColor Cyan

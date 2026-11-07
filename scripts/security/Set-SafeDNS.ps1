@@ -1,188 +1,116 @@
-# =============================================================================
-# Set-SafeDNS.ps1
-# Configure Family-Safe DNS Servers on All Network Adapters
-# =============================================================================
-
-#Requires -RunAsAdministrator
-
+# Set-SafeDNS.ps1 — Switch DNS provider on all active network adapters.
+# Usage: .\Set-SafeDNS.ps1 -Provider CloudflareFamily
 param(
-    [Parameter()]
-    [ValidateSet('Cloudflare', 'OpenDNS', 'CleanBrowsing', 'Quad9', 'AdGuard', 'Auto')]
-    [string]$Provider = 'Auto',
+    [Parameter(Mandatory)]
+    [ValidateSet("Cloudflare", "Google", "CloudflareFamily", "OpenDNS", "CleanBrowsing", "Quad9")]
+    [string]$Provider,
 
-    [switch]$SetIPv6,
-    [switch]$WhatIf
+    [switch]$SetIPv6
 )
 
 $ErrorActionPreference = "Stop"
 
-# DNS Providers (Family-Safe)
-$DNSProviders = @{
-    'Cloudflare' = @{
-        Name = 'Cloudflare for Families (Malware + Adult)'
-        IPv4Primary = '1.1.1.3'
-        IPv4Secondary = '1.0.0.3'
-        IPv6Primary = '2606:4700:4700::1113'
-        IPv6Secondary = '2606:4700:4700::1003'
+$dnsProviders = @{
+    "Cloudflare" = @{
+        Primary   = "1.1.1.1"
+        Secondary = "1.0.0.1"
+        IPv6Pri   = "2606:4700:4700::1111"
+        IPv6Sec   = "2606:4700:4700::1001"
+        Label     = "Cloudflare (fastest, lowest latency)"
     }
-    'OpenDNS' = @{
-        Name = 'OpenDNS FamilyShield'
-        IPv4Primary = '208.67.222.123'
-        IPv4Secondary = '208.67.220.123'
-        IPv6Primary = '2620:119:35::35'
-        IPv6Secondary = '2620:119:53::53'
+    "Google" = @{
+        Primary   = "8.8.8.8"
+        Secondary = "8.8.4.4"
+        IPv6Pri   = "2001:4860:4860::8888"
+        IPv6Sec   = "2001:4860:4860::8844"
+        Label     = "Google DNS (reliable, low latency)"
     }
-    'CleanBrowsing' = @{
-        Name = 'CleanBrowsing Family Filter'
-        IPv4Primary = '185.228.168.168'
-        IPv4Secondary = '185.228.169.168'
-        IPv6Primary = '2a0d:2a00:1::1'
-        IPv6Secondary = '2a0d:2a00:2::1'
+    "CloudflareFamily" = @{
+        Primary   = "1.1.1.3"
+        Secondary = "1.0.0.3"
+        IPv6Pri   = "2606:4700:4700::1113"
+        IPv6Sec   = "2606:4700:4700::1003"
+        Label     = "Cloudflare Family (malware + adult blocking)"
     }
-    'Quad9' = @{
-        Name = 'Quad9 (Malware Blocking)'
-        IPv4Primary = '9.9.9.9'
-        IPv4Secondary = '149.112.112.112'
-        IPv6Primary = '2620:fe::fe'
-        IPv6Secondary = '2620:fe::9'
+    "OpenDNS" = @{
+        Primary   = "208.67.222.123"
+        Secondary = "208.67.220.123"
+        IPv6Pri   = "::ffff:208.67.222.123"
+        IPv6Sec   = "::ffff:208.67.220.123"
+        Label     = "OpenDNS FamilyShield"
     }
-    'AdGuard' = @{
-        Name = 'AdGuard DNS Family Protection'
-        IPv4Primary = '94.140.14.15'
-        IPv4Secondary = '94.140.15.16'
-        IPv6Primary = '2a10:50c0::bad1:ff'
-        IPv6Secondary = '2a10:50c0::bad2:ff'
+    "CleanBrowsing" = @{
+        Primary   = "185.228.168.168"
+        Secondary = "185.228.169.168"
+        IPv6Pri   = "2a0d:2a00:1::"
+        IPv6Sec   = "2a0d:2a00:2::"
+        Label     = "CleanBrowsing Family Filter"
+    }
+    "Quad9" = @{
+        Primary   = "9.9.9.9"
+        Secondary = "149.112.112.112"
+        IPv6Pri   = "2620:fe::fe"
+        IPv6Sec   = "2620:fe::9"
+        Label     = "Quad9 (malware blocking)"
     }
 }
 
-function Write-ColorOutput {
-    param([string]$Message, [string]$Color = 'White')
-    Write-Host $Message -ForegroundColor $Color
-}
+$dns = $dnsProviders[$Provider]
 
-function Get-BestDNSProvider {
-    Write-ColorOutput "Testing DNS providers for best performance..." "Cyan"
-
-    $results = @()
-    foreach ($provider in $DNSProviders.Keys) {
-        $dns = $DNSProviders[$provider]
-        $start = Get-Date
-        try {
-            $result = Test-NetConnection -ComputerName $dns.IPv4Primary -InformationLevel Quiet -WarningAction SilentlyContinue
-            $latency = ((Get-Date) - $start).TotalMilliseconds
-            if ($result) {
-                $results += @{
-                    Provider = $provider
-                    Latency = $latency
-                }
-                Write-ColorOutput "  ✓ $provider : ${latency}ms" "Green"
-            }
-        } catch {
-            Write-ColorOutput "  ✗ $provider : Failed" "Red"
-        }
-    }
-
-    if ($results.Count -gt 0) {
-        $fastest = ($results | Sort-Object Latency)[0]
-        Write-ColorOutput "`nFastest provider: $($fastest.Provider) (${$fastest.Latency}ms)" "Yellow"
-        return $fastest.Provider
-    }
-
-    return 'Cloudflare'  # Default fallback
-}
-
-# Main execution
-Write-ColorOutput "========================================" "Cyan"
-Write-ColorOutput "Safe DNS Configuration" "Cyan"
-Write-ColorOutput "========================================" "Cyan"
+Write-Host "=== AbeOS Safe DNS ===" -ForegroundColor Cyan
+Write-Host "Provider: $($dns.Label)" -ForegroundColor White
+Write-Host "DNS: $($dns.Primary), $($dns.Secondary)" -ForegroundColor DarkGray
 Write-Host ""
 
-# Determine provider
-if ($Provider -eq 'Auto') {
-    $Provider = Get-BestDNSProvider
-    Write-Host ""
+# Get active physical adapters (skip virtual, Bluetooth, etc.)
+$adapters = Get-NetAdapter | Where-Object {
+    $_.Status -eq "Up" -and
+    $_.InterfaceDescription -notmatch "Virtual|Bluetooth|Loopback"
 }
-
-$selectedDNS = $DNSProviders[$Provider]
-Write-ColorOutput "Selected Provider: $($selectedDNS.Name)" "Green"
-Write-ColorOutput "Primary DNS: $($selectedDNS.IPv4Primary)" "White"
-Write-ColorOutput "Secondary DNS: $($selectedDNS.IPv4Secondary)" "White"
-Write-Host ""
-
-# Get all active network adapters
-$adapters = Get-NetAdapter | Where-Object { $_.Status -eq 'Up' }
 
 if ($adapters.Count -eq 0) {
-    Write-ColorOutput "ERROR: No active network adapters found!" "Red"
+    Write-Host "[WARN] No active network adapters found." -ForegroundColor Yellow
     exit 1
 }
 
-Write-ColorOutput "Found $($adapters.Count) active network adapter(s)" "Cyan"
-Write-Host ""
-
 foreach ($adapter in $adapters) {
-    Write-ColorOutput "Configuring: $($adapter.Name) ($($adapter.InterfaceDescription))" "Yellow"
+    $name = $adapter.Name
+    Write-Host "[$name]" -ForegroundColor Yellow
 
-    if ($WhatIf) {
-        Write-ColorOutput "  [WHATIF] Would set DNS to: $($selectedDNS.IPv4Primary), $($selectedDNS.IPv4Secondary)" "Gray"
+    # Read current DNS
+    $currentDns = (Get-DnsClientServerAddress -InterfaceAlias $name -AddressFamily IPv4).ServerAddresses
+    if ($currentDns) {
+        Write-Host "  Current: $($currentDns -join ', ')" -ForegroundColor DarkGray
     } else {
-        try {
-            # Set IPv4 DNS
-            Set-DnsClientServerAddress -InterfaceIndex $adapter.ifIndex -ServerAddresses @(
-                $selectedDNS.IPv4Primary,
-                $selectedDNS.IPv4Secondary
-            )
-            Write-ColorOutput "  ✓ IPv4 DNS configured" "Green"
-
-            # Set IPv6 DNS if requested
-            if ($SetIPv6) {
-                Set-DnsClientServerAddress -InterfaceIndex $adapter.ifIndex -ServerAddresses @(
-                    $selectedDNS.IPv6Primary,
-                    $selectedDNS.IPv6Secondary
-                ) -AddressFamily IPv6
-                Write-ColorOutput "  ✓ IPv6 DNS configured" "Green"
-            }
-
-            # Flush DNS cache
-            Clear-DnsClientCache
-            Write-ColorOutput "  ✓ DNS cache flushed" "Green"
-
-        } catch {
-            Write-ColorOutput "  ✗ Failed: $_" "Red"
-        }
+        Write-Host "  Current: DHCP (automatic)" -ForegroundColor DarkGray
     }
-    Write-Host ""
+
+    # Check if already set
+    if ($currentDns -and $currentDns[0] -eq $dns.Primary) {
+        Write-Host "  [OK] Already set to $Provider" -ForegroundColor Green
+    } else {
+        Set-DnsClientServerAddress -InterfaceAlias $name -ServerAddresses @($dns.Primary, $dns.Secondary)
+        Write-Host "  [SET] IPv4 -> $($dns.Primary), $($dns.Secondary)" -ForegroundColor Green
+    }
+
+    if ($SetIPv6) {
+        Set-DnsClientServerAddress -InterfaceAlias $name -ServerAddresses @($dns.IPv6Pri, $dns.IPv6Sec) -ErrorAction SilentlyContinue
+        Write-Host "  [SET] IPv6 -> $($dns.IPv6Pri), $($dns.IPv6Sec)" -ForegroundColor Green
+    }
 }
 
-# Verify configuration
-Write-ColorOutput "Verifying DNS configuration..." "Cyan"
+# Flush DNS cache
 Write-Host ""
+Write-Host "Flushing DNS cache..." -ForegroundColor DarkGray
+Clear-DnsClientCache
+Write-Host "[OK] DNS cache flushed." -ForegroundColor Green
 
+# Verify
+Write-Host ""
+Write-Host "=== Verification ===" -ForegroundColor Cyan
 foreach ($adapter in $adapters) {
-    $dnsServers = Get-DnsClientServerAddress -InterfaceIndex $adapter.ifIndex -AddressFamily IPv4
-    Write-ColorOutput "$($adapter.Name):" "Yellow"
-    foreach ($server in $dnsServers.ServerAddresses) {
-        Write-ColorOutput "  • $server" "White"
-    }
+    $verify = (Get-DnsClientServerAddress -InterfaceAlias $adapter.Name -AddressFamily IPv4).ServerAddresses
+    Write-Host "  $($adapter.Name): $($verify -join ', ')" -ForegroundColor White
 }
-
 Write-Host ""
-Write-ColorOutput "========================================" "Cyan"
-Write-ColorOutput "DNS Configuration Complete!" "Green"
-Write-ColorOutput "========================================" "Cyan"
-Write-Host ""
-
-Write-ColorOutput "What's protected:" "Yellow"
-Write-ColorOutput "  ✓ Malware and phishing sites blocked" "Green"
-Write-ColorOutput "  ✓ Adult content blocked" "Green"
-Write-ColorOutput "  ✓ All apps and browsers protected" "Green"
-Write-Host ""
-
-Write-ColorOutput "Test your protection:" "Yellow"
-Write-ColorOutput "  Visit: https://welcome.opendns.com (should show blocked)" "White"
-Write-ColorOutput "  Or run: Test-ContentFilter.ps1" "White"
-Write-Host ""
-
-Write-ColorOutput "To revert to automatic DNS:" "Yellow"
-Write-ColorOutput '  Get-NetAdapter | Set-DnsClientServerAddress -ResetServerAddresses' "White"
-Write-Host ""
+Write-Host "Done." -ForegroundColor Cyan

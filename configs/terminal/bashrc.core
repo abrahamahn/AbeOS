@@ -2,14 +2,42 @@
 PATH=$(echo "$PATH" | tr ':' '\n' | grep -vE '/mnt/c/Program(\\)? Files( \(x86\))?/nodejs' | paste -sd :)
 export PATH
 
-########## NVM + COREPACK ##########
+########## NVM + COREPACK (lazy load for speed) ##########
 export NVM_DIR="$HOME/.nvm"
-[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"
-[[ -s "$NVM_DIR/bash_completion" ]] && \. "$NVM_DIR/bash_completion"
-command -v corepack >/dev/null && corepack enable
+
+# Add nvm default node bin to PATH immediately so non-interactive shells
+# (git hooks, scripts, sub-shells) find node/pnpm without lazy-load.
+_nvm_node_dir=$(command ls -d "$NVM_DIR/versions/node/"v* 2>/dev/null | sort -V | tail -1)
+if [ -n "$_nvm_node_dir" ] && [ -d "$_nvm_node_dir/bin" ]; then
+    case ":$PATH:" in
+        *":$_nvm_node_dir/bin:"*) ;;
+        *) PATH="$_nvm_node_dir/bin:$PATH" ;;
+    esac
+fi
+unset _nvm_node_dir
+
+# Lazy load NVM - only initialize when first needed
+_load_nvm() {
+  unset -f nvm node npm npx pnpm corepack _load_nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+  command -v corepack >/dev/null && corepack enable
+}
+
+nvm() { _load_nvm; nvm "$@"; }
+node() { _load_nvm; node "$@"; }
+npm() { _load_nvm; npm "$@"; }
+npx() { _load_nvm; npx "$@"; }
+pnpm() { _load_nvm; pnpm "$@"; }
+corepack() { _load_nvm; corepack "$@"; }
+
+########## ENSURE LOCAL BIN IN PATH ##########
+[[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
 
 ########## OH MY POSH ##########
-if command -v oh-my-posh >/dev/null; then
+if [[ $- == *i* ]] && command -v oh-my-posh >/dev/null; then
+    export POSH_CACHE_DIR="/tmp/oh-my-posh-cache"
+    [ -d "$POSH_CACHE_DIR" ] || mkdir -p "$POSH_CACHE_DIR"
     eval "$(oh-my-posh init bash --config '/mnt/c/AbeOS/configs/terminal/abe.omp.json')"
 fi
 
@@ -41,3 +69,44 @@ shopt -s histappend
 HISTSIZE=2000
 HISTFILESIZE=4000
 shopt -s checkwinsize
+
+########## DEFAULT DIRECTORY ##########
+if [ "$PWD" = "$HOME" ]; then
+    cd /mnt/c/projects
+fi
+
+########## MATRIX BANNER (once per session) ##########
+if [[ -z "$ABEOS_BANNER" ]]; then
+    export ABEOS_BANNER=1
+    _g='\033[38;2;0;175;255m'
+    _d='\033[38;2;0;62;92m'
+    _m='\033[38;2;0;117;171m'
+    _c='\033[38;2;0;202;255m'
+    _r='\033[0m'
+    _kern=$(uname -r | cut -d'-' -f1)
+    _node=$(basename "$(command ls -d "$NVM_DIR/versions/node/"v* 2>/dev/null | tail -1)" 2>/dev/null)
+    printf '\n'
+    printf "  ${_d}ﾀ${_m}0${_d}ｱ${_m}1${_d}ﾁ${_m}0${_g}ｳ${_m}1${_d}ﾂ${_m}0${_d}ｴ${_m}1${_d}ﾃ${_m}0${_g}ｵ${_m}1${_d}ﾄ${_m}0${_d}ｶ${_m}1${_d}ﾅ${_m}0${_g}ｷ${_m}1${_d}ﾆ${_m}0${_d}ｸ${_m}1${_d}ﾇ${_m}0${_g}ｹ${_m}1${_d}ﾈ${_m}0${_d}ｺ${_m}1${_d}ﾉ${_m}0${_g}ﾊ${_m}1${_d}ﾋ${_m}0${_r}\n"
+    printf '\n'
+    _blk='█'
+    for _line in \
+        "#   # ##### #     ####  ##### #   # #####   #   # ##### #####" \
+        "#   # #     #     #     #   # ## ## #       ##  # #     #   #" \
+        "# # # ####  #     #     #   # # # # ####    # # # ####  #   #" \
+        "## ## #     #     #     #   # #   # #       #  ## #     #   #" \
+        "#   # ##### ##### ####  ##### #   # #####   #   # ##### #####"; do
+        printf "  ${_g}${_line//#/${_blk}}${_r}\n"
+    done
+    printf '\n'
+    printf "   ${_d}──────────────── ${_m}SYSTEM ONLINE ${_d}──────────────${_r}\n"
+    printf '\n'
+    printf "    ${_d}▸ SYS     ${_c}Linux ${_kern} (WSL2)${_r}\n"
+    printf "    ${_d}▸ SHELL   ${_c}bash ${BASH_VERSION%%\(*}${_r}\n"
+    [ -n "$_node" ] && printf "    ${_d}▸ NODE    ${_c}${_node}${_r}\n"
+    printf "    ${_d}▸ TIME    ${_c}$(date '+%Y-%m-%d %H:%M:%S')${_r}\n"
+    printf "    ${_d}▸ STATUS  ${_g}● ONLINE${_r}\n"
+    printf '\n'
+    printf "  ${_d}ﾑ${_m}1${_d}ﾒ${_m}0${_d}ﾓ${_m}1${_g}ﾔ${_m}0${_d}ﾕ${_m}1${_d}ﾖ${_m}0${_d}ﾗ${_m}1${_g}ﾘ${_m}0${_d}ﾙ${_m}1${_d}ﾚ${_m}0${_d}ﾛ${_m}1${_g}ﾜ${_m}0${_d}ﾝ${_m}1${_d}ﾀ${_m}0${_d}ｱ${_m}1${_g}ﾁ${_m}0${_d}ｳ${_m}1${_d}ﾂ${_m}0${_d}ｴ${_m}1${_g}ﾃ${_m}0${_d}ｵ${_m}1${_r}\n"
+    printf '\n'
+    unset _g _d _m _c _r _kern _node _blk _line
+fi

@@ -1,0 +1,332 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions":
+    [
+        {
+            "command":
+            {
+                "action": "closeTab"
+            },
+            "id": "User.closeTab.0"
+        },
+        {
+            "command":
+            {
+                "action": "splitPane",
+                "split": "auto"
+            },
+            "id": "User.splitPane.91AB55B1"
+        }
+    ],
+    "compatibility.allowHeadless": true,
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{ead0e809-0e30-4193-8f0b-c8c2a8b25628}",
+    "keybindings":
+    [
+        {
+            "id": "Terminal.CopyToClipboard",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "Terminal.PrevTab",
+            "keys": "ctrl+shift+tab"
+        },
+        {
+            "id": "Terminal.ResizePaneDown",
+            "keys": "alt+shift+down"
+        },
+        {
+            "id": "Terminal.NextTab",
+            "keys": "ctrl+tab"
+        },
+        {
+            "id": "Terminal.OpenNewTab",
+            "keys": "ctrl+t"
+        },
+        {
+            "id": "Terminal.PasteFromClipboard",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "Terminal.FindText",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "Terminal.ToggleFocusMode",
+            "keys": "ctrl+shift+z"
+        },
+        {
+            "id": "User.closeTab.0",
+            "keys": "ctrl+w"
+        },
+        {
+            "id": "Terminal.SwitchToTab0",
+            "keys": "ctrl+1"
+        },
+        {
+            "id": "Terminal.SwitchToTab1",
+            "keys": "ctrl+2"
+        },
+        {
+            "id": "Terminal.SwitchToTab2",
+            "keys": "ctrl+3"
+        },
+        {
+            "id": "Terminal.SwitchToTab3",
+            "keys": "ctrl+4"
+        },
+        {
+            "id": "Terminal.SwitchToTab4",
+            "keys": "ctrl+5"
+        },
+        {
+            "id": "Terminal.SplitPaneDown",
+            "keys": "alt+shift+minus"
+        },
+        {
+            "id": "Terminal.SplitPaneRight",
+            "keys": "alt+shift+plus"
+        },
+        {
+            "id": "Terminal.DecreaseFontSize",
+            "keys": "ctrl+minus"
+        },
+        {
+            "id": "Terminal.IncreaseFontSize",
+            "keys": "ctrl+plus"
+        },
+        {
+            "id": "User.splitPane.91AB55B1",
+            "keys": "alt+shift+d"
+        },
+        {
+            "id": "Terminal.ClosePane",
+            "keys": "ctrl+shift+w"
+        },
+        {
+            "id": "Terminal.MoveFocusUp",
+            "keys": "alt+up"
+        },
+        {
+            "id": "Terminal.MoveFocusDown",
+            "keys": "alt+down"
+        },
+        {
+            "id": "Terminal.MoveFocusLeft",
+            "keys": "alt+left"
+        },
+        {
+            "id": "Terminal.MoveFocusRight",
+            "keys": "alt+right"
+        },
+        {
+            "id": "Terminal.ResizePaneUp",
+            "keys": "alt+shift+up"
+        },
+        {
+            "id": "Terminal.ResizePaneLeft",
+            "keys": "alt+shift+left"
+        },
+        {
+            "id": "Terminal.ResizePaneRight",
+            "keys": "alt+shift+right"
+        },
+        {
+            "id": "Terminal.ResetFontSize",
+            "keys": "ctrl+0"
+        },
+        {
+            "id": "Terminal.ToggleFullscreen",
+            "keys": "f11"
+        },
+        {
+            "id": "Terminal.ToggleCommandPalette",
+            "keys": "ctrl+shift+p"
+        }
+    ],
+    "newTabMenu":
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles":
+    {
+        "defaults":
+        {
+            "adjustIndistinguishableColors": "never",
+            "antialiasingMode": "cleartype",
+            "background": "#1E3A52",
+            "bellStyle": "none",
+            "colorScheme": "Cyberpunk",
+            "cursorHeight": 25,
+            "cursorShape": "filledBox",
+            "elevate": true,
+            "experimental.retroTerminalEffect": false,
+            "font":
+            {
+                "builtinGlyphs": true,
+                "face": "JetBrainsMono NF",
+                "features":
+                {
+                    "calt": 1,
+                    "liga": 1
+                },
+                "size": 11,
+                "weight": "medium"
+            },
+            "intenseTextStyle": "bright",
+            "opacity": 0,
+            "padding": "14, 10, 14, 10",
+            "scrollbarState": "hidden",
+            "startingDirectory": "\\\\wsl.localhost\\Ubuntu-24.04\\home\\abe\\projects",
+            "useAcrylic": true
+        },
+        "list":
+        [
+            {
+                "commandline": "C:\\WINDOWS\\system32\\wsl.exe --distribution-id {67a7defc-32e6-4bbd-aa5e-70d07d63db6f}",
+                "guid": "{ead0e809-0e30-4193-8f0b-c8c2a8b25628}",
+                "hidden": false,
+                "icon": "C:\\Users\\abe\\AppData\\Local\\wsl\\{67a7defc-32e6-4bbd-aa5e-70d07d63db6f}\\shortcut.ico",
+                "name": "Linux",
+                "opacity": 95,
+                "pathTranslationStyle": "wsl",
+                "startingDirectory": "\\\\wsl.localhost\\Ubuntu-24.04\\home\\abe\\projects",
+                "suppressApplicationTitle": true,
+                "useAcrylic": true
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "PowerShell",
+                "opacity": 95,
+                "startingDirectory": "C:\\Users\\abe",
+                "useAcrylic": true
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": true,
+                "name": "Command Prompt"
+            },
+            {
+                "guid": "{2b25f05a-756f-5209-b84b-27a597dc34fb}",
+                "hidden": true,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{2124e864-cd82-5a9b-83bb-3d1a3d88cff2}",
+                "hidden": true,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            }
+        ]
+    },
+    "rendering.graphicsAPI": "direct3d11",
+    "schemes":
+    [
+        {
+            "background": "#325A7C",
+            "black": "#284B68",
+            "blue": "#90DEF0",
+            "brightBlack": "#5E7080",
+            "brightBlue": "#B0ECF8",
+            "brightCyan": "#98E4FC",
+            "brightGreen": "#DCF8E8",
+            "brightPurple": "#FF85B8",
+            "brightRed": "#F0A060",
+            "brightWhite": "#F8FFFF",
+            "brightYellow": "#F8F4B8",
+            "cursorColor": "#90DEF0",
+            "cyan": "#70D8F8",
+            "foreground": "#B0ECF8",
+            "green": "#C0F0D4",
+            "name": "Cyberpunk",
+            "purple": "#FF6B9D",
+            "red": "#E89050",
+            "selectionBackground": "#FFB6C1",
+            "white": "#F0F8FF",
+            "yellow": "#F4F0A5"
+        },
+        {
+            "background": "#02000F",
+            "black": "#0A0A0A",
+            "blue": "#00AAFF",
+            "brightBlack": "#003B00",
+            "brightBlue": "#00CCFF",
+            "brightCyan": "#7AFAFF",
+            "brightGreen": "#39FF14",
+            "brightPurple": "#DD55FF",
+            "brightRed": "#FF3366",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFDD00",
+            "cursorColor": "#00FF41",
+            "cyan": "#00CAFF",
+            "foreground": "#00FF41",
+            "green": "#00FF41",
+            "name": "Matrix",
+            "purple": "#BF00FF",
+            "red": "#FF0033",
+            "selectionBackground": "#003B00",
+            "white": "#00AFFF",
+            "yellow": "#FFB000"
+        }
+    ],
+    "searchWebDefaultQueryUrl": "https://www.google.com/",
+    "showTabsFullscreen": false,
+    "showTabsInTitlebar": true,
+    "theme": "CyberpunkDark",
+    "themes":
+    [
+        {
+            "name": "CyberpunkDark",
+            "tab":
+            {
+                "background": "#0A1520FF",
+                "iconStyle": "default",
+                "showCloseButton": "hover",
+                "unfocusedBackground": "#060A0EFF"
+            },
+            "tabRow":
+            {
+                "background": "#040608FF",
+                "unfocusedBackground": "#040608FF"
+            },
+            "window":
+            {
+                "applicationTheme": "dark",
+                "experimental.rainbowFrame": false,
+                "frame": null,
+                "unfocusedFrame": null,
+                "useMica": false
+            }
+        },
+        {
+            "name": "MatrixDark",
+            "tab":
+            {
+                "background": null,
+                "iconStyle": "default",
+                "showCloseButton": "always",
+                "unfocusedBackground": null
+            },
+            "tabRow":
+            {
+                "background": "#02000FFF",
+                "unfocusedBackground": "#010008FF"
+            },
+            "window":
+            {
+                "applicationTheme": "dark",
+                "experimental.rainbowFrame": false,
+                "frame": "#00FFFFFF",
+                "unfocusedFrame": "#003B00FF",
+                "useMica": false
+            }
+        }
+    ],
+    "useAcrylicInTabRow": false
+}

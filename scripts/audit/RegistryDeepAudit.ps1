@@ -1,460 +1,168 @@
-<#
-    AbeOS Registry Deep Audit
-    Modes:
-      A - Safe audit + auto-delete verified orphan entries
-      B - Audit + ask before deleting each category
-      C - Aggressive audit + ask before deleting each entry
-      D - Audit only + create cleanup script (no deletions)
+# RegistryDeepAudit.ps1 - Audit critical registry settings for AbeOS compliance.
+# Usage: .\RegistryDeepAudit.ps1
 
-    Output: C:\AbeOS\logs\registry-audit-YYYYMMDD-HHMMSS\
-#>
+$ErrorActionPreference = "SilentlyContinue"
 
-# ============================================================
-# 0. Mode Selection
-# ============================================================
-
-Write-Host ""
-Write-Host "AbeOS Registry Deep Audit" -ForegroundColor Cyan
-Write-Host ""
-Write-Host "Select audit mode:"
-Write-Host "  A) Safe Audit + Auto-Delete Verified Orphans"
-Write-Host "  B) Audit + Prompt Before Deleting Category"
-Write-Host "  C) Aggressive Audit + Prompt Before Each Entry"
-Write-Host "  D) Audit Only (Generate Cleanup Script)"
+Write-Host "=== AbeOS Registry Deep Audit ===" -ForegroundColor Cyan
+Write-Host "Generated: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" -ForegroundColor DarkGray
 Write-Host ""
 
-$mode = Read-Host "Enter A / B / C / D"
-$mode = $mode.ToUpper()
+$issueCount = 0
 
-if ($mode -notin @("A", "B", "C", "D")) {
-    Write-Host "Invalid mode. Exiting." -ForegroundColor Red
-    exit
-}
-
-# ============================================================
-# 1. Setup logging
-# ============================================================
-
-$timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
-$baseLogDir = "C:\AbeOS\logs"
-if (-not (Test-Path $baseLogDir)) { New-Item -ItemType Directory -Path $baseLogDir | Out-Null }
-
-$logDir = Join-Path $baseLogDir "registry-audit-$timestamp"
-New-Item -ItemType Directory -Path $logDir -Force | Out-Null
-
-$cleanupScript = Join-Path $logDir "CleanupCommands.ps1"
-
-Write-Host "[+] Logging to: $logDir" -ForegroundColor Cyan
-
-# ============================================================
-# Helper: Action depending on mode
-# ============================================================
-
-function Handle-Entry {
+function Check-Registry {
     param(
-        [string]$description,
-        [string]$deleteCommand,
-        [string]$category
+        [string]$Path,
+        [string]$Name,
+        $ExpectedValue,
+        [string]$Label,
+        [string]$Category = ""
     )
 
-    switch ($mode) {
-        "A" {
-            # Auto-delete verified safe entries
-            Invoke-Expression $deleteCommand
-        }
-        "B" {
-            # Ask per category (once)
-            if (-not $script:confirmedCategory.ContainsKey($category)) {
-                $answer = Read-Host "Delete category '$category'? (y/n)"
-                $script:confirmedCategory[$category] = ($answer -eq "y")
-            }
-            if ($script:confirmedCategory[$category]) {
-                Invoke-Expression $deleteCommand
-            }
-        }
-        "C" {
-            # Ask per entry
-            $ans = Read-Host "Delete entry: $description ? (y/n)"
-            if ($ans -eq "y") { Invoke-Expression $deleteCommand }
-        }
-        "D" {
-            # Dump cleanup commands only
-            $deleteCommand | Out-File -FilePath $cleanupScript -Append
-        }
-    }
-}
+    $current = Get-ItemProperty -Path $Path -Name $Name -ErrorAction SilentlyContinue
+    $currentVal = $(if ($current) { $current.$Name } else { "(not set)" })
 
-$script:confirmedCategory = @{}
-# ============================================================
-# 2. Audit: Orphan Uninstall Keys (with fuzzy-safe detection)
-# ============================================================
-
-Write-Host "[1] Auditing orphan uninstall entries (fuzzy-safe)..."
-
-# Roots to scan
-$unistRoots = @(
-    "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall",
-    "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall",
-    "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"
-)
-
-$unistReport = Join-Path $logDir "OrphanUninstall_Fuzzy.csv"
-$unistResults = @()
-
-# Preload services & processes once for performance
-$allServices  = Get-Service -ErrorAction SilentlyContinue
-$allProcesses = Get-Process -ErrorAction SilentlyContinue
-
-# Roots to search on disk for fuzzy app presence
-$searchRoots = @(
-    "C:\Program Files",
-    "C:\Program Files (x86)",
-    "C:\ProgramData",
-    "C:\Users\abe\AppData\Local",
-    "C:\Users\abe\AppData\Roaming"
-) | Where-Object { Test-Path $_ }
-
-function Get-AppSearchTokens {
-    param(
-        [string]$DisplayName
-    )
-    if ([string]::IsNullOrWhiteSpace($DisplayName)) { return @() }
-
-    $stopWords = @(
-        "microsoft","update","redistributable","driver","runtime","x64","x86",
-        "setup","installer","visual","c++","client","service","tools","helper",
-        "framework","library"
-    )
-
-    $rawTokens = $DisplayName -split '\s+' |
-                 ForEach-Object { $_.Trim().Trim(',','.','-','_','(',')') } |
-                 Where-Object { $_.Length -ge 3 }
-
-    $tokens = $rawTokens | Where-Object {
-        $lower = $_.ToLowerInvariant()
-        $stopWords -notcontains $lower
-    }
-
-    return ($tokens | Select-Object -Unique | Select-Object -First 3)
-}
-
-function Test-ExeExistsFromCommand {
-    param(
-        [string]$CommandLine
-    )
-    if ([string]::IsNullOrWhiteSpace($CommandLine)) { return $false }
-
-    # Strip quotes and arguments: "C:\path\app.exe" /foo /bar
-    $clean = $CommandLine.Trim()
-    if ($clean.StartsWith('"')) {
-        $secondQuote = $clean.IndexOf('"', 1)
-        if ($secondQuote -gt 1) {
-            $exe = $clean.Substring(1, $secondQuote - 1)
-        } else {
-            $exe = $clean.Trim('"')
-        }
+    if ($currentVal -eq $ExpectedValue) {
+        Write-Host "  [OK] ${Label} = $currentVal" -ForegroundColor Green
+        return $false
     } else {
-        $exe = $clean.Split(" ")[0]
-    }
-
-    if (-not [string]::IsNullOrWhiteSpace($exe)) {
-        try {
-            return (Test-Path -LiteralPath $exe)
-        } catch { return $false }
-    }
-
-    return $false
-}
-
-foreach ($root in $unistRoots) {
-    if (-not (Test-Path $root)) { continue }
-
-    foreach ($key in Get-ChildItem $root -ErrorAction SilentlyContinue) {
-        try {
-            $p = Get-ItemProperty $key.PSPath -ErrorAction SilentlyContinue
-        } catch {
-            continue
-        }
-
-        $displayName    = $p.DisplayName
-        $displayVersion = $p.DisplayVersion
-        $publisher      = $p.Publisher
-        $installLoc     = $p.InstallLocation
-        $uninstallStr   = $p.UninstallString
-        $displayIcon    = $p.DisplayIcon
-
-        # Skip totally empty/anonymous entries
-        if (-not $displayName -and -not $installLoc -and -not $uninstallStr -and -not $displayIcon) {
-            continue
-        }
-
-        # 1) InstallLocation exists?
-        $installExists = $false
-        if ($installLoc) {
-            try { $installExists = Test-Path -LiteralPath $installLoc } catch { $installExists = $false }
-        }
-
-        # 2) DisplayIcon exe exists?
-        $iconExists = $false
-        if ($displayIcon) {
-            $iconPath = $displayIcon.Trim('"')
-            # strip arguments if any after .exe
-            $exeIndex = $iconPath.ToLower().IndexOf(".exe")
-            if ($exeIndex -ge 0) {
-                $iconPath = $iconPath.Substring(0, $exeIndex + 4)
-            }
-            try { $iconExists = Test-Path -LiteralPath $iconPath } catch { $iconExists = $false }
-        }
-
-        # 3) UninstallString exe exists?
-        $uninstExists = Test-ExeExistsFromCommand -CommandLine $uninstallStr
-
-        # 4) Fuzzy on-disk search using tokens from DisplayName
-        $tokens = Get-AppSearchTokens -DisplayName $displayName
-        $foundOnDisk = $false
-        if ($tokens.Count -gt 0) {
-            foreach ($rootDir in $searchRoots) {
-                if ($foundOnDisk) { break }
-                try {
-                    $topDirs = Get-ChildItem $rootDir -Directory -ErrorAction SilentlyContinue
-                    foreach ($t in $tokens) {
-                        if ($topDirs | Where-Object { $_.Name -like "*$t*" }) {
-                            $foundOnDisk = $true
-                            break
-                        }
-                    }
-                } catch {}
-            }
-        }
-
-        # 5) Fuzzy service match
-        $foundService = $false
-        if ($tokens.Count -gt 0 -and $allServices) {
-            foreach ($t in $tokens) {
-                if ($allServices | Where-Object {
-                    $_.Name -like "*$t*" -or $_.DisplayName -like "*$t*"
-                }) {
-                    $foundService = $true
-                    break
-                }
-            }
-        }
-
-        # 6) Fuzzy process match
-        $foundProcess = $false
-        if ($tokens.Count -gt 0 -and $allProcesses) {
-            foreach ($t in $tokens) {
-                if ($allProcesses | Where-Object {
-                    $_.ProcessName -like "*$t*"
-                }) {
-                    $foundProcess = $true
-                    break
-                }
-            }
-        }
-
-        # FINAL ORPHAN DECISION:
-        # Only consider this an orphan if NOTHING indicates the app still exists.
-        $isOrphan = -not $installExists -and `
-                    -not $iconExists -and `
-                    -not $uninstExists -and `
-                    -not $foundOnDisk -and `
-                    -not $foundService -and `
-                    -not $foundProcess
-
-        if ($isOrphan) {
-            $unistResults += [PSCustomObject]@{
-                RootKey          = $root
-                KeyPath          = $key.PSPath
-                KeyName          = $key.PSChildName
-                DisplayName      = $displayName
-                DisplayVersion   = $displayVersion
-                Publisher        = $publisher
-                InstallLocation  = $installLoc
-                InstallExists    = $installExists
-                DisplayIcon      = $displayIcon
-                IconExists       = $iconExists
-                UninstallString  = $uninstallStr
-                UninstallExeOK   = $uninstExists
-                FoundOnDisk      = $foundOnDisk
-                FoundService     = $foundService
-                FoundProcess     = $foundProcess
-            }
-
-            $del = "Remove-Item -Path '$($key.PSPath)' -Recurse -Force"
-            Handle-Entry -description $displayName -deleteCommand $del -category "UninstallKeys"
-        }
+        Write-Host "  [!!] ${Label} = $currentVal (expected: $ExpectedValue)" -ForegroundColor Red
+        return $true
     }
 }
 
-$unistResults | Export-Csv -Path $unistReport -NoTypeInformation
-Write-Host "    -> Fuzzy-safe orphan uninstall keys written to $unistReport"
+# --- Theme & Appearance ---
+Write-Host "[THEME & APPEARANCE]" -ForegroundColor Yellow
+$personalize = "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize"
+$dwm = "HKCU:\SOFTWARE\Microsoft\Windows\DWM"
 
-# ============================================================
-# 3. Orphan ProfileList SIDs
-# ============================================================
+$r = Check-Registry -Path $personalize -Name "AppsUseLightTheme" -ExpectedValue 0 -Label "Apps dark mode"
+if ($r) { $issueCount++ }
 
-Write-Host "[2] Auditing orphan ProfileList SIDs..."
+$r = Check-Registry -Path $personalize -Name "SystemUsesLightTheme" -ExpectedValue 0 -Label "System dark mode"
+if ($r) { $issueCount++ }
 
-$profKey = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList"
-$profReport = Join-Path $logDir "ProfileList_Orphans.csv"
-$profResults = @()
+$r = Check-Registry -Path $dwm -Name "ColorPrevalence" -ExpectedValue 1 -Label "Window colorization"
+if ($r) { $issueCount++ }
 
-foreach ($sid in Get-ChildItem $profKey) {
-    $img = (Get-ItemProperty $sid.PSPath).ProfileImagePath
-    if ($img -and -not (Test-Path $img)) {
-        $profResults += [PSCustomObject]@{
-            SID   = $sid.PSChildName
-            Path  = $img
-        }
+$r = Check-Registry -Path $personalize -Name "ColorPrevalence" -ExpectedValue 1 -Label "Taskbar colorization"
+if ($r) { $issueCount++ }
 
-        $del = "Remove-Item -Path '$($sid.PSPath)' -Recurse -Force"
-        Handle-Entry -description $sid.PSChildName -deleteCommand $del -category "SIDs"
-    }
-}
-
-$profResults | Export-Csv -Path $profReport -NoTypeInformation
-Write-Host "    -> Orphan ProfileList SIDs written."
-
-# ============================================================
-# 4. Orphan Installer\UserData SIDs
-# ============================================================
-
-Write-Host "[3] Auditing orphan Installer\\UserData SIDs..."
-
-$instRoot = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData"
-$instReport = Join-Path $logDir "InstallerUserData_Orphans.csv"
-$instResults = @()
-
-$validSIDs = @(
-    "S-1-5-18","S-1-5-19","S-1-5-20"
-)
-
-foreach ($sid in Get-ChildItem $instRoot) {
-    if ($sid.PSChildName -in $validSIDs) { continue }
-
-    # Check if SID belongs to a real user
-    if (-not (Get-LocalUser | Where-Object SID -eq $sid.PSChildName)) {
-        $instResults += [PSCustomObject]@{
-            SID = $sid.PSChildName
-        }
-
-        $del = "Remove-Item -Path '$($sid.PSPath)' -Recurse -Force"
-        Handle-Entry -description $sid.PSChildName -deleteCommand $del -category "InstallerUserData"
-    }
-}
-
-$instResults | Export-Csv -Path $instReport -NoTypeInformation
-Write-Host "    -> Orphan Installer SIDs written."
-
-# ============================================================
-# 5. App Paths Audit (Missing EXEs)
-# ============================================================
-
-Write-Host "[4] Auditing App Paths..."
-
-$appPaths = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths"
-$appPathsReport = Join-Path $logDir "AppPaths_Orphans.csv"
-$appPathsRes = @()
-
-foreach ($key in Get-ChildItem $appPaths) {
-    try {
-        $exe = (Get-ItemProperty $key.PSPath)."(Default)"
-    } catch { continue }
-
-    if ($exe -and -not (Test-Path $exe)) {
-        $appPathsRes += [PSCustomObject]@{
-            Key = $key.PSPath
-            Target = $exe
-        }
-
-        $del = "Remove-Item -Path '$($key.PSPath)' -Recurse -Force"
-        Handle-Entry -description $exe -deleteCommand $del -category "AppPaths"
-    }
-}
-
-$appPathsRes | Export-Csv -Path $appPathsReport -NoTypeInformation
-Write-Host "    -> App Paths audit written."
-
-# ============================================================
-# 6. Shell Extensions Audit (Broken CLSIDs)
-# ============================================================
-
-Write-Host "[5] Auditing shell extensions..."
-
-$shellRoots = @(
-    "HKCR:\*\shellex",
-    "HKCR:\Directory\shellex",
-    "HKCR:\Folder\shellex"
-)
-
-$shellReport = Join-Path $logDir "ShellExtensions_Orphans.csv"
-$shellRes = @()
-
-foreach ($root in $shellRoots) {
-    if (-not (Test-Path $root)) { continue }
-
-    foreach ($sub in Get-ChildItem $root -Recurse) {
-        if ($sub.PSChildName -match "^\{.+\}$") {
-            $clsid = "HKCR:\CLSID\$($sub.PSChildName)"
-            if (-not (Test-Path $clsid)) {
-                $shellRes += [PSCustomObject]@{
-                    MissingCLSID = $sub.PSChildName
-                    RefPath = $sub.PSPath
-                }
-
-                $del = "Remove-Item -Path '$($sub.PSPath)' -Recurse -Force"
-                Handle-Entry -description $sub.PSChildName -deleteCommand $del -category "ShellExtensions"
-            }
-        }
-    }
-}
-
-$shellRes | Export-Csv -Path $shellReport -NoTypeInformation
-Write-Host "    -> Shell extension audit written."
-
-# ============================================================
-# 7. Service Entries with Missing Binaries
-# ============================================================
-
-Write-Host "[6] Auditing services whose ImagePath is broken..."
-
-$svcReport = Join-Path $logDir "Service_Orphans.csv"
-$svcRes = @()
-
-foreach ($svc in Get-ChildItem "HKLM:\System\CurrentControlSet\Services") {
-    try {
-        $img = (Get-ItemProperty $svc.PSPath).ImagePath
-    } catch { continue }
-
-    if ($img -and $img -match "\.exe") {
-        $clean = $img.Trim('"')
-        $exe = $clean.Split(" ")[0]
-
-        if (-not (Test-Path $exe)) {
-            $svcRes += [PSCustomObject]@{
-                Service = $svc.PSChildName
-                ImagePath = $img
-            }
-
-            $del = "Remove-Item -Path '$($svc.PSPath)' -Recurse -Force"
-            Handle-Entry -description $svc.PSChildName -deleteCommand $del -category "Services"
-        }
-    }
-}
-
-$svcRes | Export-Csv -Path $svcReport -NoTypeInformation
-Write-Host "    -> Service audit written."
-
-# ============================================================
-# Finish
-# ============================================================
-
+# --- Taskbar ---
 Write-Host ""
-Write-Host "=== Registry Audit Complete ===" -ForegroundColor Cyan
-Write-Host "Logs saved to: $logDir" -ForegroundColor Cyan
+Write-Host "[TASKBAR]" -ForegroundColor Yellow
+$explorer = "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
+$search = "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search"
 
-if ($mode -eq "D") {
-    Write-Host "Cleanup commands saved to:" -ForegroundColor Yellow
-    Write-Host "  $cleanupScript"
+$r = Check-Registry -Path $search -Name "SearchboxTaskbarMode" -ExpectedValue 0 -Label "Search hidden"
+if ($r) { $issueCount++ }
+
+$r = Check-Registry -Path $explorer -Name "ShowCopilotButton" -ExpectedValue 0 -Label "Copilot hidden"
+if ($r) { $issueCount++ }
+
+$r = Check-Registry -Path $explorer -Name "ShowTaskViewButton" -ExpectedValue 0 -Label "Task View hidden"
+if ($r) { $issueCount++ }
+
+$r = Check-Registry -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarDa" -Name "VisibilityLevel" -ExpectedValue 0 -Label "Widgets hidden"
+if ($r) { $issueCount++ }
+
+# --- Game Bar ---
+Write-Host ""
+Write-Host "[GAME BAR]" -ForegroundColor Yellow
+$r = Check-Registry -Path "HKCU:\SOFTWARE\Microsoft\GameBar" -Name "UseNexusForGameBarEnabled" -ExpectedValue 0 -Label "Game Bar disabled"
+if ($r) { $issueCount++ }
+
+# --- Boot ---
+Write-Host ""
+Write-Host "[BOOT CONFIGURATION]" -ForegroundColor Yellow
+$r = Check-Registry -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "VerboseStatus" -ExpectedValue 1 -Label "Verbose boot"
+if ($r) { $issueCount++ }
+
+# --- Power & Performance ---
+Write-Host ""
+Write-Host "[POWER & PERFORMANCE]" -ForegroundColor Yellow
+
+$r = Check-Registry -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Power" -Name "HiberbootEnabled" -ExpectedValue 0 -Label "Fast Startup disabled"
+if ($r) { $issueCount++ }
+
+$sysMain = (Get-Service -Name "SysMain" -ErrorAction SilentlyContinue).StartType
+if ($sysMain -eq "Disabled") {
+    Write-Host "  [OK] SysMain (Superfetch) = Disabled" -ForegroundColor Green
+} else {
+    Write-Host "  [!!] SysMain (Superfetch) = $sysMain (expected: Disabled)" -ForegroundColor Red
+    $issueCount++
 }
+
+# --- Privacy & Security ---
+Write-Host ""
+Write-Host "[PRIVACY & SECURITY]" -ForegroundColor Yellow
+
+$smartscreen = Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "SmartScreenEnabled" -ErrorAction SilentlyContinue
+if ($smartscreen -and $smartscreen.SmartScreenEnabled -ne "Off") {
+    Write-Host "  [OK] SmartScreen = $($smartscreen.SmartScreenEnabled)" -ForegroundColor Green
+} else {
+    Write-Host "  [!!] SmartScreen = Off (should be enabled)" -ForegroundColor Red
+    $issueCount++
+}
+
+# SafeSearch policies
+$googleSafe = Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "ForceGoogleSafeSearch" -ErrorAction SilentlyContinue
+if ($googleSafe -and $googleSafe.ForceGoogleSafeSearch -eq 1) {
+    Write-Host "  [OK] Google SafeSearch = Enforced" -ForegroundColor Green
+} else {
+    Write-Host "  [!!] Google SafeSearch = Not enforced" -ForegroundColor Yellow
+    $issueCount++
+}
+
+$bingSafe = Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "ForceBingSafeSearch" -ErrorAction SilentlyContinue
+if ($bingSafe -and $bingSafe.ForceBingSafeSearch -ge 1) {
+    Write-Host "  [OK] Bing SafeSearch = Enforced" -ForegroundColor Green
+} else {
+    Write-Host "  [!!] Bing SafeSearch = Not enforced" -ForegroundColor Yellow
+    $issueCount++
+}
+
+# --- OEM Branding ---
+Write-Host ""
+Write-Host "[OEM BRANDING]" -ForegroundColor Yellow
+$oem = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation"
+$manufacturer = (Get-ItemProperty -Path $oem -Name "Manufacturer" -ErrorAction SilentlyContinue).Manufacturer
+$model = (Get-ItemProperty -Path $oem -Name "Model" -ErrorAction SilentlyContinue).Model
+$mfgDisplay = $(if ($manufacturer) { $manufacturer } else { "(not set)" })
+$modelDisplay = $(if ($model) { $model } else { "(not set)" })
+Write-Host "  Manufacturer: $mfgDisplay" -ForegroundColor White
+Write-Host "  Model: $modelDisplay" -ForegroundColor White
+
+# --- Explorer Settings ---
+Write-Host ""
+Write-Host "[EXPLORER]" -ForegroundColor Yellow
+$r = Check-Registry -Path $explorer -Name "HideFileExt" -ExpectedValue 0 -Label "Show file extensions"
+if ($r) { $issueCount++ }
+
+$r = Check-Registry -Path $explorer -Name "Hidden" -ExpectedValue 1 -Label "Show hidden files"
+if ($r) { $issueCount++ }
+
+# --- User Account Check ---
+Write-Host ""
+Write-Host "[USER ACCOUNTS]" -ForegroundColor Yellow
+$users = Get-LocalUser | Where-Object { $_.Enabled }
+$suspiciousUsers = $users | Where-Object { $_.Name -match "^(temp|newadmin|default|test)" }
+if ($suspiciousUsers) {
+    foreach ($u in $suspiciousUsers) {
+        Write-Host "  [!!] Suspicious active account: $($u.Name)" -ForegroundColor Red
+        $issueCount++
+    }
+} else {
+    $userNames = ($users | ForEach-Object { $_.Name }) -join ", "
+    Write-Host "  [OK] Active accounts: $userNames" -ForegroundColor Green
+}
+
+# --- Summary ---
+Write-Host ""
+Write-Host "=== Summary ===" -ForegroundColor Cyan
+if ($issueCount -eq 0) {
+    Write-Host "  Zero issues - Registry is AbeOS compliant." -ForegroundColor Green
+} else {
+    Write-Host "  $issueCount issue(s) found. Run Apply-AbeOS-Theme.ps1 to fix theme settings." -ForegroundColor Yellow
+}
+Write-Host ""
+Write-Host "Done." -ForegroundColor Cyan

@@ -1,23 +1,26 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "transient_prompt": {
-    "enabled": false
+    "enabled": true,
+    "template": "<#70D8F8>\u03bb</> ",
+    "filler": "",
+    "newline": false
   },
   "continuation_prompt": {
-    "template": ""
+    "template": "<#5E7080>\u2502</> "
   },
   "blocks": [
     {
       "type": "prompt",
       "style": "primary",
       "alignment": "left",
-      "newline": true,
+      "newline": false,
       "segments": [
         {
           "type": "os",
           "style": "diamond",
-          "background": "#0c7bbb",
-          "foreground": "#ffffff",
+          "background": "#4A7E9A",
+          "foreground": "#0A0A0A",
           "leading_diamond": "\u256d\u2500\ue0b2",
           "properties": {
             "alpine": "\uf300",
@@ -41,43 +44,43 @@
         {
           "type": "session",
           "style": "powerline",
-          "background": "#4a2a7a",
-          "foreground": "#d7aaff",
+          "background": "#5A9BB8",
+          "foreground": "#0A0A0A",
           "powerline_symbol": "\ue0b0",
-          "template": " {{ if .Env.WSL_DISTRO_NAME }}bash (wsl){{ else if eq .Shell \"pwsh\" }}pwsh{{ else if eq .Shell \"bash\" }}bash{{ else }}{{ .Shell }}{{ end }} "
+          "template": " {{ if .Env.WSL_DISTRO_NAME }}bash <#0A0A0A>(wsl)</>{{ else if eq .Shell \"pwsh\" }}pwsh{{ else if eq .Shell \"bash\" }}bash{{ else }}{{ .Shell }}{{ end }} "
         },
         {
           "type": "session",
           "style": "powerline",
-          "background": "#2d4263",
-          "foreground": "#00fff9",
+          "background": "#4A7E9A",
+          "foreground": "#0A0A0A",
           "powerline_symbol": "\ue0b0",
-          "template": " {{ .UserName }} "
+          "template": " \uf007 {{ .UserName }} "
         },
         {
           "type": "git",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "background_templates": ["transparent"],
-          "foreground": "#ff9ab8",
+          "background": "#5A9BB8",
+          "foreground": "#0A0A0A",
           "foreground_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#ff7a9f{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#e1bee7{{ end }}",
-            "{{ if gt .Ahead 0 }}#e1bee7{{ end }}",
-            "{{ if gt .Behind 0 }}#e1bee7{{ end }}"
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#0A0A0A{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#0A0A0A{{ end }}",
+            "{{ if gt .Ahead 0 }}#0A0A0A{{ end }}",
+            "{{ if gt .Behind 0 }}#0A0A0A{{ end }}"
           ],
           "properties": {
             "branch_template": "{{ trunc 25 .Branch }}",
             "fetch_status": true,
             "fetch_upstream_icon": true
           },
-          "template": "{{ .UpstreamIcon }} {{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}",
+          "template": " {{ .UpstreamIcon }} \ue725 {{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} <#0A0A0A>\uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} <#0A0A0A>|</>{{ end }}{{ if .Staging.Changed }} <#0A0A0A>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <#0A0A0A>\ueb4b {{ .StashCount }}</>{{ end }} ",
           "trailing_diamond": "\ue0b4"
         },
         {
           "type": "node",
           "style": "plain",
-          "foreground": "#aaffaa",
+          "foreground": "#90DEF0",
           "properties": {
             "fetch_version": true,
             "display_mode": "always"
@@ -87,11 +90,42 @@
         {
           "type": "python",
           "style": "plain",
-          "foreground": "#ffaaff",
+          "foreground": "#F8F4B8",
           "properties": {
-            "display_mode": "always"
+            "display_version": false,
+            "display_virtual_env": true
           },
-          "template": " \ue73c {{ .Full }}"
+          "template": " \ue73c {{ .Venv }} "
+        }
+      ],
+      "filler": "<#90DEF0>\u2500</>"
+    },
+    {
+      "type": "prompt",
+      "style": "primary",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "foreground": "#90DEF0",
+          "properties": {
+            "threshold": 500,
+            "style": "roundrock"
+          },
+          "template": "\uf252 {{ .FormattedMs }} "
+        },
+        {
+          "type": "time",
+          "style": "diamond",
+          "background": "#5A9BB8",
+          "foreground": "#0A0A0A",
+          "leading_diamond": "\ue0b2",
+          "trailing_diamond": "\ue0b0",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "template": " \uf017 {{ .CurrentDate | date .Format }} "
         }
       ]
     },
@@ -104,29 +138,29 @@
         {
           "type": "text",
           "style": "plain",
-          "foreground": "#0c7bbb",
-          "template": "\u2070\u2500"
+          "foreground": "#90DEF0",
+          "template": "\u2570\u2500"
         },
         {
           "type": "path",
           "style": "plain",
-          "foreground": "#ff9ab8",
+          "foreground": "#70D8F8",
           "properties": {
             "style": "full",
-            "max_width": 50
+            "max_width": 60
           },
-          "template": "{ {{ .Path }} }",
+          "template": "<#90DEF0>{</> {{ .Path }} <#90DEF0>}</>",
           "trailing_space": true
         },
         {
           "type": "status",
           "style": "plain",
-          "foreground": "#00fff9",
-          "foreground_templates": ["{{ if gt .Code 0 }}#ff006e{{ end }}"],
+          "foreground": "#70D8F8",
+          "foreground_templates": ["{{ if gt .Code 0 }}#F0A890{{ end }}"],
           "properties": {
             "always_enabled": true
           },
-          "template": " \ue286 "
+          "template": "\u03bb "
         }
       ]
     }

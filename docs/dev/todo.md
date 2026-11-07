@@ -73,9 +73,9 @@ _(for Music Production 🎹 + Gaming 🎮 + Coding 💻 + Streaming 📡 + macOS
 
 ### 8 Automation
 
-- [ ] Script `Install-DevTools.ps1` / `Install-DevTools.sh` to apply the above packages sequentially per shell. → Setup-DevEnvironment.ps1 (Master orchestrator), Install-All-DevTools.sh
-- [ ] Add verification script to ensure Node/Python/Java/C++/CUDA/WSL components report expected versions. → Verify-Installation.sh
-- [ ] Document environment variables (`UV_USE_PYTHON`, `CUDA_PATH`, `NPM_TOKEN`, etc.) in `configs/core/terminal/README.md`.
+- [x] Script `Install-DevTools.ps1` / `Install-DevTools.sh` to apply the above packages sequentially per shell. → Setup-DevEnvironment.ps1 (Master orchestrator), Install-All-DevTools.sh
+- [x] Add verification script to ensure Node/Python/Java/C++/CUDA/WSL components report expected versions. → Verify-Installation.sh
+- [x] Document environment variables (`CUDA_PATH`, `NPM_TOKEN`, tool directories) in `configs/terminal/README.md`. See also: docs/dev/INSTALLATION_MANIFEST.md
 
 ### 9 Check
 
@@ -115,19 +115,19 @@ _(for Music Production 🎹 + Gaming 🎮 + Coding 💻 + Streaming 📡 + macOS
 
 ### 2. Audio Routing (VoiceMeeter)
 
-- [x ] Install Voicemeeter Banana
-- [x ] Route:
+- [] Install Voicemeeter Banana
+- [] Route:
   - Mic → Input 1
   - FL Studio → AUX1
   - Game Audio → AUX2
   - Output → OBS Virtual Cable
-- [x ] Save profiles:
+- [] Save profiles:
   - `Music.xml`, `Gaming.xml`, `Streaming.xml`
-- [ x] Integrate in `Mode-Switcher.ps1`
+- [] Integrate in `Mode-Switcher.ps1`
 
 ### 3. GPU-Aware Mode Switching
 
-- [ ] Implement Afterburner + GHelper profiles:
+- [x] Implement Afterburner + GHelper profiles:
   - Creator Mode → 85W GPU, Balanced Fans
   - Performance Mode → Max Clocks, Turbo Fans
 - [ ] Apply via:
@@ -163,10 +163,10 @@ _(for Music Production 🎹 + Gaming 🎮 + Coding 💻 + Streaming 📡 + macOS
 
 ### 1. DAW + Plugins
 
-- [ ] Install FL Studio + Ableton Live
-- [ ] Centralize all VST2/VST3 paths:
+- [x] Install FL Studio + Ableton Live
+- [x] Centralize all VST2/VST3 paths:
   - `C:\Production\VST2`
-  - `C:\Production\VST3`
+  - `C:\Program Files\Common Files\VST3`
 - [ ] Fix registry paths for relocated plugins
 - [ ] Use `Vst-Registry.psm1` to sync all plugin entries
 - [ ] Organize by type:

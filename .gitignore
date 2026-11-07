@@ -6,8 +6,10 @@
 assets/
 assets/**
 
-.claude
-``
+.claude/
+.tmp/
+.playwright-mcp/
+
 # Keep folder structure
 !assets/**/.gitkeep
 
@@ -15,6 +17,8 @@ assets/**
 *.exe
 *.msi
 *.dll
+*.sys
+*.reg
 *.vst3
 *.vst
 *.dylib
@@ -26,6 +30,19 @@ assets/**
 # (but keep scripts)
 !scripts/**/*.ps1
 !scripts/**/*.sh
+
+# ---- BACKUPS ----
+backups/
+configs/core/backup/
+configs/core/terminal/
+
+# ---- CONTROL CENTER BUILD OUTPUT ----
+control-center/node_modules/
+control-center/dist/
+control-center/dist-ssr/
+control-center/src-tauri/target/
+control-center/.claude/
+control-center/.playwright-mcp/
 
 # ---- SYSTEM / OS CACHE ----
 Thumbs.db
