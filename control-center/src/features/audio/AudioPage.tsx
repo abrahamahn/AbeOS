@@ -4,7 +4,7 @@ import { Music, Play, RefreshCw, CheckCircle, XCircle } from "lucide-react";
 import { PageHeader } from "../../components/PageHeader.tsx";
 import { TerminalOutput } from "../../components/TerminalOutput.tsx";
 import { api } from "../../lib/tauri.ts";
-import type { AudioInfo } from "../../lib/tauri.ts";
+import type { AudioInfo } from "../../lib/types.ts";
 import { useScript } from "../../hooks/useScript.ts";
 import { SCRIPTS } from "../../lib/constants.ts";
 

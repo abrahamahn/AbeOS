@@ -1,7 +1,7 @@
 // src/hooks/useSystemHistory.ts
 import { useState, useEffect, useRef, useCallback } from "react";
 import { api } from "../lib/tauri.ts";
-import type { SystemInfo } from "../lib/tauri.ts";
+import type { SystemInfo } from "../lib/types.ts";
 
 /** A single point-in-time snapshot of system metrics. */
 export interface SystemSnapshot {

@@ -11,29 +11,13 @@ echo "Miniconda3 Installation"
 echo "=================================================="
 echo ""
 
-# Color codes
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-YELLOW='\033[1;33m'
-RED='\033[0;31m'
-NC='\033[0m'
-
-log_info() {
-    echo -e "${BLUE}[INFO]${NC} $1"
-}
-
-log_success() {
-    echo -e "${GREEN}[SUCCESS]${NC} $1"
-}
-
-log_warning() {
-    echo -e "${YELLOW}[WARNING]${NC} $1"
-}
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/lib/common.sh"
 
 # Check if Miniconda is already installed
 if [ -d "$HOME/miniconda3" ]; then
     log_warning "Miniconda3 already installed at $HOME/miniconda3"
-    read -p "Do you want to reinstall? (y/N): " -n 1 -r
+    read -p "Do you want to reinstall? (y/N): " -n 1 -
     echo
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
         log_info "Skipping installation"
@@ -41,7 +25,7 @@ if [ -d "$HOME/miniconda3" ]; then
     fi
 fi
 
-# Download Miniconda installer
+# Download Miniconda installe
 log_info "Downloading Miniconda3 installer..."
 MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
 INSTALLER="/tmp/miniconda.sh"
@@ -110,7 +94,7 @@ conda install -y \
 log_success "ML environment created"
 conda deactivate
 
-# Create activation helper
+# Create activation helpe
 cat > "$HOME/.conda_activate_ml.sh" << 'EOF'
 #!/bin/bash
 source "$HOME/miniconda3/bin/activate" ml-base

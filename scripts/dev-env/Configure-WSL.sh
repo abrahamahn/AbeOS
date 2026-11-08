@@ -5,35 +5,15 @@
 # Based on DEBUG.md, DEBUG2.md, and DEBUG3.md findings
 # =============================================================================
 
-set -e  # Exit on error
+set -e  # Exit on erro
 
 echo "=================================================="
 echo "WSL2 Configuration Setup"
 echo "=================================================="
 echo ""
 
-# Color codes for output
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-YELLOW='\033[1;33m'
-RED='\033[0;31m'
-NC='\033[0m' # No Color
-
-log_info() {
-    echo -e "${BLUE}[INFO]${NC} $1"
-}
-
-log_success() {
-    echo -e "${GREEN}[SUCCESS]${NC} $1"
-}
-
-log_warning() {
-    echo -e "${YELLOW}[WARNING]${NC} $1"
-}
-
-log_error() {
-    echo -e "${RED}[ERROR]${NC} $1"
-}
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/lib/common.sh"
 
 # Check if running in WSL
 if ! grep -q microsoft /proc/version; then
@@ -203,15 +183,15 @@ log_warning "2. Restart WSL to apply changes"
 echo ""
 log_warning "3. After restart, run the bash profile setup:"
 echo "   cd /mnt/c/AbeOS  # or ~/AbeOS if cloned in Linux"
-echo "   ./scripts/dev-environment/Setup-Bash-Profile.sh"
+echo "   ./scripts/dev-env/Setup-Bash-Profile.sh"
 echo ""
 log_warning "4. Run the diagnostic script:"
 echo "   ~/verify-wsl.sh"
 echo ""
 echo "5. Install development tools:"
-echo "   ./scripts/dev-environment/Install-Node-DevTools.sh"
-echo "   ./scripts/dev-environment/Install-Python-AI-DevTools.sh"
-echo "   ./scripts/dev-environment/Install-WebDev-Packages.sh"
+echo "   ./scripts/dev-env/Install-Node-DevTools.sh"
+echo "   ./scripts/dev-env/Install-Python-AI-DevTools.sh"
+echo "   ./scripts/dev-env/Install-WebDev-Packages.sh"
 echo ""
 log_info "For PowerShell profile setup on Windows, run (as Administrator):"
 echo "   .\\scripts\\dev-environment\\Setup-PowerShell-Profile.ps1"

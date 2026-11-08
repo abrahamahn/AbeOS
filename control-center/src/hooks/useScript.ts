@@ -1,7 +1,7 @@
 // src/hooks/useScript.ts
 import { useState, useCallback, useRef } from "react";
 import { runScript } from "../lib/tauri.ts";
-import type { ScriptOutput } from "../lib/tauri.ts";
+import type { ScriptOutput } from "../lib/types.ts";
 
 interface UseScriptReturn {
   /** Accumulated output lines from the script. */

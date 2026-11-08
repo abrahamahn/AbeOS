@@ -21,10 +21,7 @@ pub fn discover_scripts() -> Vec<ScriptEntry> {
     let abeos_root = r"C:\AbeOS";
     let mut scripts = Vec::new();
 
-    for entry in WalkDir::new(abeos_root)
-        .into_iter()
-        .filter_map(|e| e.ok())
-    {
+    for entry in WalkDir::new(abeos_root).into_iter().filter_map(|e| e.ok()) {
         let path = entry.path();
         let ext = path
             .extension()
@@ -68,7 +65,10 @@ pub fn discover_scripts() -> Vec<ScriptEntry> {
             .and_then(|content| {
                 content.lines().find_map(|line| {
                     let trimmed = line.trim();
-                    if trimmed.starts_with('#') && !trimmed.starts_with("#!") && !trimmed.starts_with("#Requires") {
+                    if trimmed.starts_with('#')
+                        && !trimmed.starts_with("#!")
+                        && !trimmed.starts_with("#Requires")
+                    {
                         Some(trimmed.trim_start_matches('#').trim().to_string())
                     } else {
                         None

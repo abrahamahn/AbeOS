@@ -1,48 +1,16 @@
 #!/bin/bash
 # =============================================================================
 # Install-All-DevTools.sh
-# Master Development Environment Installation Orchestrator
+# Master Development Environment Installation Orchestrato
 # =============================================================================
 
-set -e  # Exit on error
+set -e  # Exit on erro
 
-# Color codes for output
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-YELLOW='\033[1;33m'
-RED='\033[0;31m'
-CYAN='\033[0;36m'
-NC='\033[0m' # No Color
-
-# Get script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/lib/common.sh"
 
-log_info() {
-    echo -e "${BLUE}[INFO]${NC} $1"
-}
-
-log_success() {
-    echo -e "${GREEN}[SUCCESS]${NC} $1"
-}
-
-log_warning() {
-    echo -e "${YELLOW}[WARNING]${NC} $1"
-}
-
-log_error() {
-    echo -e "${RED}[ERROR]${NC} $1"
-}
-
-log_section() {
-    echo ""
-    echo -e "${CYAN}========================================${NC}"
-    echo -e "${CYAN}$1${NC}"
-    echo -e "${CYAN}========================================${NC}"
-    echo ""
-}
-
-# Welcome banner
-clear
+# Welcome banne
+clea
 echo -e "${CYAN}"
 cat << "EOF"
    _____ _              ____   _____
@@ -69,7 +37,7 @@ log_info "  • VS Code extensions"
 log_info ""
 
 # Ask for confirmation
-read -p "Continue with installation? (y/N): " -n 1 -r
+read -p "Continue with installation? (y/N): " -n 1 -
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     log_warning "Installation cancelled by user"
@@ -185,7 +153,7 @@ echo "  3. Check installation report for any issues"
 echo ""
 
 # Prompt to run verification
-read -p "Run verification script now? (y/N): " -n 1 -r
+read -p "Run verification script now? (y/N): " -n 1 -
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     if [ -f "$SCRIPT_DIR/Verify-Installation.sh" ]; then

@@ -74,9 +74,7 @@ pub fn get_log_entries() -> Vec<LogEntry> {
                 .as_ref()
                 .and_then(|m| m.modified().ok())
                 .map(|t| {
-                    let duration = t
-                        .duration_since(std::time::UNIX_EPOCH)
-                        .unwrap_or_default();
+                    let duration = t.duration_since(std::time::UNIX_EPOCH).unwrap_or_default();
                     format_timestamp(duration.as_secs())
                 })
                 .unwrap_or_default();
@@ -105,15 +103,14 @@ fn format_timestamp(secs: u64) -> String {
     let hours = remaining / 3600;
     let minutes = (remaining % 3600) / 60;
 
+    let is_leap_year =
+        |y: u64| y.is_multiple_of(4) && (!y.is_multiple_of(100) || y.is_multiple_of(400));
+
     // Approximate date calculation (good enough for display)
     let mut year = 1970u64;
     let mut remaining_days = days;
     loop {
-        let days_in_year = if year % 4 == 0 && (year % 100 != 0 || year % 400 == 0) {
-            366
-        } else {
-            365
-        };
+        let days_in_year = if is_leap_year(year) { 366 } else { 365 };
         if remaining_days < days_in_year {
             break;
         }
@@ -121,7 +118,7 @@ fn format_timestamp(secs: u64) -> String {
         year += 1;
     }
 
-    let days_in_months: [u64; 12] = if year % 4 == 0 && (year % 100 != 0 || year % 400 == 0) {
+    let days_in_months: [u64; 12] = if is_leap_year(year) {
         [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     } else {
         [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]

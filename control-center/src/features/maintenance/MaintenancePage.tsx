@@ -4,7 +4,7 @@ import { Wrench, Play, Calendar, FileText } from "lucide-react";
 import { PageHeader } from "../../components/PageHeader.tsx";
 import { TerminalOutput } from "../../components/TerminalOutput.tsx";
 import { api } from "../../lib/tauri.ts";
-import type { ScheduledTask, LogEntry } from "../../lib/tauri.ts";
+import type { ScheduledTask, LogEntry } from "../../lib/types.ts";
 import { useScript } from "../../hooks/useScript.ts";
 import { SCRIPTS } from "../../lib/constants.ts";
 

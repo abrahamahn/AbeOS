@@ -17,7 +17,7 @@ import { PageHeader } from "../../components/PageHeader.tsx";
 import { TerminalOutput } from "../../components/TerminalOutput.tsx";
 import { useScript } from "../../hooks/useScript.ts";
 import { SCRIPTS } from "../../lib/constants.ts";
-import type { ScriptOutput } from "../../lib/tauri.ts";
+import type { ScriptOutput } from "../../lib/types.ts";
 import type { LucideIcon } from "lucide-react";
 
 interface ToolVersion {

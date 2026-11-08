@@ -10,7 +10,7 @@ BLUE='\033[0;34m'
 YELLOW='\033[1;33m'
 RED='\033[0;31m'
 CYAN='\033[0;36m'
-NC='\033[0m' # No Color
+NC='\033[0m' # No Colo
 
 # Counters
 TOTAL_CHECKS=0
@@ -95,8 +95,8 @@ check_file() {
     fi
 }
 
-# Clear screen and show banner
-clear
+# Clear screen and show banne
+clea
 echo -e "${CYAN}"
 cat << "EOF"
  __      __        _  __

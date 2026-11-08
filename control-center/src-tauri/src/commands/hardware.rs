@@ -1,6 +1,8 @@
 // src-tauri/src/commands/hardware.rs
 use serde::Serialize;
 
+use super::win_utils::{ps_json, ps_json_array, ps_query};
+
 /// Extended hardware health data beyond basic system info.
 #[derive(Serialize)]
 pub struct HardwareHealth {
@@ -93,26 +95,6 @@ pub fn get_hardware_health() -> HardwareHealth {
     }
 }
 
-/// Runs a PowerShell command and returns stdout as a trimmed string.
-fn ps_query(command: &str) -> String {
-    let output = std::process::Command::new("powershell.exe")
-        .args(["-NoProfile", "-Command", command])
-        .output();
-    match output {
-        Ok(o) => String::from_utf8_lossy(&o.stdout).trim().to_string(),
-        Err(_) => String::new(),
-    }
-}
-
-/// Runs a PowerShell command and parses the JSON output.
-fn ps_json(command: &str) -> Option<serde_json::Value> {
-    let text = ps_query(command);
-    if text.is_empty() {
-        return None;
-    }
-    serde_json::from_str(&text).ok()
-}
-
 /// Queries battery info via WMI. Returns None on desktops without a battery.
 fn get_battery_info() -> Option<BatteryInfo> {
     let json = ps_json(
@@ -158,21 +140,19 @@ fn get_battery_info() -> Option<BatteryInfo> {
         current_charge_percent: json.get("ChargePercent")?.as_u64().unwrap_or(0) as u32,
         health_percent: (health * 10.0).round() / 10.0,
         cycle_count: json.get("CycleCount")?.as_u64().unwrap_or(0) as u32,
-        status: json.get("Status")?.as_str().unwrap_or("Unknown").to_string(),
+        status: json
+            .get("Status")?
+            .as_str()
+            .unwrap_or("Unknown")
+            .to_string(),
     })
 }
 
 /// Queries GPU info via Win32_VideoController.
 fn get_gpu_info() -> Vec<GpuInfo> {
-    let json = ps_json(
+    let arr = ps_json_array(
         "Get-CimInstance -ClassName Win32_VideoController | Select-Object Name, DriverVersion, AdapterRAM, Status | ConvertTo-Json -Compress",
     );
-
-    let arr = match json {
-        Some(serde_json::Value::Array(a)) => a,
-        Some(obj @ serde_json::Value::Object(_)) => vec![obj],
-        _ => return Vec::new(),
-    };
 
     arr.iter()
         .filter_map(|v| {
@@ -197,7 +177,7 @@ fn get_gpu_info() -> Vec<GpuInfo> {
 
 /// Queries network adapters with IP addresses.
 fn get_network_adapters() -> Vec<NetworkAdapterInfo> {
-    let json = ps_json(
+    let arr = ps_json_array(
         r#"
         $adapters = Get-NetAdapter | Where-Object { $_.Status -eq 'Up' -and $_.InterfaceDescription -notmatch 'Virtual|Loopback' } |
             Select-Object Name, InterfaceDescription, MacAddress, Status, LinkSpeed, MediaType
@@ -218,12 +198,6 @@ fn get_network_adapters() -> Vec<NetworkAdapterInfo> {
         $result | ConvertTo-Json -Compress
         "#,
     );
-
-    let arr = match json {
-        Some(serde_json::Value::Array(a)) => a,
-        Some(obj @ serde_json::Value::Object(_)) => vec![obj],
-        _ => return Vec::new(),
-    };
 
     arr.iter()
         .filter_map(|v| {
@@ -249,7 +223,14 @@ fn get_wifi_info() -> Option<WifiInfo> {
     let get_field = |key: &str| -> String {
         text.lines()
             .find(|l| l.trim().starts_with(key))
-            .map(|l| l.split(':').skip(1).collect::<Vec<_>>().join(":").trim().to_string())
+            .map(|l| {
+                l.split(':')
+                    .skip(1)
+                    .collect::<Vec<_>>()
+                    .join(":")
+                    .trim()
+                    .to_string()
+            })
             .unwrap_or_default()
     };
 
@@ -264,7 +245,11 @@ fn get_wifi_info() -> Option<WifiInfo> {
     Some(WifiInfo {
         ssid,
         signal_percent: signal,
-        link_speed: format!("{} / {}", get_field("Receive rate"), get_field("Transmit rate")),
+        link_speed: format!(
+            "{} / {}",
+            get_field("Receive rate"),
+            get_field("Transmit rate")
+        ),
         auth_type: get_field("Authentication"),
     })
 }
@@ -285,7 +270,11 @@ fn get_bluetooth_info() -> Option<BluetoothInfo> {
     )?;
 
     Some(BluetoothInfo {
-        adapter_name: json.get("Adapter")?.as_str().unwrap_or("Bluetooth").to_string(),
+        adapter_name: json
+            .get("Adapter")?
+            .as_str()
+            .unwrap_or("Bluetooth")
+            .to_string(),
         status: "OK".to_string(),
         connected_devices: json
             .get("Devices")
@@ -301,7 +290,7 @@ fn get_bluetooth_info() -> Option<BluetoothInfo> {
 
 /// Queries physical disk health via Get-PhysicalDisk.
 fn get_disk_health() -> Vec<DiskHealthInfo> {
-    let json = ps_json(
+    let arr = ps_json_array(
         r#"
         $disks = Get-PhysicalDisk | Select-Object FriendlyName, MediaType, HealthStatus, Size
         $temps = @{}
@@ -326,12 +315,6 @@ fn get_disk_health() -> Vec<DiskHealthInfo> {
         "#,
     );
 
-    let arr = match json {
-        Some(serde_json::Value::Array(a)) => a,
-        Some(obj @ serde_json::Value::Object(_)) => vec![obj],
-        _ => return Vec::new(),
-    };
-
     arr.iter()
         .filter_map(|v| {
             Some(DiskHealthInfo {
@@ -353,9 +336,21 @@ fn get_bios_info() -> BiosInfo {
 
     match json {
         Some(v) => BiosInfo {
-            version: v.get("SMBIOSBIOSVersion").and_then(|s| s.as_str()).unwrap_or("Unknown").to_string(),
-            manufacturer: v.get("Manufacturer").and_then(|s| s.as_str()).unwrap_or("Unknown").to_string(),
-            release_date: v.get("ReleaseDate").and_then(|s| s.as_str()).unwrap_or("Unknown").to_string(),
+            version: v
+                .get("SMBIOSBIOSVersion")
+                .and_then(|s| s.as_str())
+                .unwrap_or("Unknown")
+                .to_string(),
+            manufacturer: v
+                .get("Manufacturer")
+                .and_then(|s| s.as_str())
+                .unwrap_or("Unknown")
+                .to_string(),
+            release_date: v
+                .get("ReleaseDate")
+                .and_then(|s| s.as_str())
+                .unwrap_or("Unknown")
+                .to_string(),
         },
         None => BiosInfo {
             version: "Unknown".to_string(),

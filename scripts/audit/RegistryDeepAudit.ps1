@@ -41,10 +41,10 @@ if ($r) { $issueCount++ }
 $r = Check-Registry -Path $personalize -Name "SystemUsesLightTheme" -ExpectedValue 0 -Label "System dark mode"
 if ($r) { $issueCount++ }
 
-$r = Check-Registry -Path $dwm -Name "ColorPrevalence" -ExpectedValue 1 -Label "Window colorization"
+$r = Check-Registry -Path $dwm -Name "ColorPrevalence" -ExpectedValue 0 -Label "Colored title bars (off)"
 if ($r) { $issueCount++ }
 
-$r = Check-Registry -Path $personalize -Name "ColorPrevalence" -ExpectedValue 1 -Label "Taskbar colorization"
+$r = Check-Registry -Path $personalize -Name "ColorPrevalence" -ExpectedValue 0 -Label "Taskbar accent (off)"
 if ($r) { $issueCount++ }
 
 # --- Taskbar ---

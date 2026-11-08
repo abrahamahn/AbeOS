@@ -1,7 +1,7 @@
 // src/hooks/useSystemInfo.ts
 import { useState, useEffect, useRef } from "react";
 import { api } from "../lib/tauri.ts";
-import type { SystemInfo } from "../lib/tauri.ts";
+import type { SystemInfo } from "../lib/types.ts";
 
 /**
  * Polls system info from the Rust backend at a configurable interval.

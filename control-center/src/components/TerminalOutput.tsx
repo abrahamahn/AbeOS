@@ -1,6 +1,6 @@
 // src/components/TerminalOutput.tsx
 import { useEffect, useRef } from "react";
-import type { ScriptOutput } from "../lib/tauri.ts";
+import type { ScriptOutput } from "../lib/types.ts";
 
 interface TerminalOutputProps {
   /** Lines of output to render. */

@@ -9,7 +9,6 @@ const NAV_ITEMS = [
   { path: "/dev", label: "Dev" },
   { path: "/audio", label: "Audio" },
   { path: "/maintenance", label: "Maint." },
-  { path: "/scripts", label: "Scripts" },
 ] as const;
 
 /**

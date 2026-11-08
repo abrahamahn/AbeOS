@@ -2,6 +2,8 @@
 use serde::Serialize;
 use sysinfo::System;
 
+use super::win_utils::ps_query;
+
 /// Real-time system metrics returned to the frontend dashboard.
 #[derive(Serialize)]
 pub struct SystemInfo {
@@ -86,19 +88,12 @@ pub fn get_system_info() -> SystemInfo {
 /// Returns the currently active ASUS ROG BIOS performance profile via ACPI WMI.
 #[tauri::command]
 pub fn get_power_mode() -> String {
-    let output = std::process::Command::new("powershell.exe")
-        .args([
-            "-NoProfile",
-            "-Command",
-            r#"try { $a = Get-WmiObject -Namespace root\WMI -Class AsusAtkWmi_WMNB -ErrorAction Stop; $r = $a.DSTS([uint32]0x00120075); $v = $r.Data -band 0xFF; switch ($v) { 0 { 'Balanced' } 1 { 'Turbo' } 2 { 'Silent' } default { "Unknown ($v)" } } } catch { 'Unknown' }"#,
-        ])
-        .output();
-
-    match output {
-        Ok(o) => {
-            let result = String::from_utf8_lossy(&o.stdout).trim().to_string();
-            if result.is_empty() { "Unknown".to_string() } else { result }
-        }
-        Err(_) => "Unknown".to_string(),
+    let result = ps_query(
+        r#"try { $a = Get-WmiObject -Namespace root\WMI -Class AsusAtkWmi_WMNB -ErrorAction Stop; $r = $a.DSTS([uint32]0x00120075); $v = $r.Data -band 0xFF; switch ($v) { 0 { 'Balanced' } 1 { 'Turbo' } 2 { 'Silent' } default { "Unknown ($v)" } } } catch { 'Unknown' }"#,
+    );
+    if result.is_empty() {
+        "Unknown".to_string()
+    } else {
+        result
     }
 }

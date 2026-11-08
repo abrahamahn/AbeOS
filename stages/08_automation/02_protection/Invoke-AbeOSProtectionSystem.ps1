@@ -48,7 +48,7 @@ function Write-Section {
 }
 
 function Write-Info { param([string]$Message) Write-Host "[INFO] $Message" -ForegroundColor Cyan }
-function Write-Success { param([string]$Message) Write-Host "[✓] $Message" -ForegroundColor Green }
+function Write-Success { param([string]$Message) Write-Host "[OK] $Message" -ForegroundColor Green }
 function Write-WarningMessage { param([string]$Message) Write-Host "[WARN] $Message" -ForegroundColor Yellow }
 function Write-ErrorMessage { param([string]$Message) Write-Host "[ERROR] $Message" -ForegroundColor Red }
 
@@ -117,7 +117,7 @@ function Ensure-CriticalServices {
 
             if ($svc.StartType -eq "Disabled") {
                 Set-Service -Name $svcName -StartupType Manual -ErrorAction Stop
-                $svcSummary.Actions += "StartupType → Manual"
+                $svcSummary.Actions += "StartupType -> Manual"
             }
 
             if ($svc.Status -ne "Running") {
@@ -155,7 +155,7 @@ function Invoke-RegistryBackup {
         $target = Join-Path $OutputDirectory "$safeHive-$timestamp.reg"
         try {
             & reg.exe export $safeHive $target /y | Out-Null
-            Write-Success "Exported $safeHive → $target"
+            Write-Success "Exported $safeHive -> $target"
         } catch {
             Write-WarningMessage "Failed to export $safeHive : $_"
         }

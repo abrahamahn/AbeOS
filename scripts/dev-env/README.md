@@ -13,7 +13,7 @@ This directory contains automated installation scripts for setting up a complete
 
 ### Windows (PowerShell)
 
-#### `Install-Windows-DevTools.ps1`
+#### `Install-DevEnvironment.ps1`
 Installs Windows-specific development tools via winget and Chocolatey.
 
 **Requires:** Administrator privileges
@@ -33,7 +33,7 @@ Installs Windows-specific development tools via winget and Chocolatey.
 **Usage:**
 ```powershell
 # Run as Administrator
-.\Install-Windows-DevTools.ps1
+.\Install-DevEnvironment.ps1 -Category All
 ```
 
 ### WSL2/Linux (Bash)
@@ -151,15 +151,15 @@ bash Verify-Installation.sh
 
 1. **On Windows (as Administrator):**
    ```powershell
-   cd C:\AbeOS\scripts\dev-environment
-   .\Install-Windows-DevTools.ps1
+   cd C:\AbeOS\scripts\dev-env
+   .\Install-DevEnvironment.ps1 -Category All
    ```
 
 2. **Restart your computer** to complete WSL2 installation
 
 3. **In WSL2:**
    ```bash
-   cd /mnt/c/AbeOS/scripts/dev-environment
+   cd /mnt/c/AbeOS/scripts/dev-env
    bash Install-All-DevTools.sh
    ```
 

@@ -11,28 +11,8 @@ echo "AbeOS Bash Profile Setup"
 echo "=================================================="
 echo ""
 
-# Color codes
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-YELLOW='\033[1;33m'
-RED='\033[0;31m'
-NC='\033[0m'
-
-log_info() {
-    echo -e "${BLUE}[INFO]${NC} $1"
-}
-
-log_success() {
-    echo -e "${GREEN}[SUCCESS]${NC} $1"
-}
-
-log_warning() {
-    echo -e "${YELLOW}[WARNING]${NC} $1"
-}
-
-log_error() {
-    echo -e "${RED}[ERROR]${NC} $1"
-}
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/lib/common.sh"
 
 # Check if running in WSL
 if ! grep -q microsoft /proc/version; then
@@ -41,16 +21,16 @@ if ! grep -q microsoft /proc/version; then
 fi
 
 # Determine AbeOS location (try WSL mount first, then Linux location)
-if [ -d "/mnt/c/AbeOS/configs/core/terminal" ]; then
-    ABEOS_CONFIG_DIR="/mnt/c/AbeOS/configs/core/terminal"
+if [ -d "/mnt/c/AbeOS/configs/terminal" ]; then
+    ABEOS_CONFIG_DIR="/mnt/c/AbeOS/configs/terminal"
     log_info "Using AbeOS configs from Windows: $ABEOS_CONFIG_DIR"
-elif [ -d "/home/user/AbeOS/configs/core/terminal" ]; then
-    ABEOS_CONFIG_DIR="/home/user/AbeOS/configs/core/terminal"
+elif [ -d "/home/user/AbeOS/configs/terminal" ]; then
+    ABEOS_CONFIG_DIR="/home/user/AbeOS/configs/terminal"
     log_info "Using AbeOS configs from Linux: $ABEOS_CONFIG_DIR"
 else
     log_error "AbeOS configs not found. Expected at:"
-    echo "  /mnt/c/AbeOS/configs/core/terminal OR"
-    echo "  /home/user/AbeOS/configs/core/terminal"
+    echo "  /mnt/c/AbeOS/configs/terminal OR"
+    echo "  /home/user/AbeOS/configs/terminal"
     exit 1
 fi
 
@@ -74,9 +54,9 @@ cp "$ABEOS_CONFIG_DIR/bashrc" "$HOME/.bashrc"
 
 # Update the path in bashrc to point to the correct location
 log_info "Updating bashrc.core path reference..."
-if [ "$ABEOS_CONFIG_DIR" == "/home/user/AbeOS/configs/core/terminal" ]; then
+if [ "$ABEOS_CONFIG_DIR" == "/home/user/AbeOS/configs/terminal" ]; then
     # If using Linux location, update the path
-    sed -i "s|/mnt/c/AbeOS/configs/core/terminal/bashrc.core|$ABEOS_CONFIG_DIR/bashrc.core|g" "$HOME/.bashrc"
+    sed -i "s|/mnt/c/AbeOS/configs/terminal/bashrc.core|$ABEOS_CONFIG_DIR/bashrc.core|g" "$HOME/.bashrc"
     log_info "Updated path to Linux location"
 fi
 

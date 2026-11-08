@@ -4,7 +4,7 @@ import { Cpu, Zap, Play, RefreshCw } from "lucide-react";
 import { PageHeader } from "../../components/PageHeader.tsx";
 import { TerminalOutput } from "../../components/TerminalOutput.tsx";
 import { api } from "../../lib/tauri.ts";
-import type { HardwareHealth } from "../../lib/tauri.ts";
+import type { HardwareHealth } from "../../lib/types.ts";
 import { useScript } from "../../hooks/useScript.ts";
 import { useSystemInfo } from "../../hooks/useSystemInfo.ts";
 import { SCRIPTS } from "../../lib/constants.ts";
